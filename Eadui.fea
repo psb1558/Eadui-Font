@@ -1,0 +1,3361 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+
+#
+# Feature file for Eadui font. Copyright (c) 2015 by Peter S. Baker
+#
+# GSUB 
+
+lookup ccmpDotlessi {
+  lookupflag 0;
+    sub i' [\gravecomb \acutecomb \uni0302 \tildecomb \uni0304 \uni0307 \uni0308 \uni035B \uni1DD2 \uni1DE3 \uni0365 \uni0366 ] by \dotlessi;
+} ccmpDotlessi;
+
+lookup ccmpGlyphCompositionDecompositi {
+  lookupflag 0;
+    sub \eogonek by \e \uni0328 ;
+    sub \umacron by \u \uni0304 ;
+    sub \emacron by \e \uni0304 ;
+    sub \amacron by \a \uni0304 ;
+    sub \imacron by \dotlessi \uni0304 ;
+    sub \omacron by \o \uni0304 ;
+    sub \aacute by \a \acutecomb ;
+    sub \eacute by \e \acutecomb ;
+    sub \iacute by \dotlessi \acutecomb ;
+    sub \oacute by \o \acutecomb ;
+    sub \uacute by \u \acutecomb ;
+    sub \adieresis by \a \uni0308 ;
+    sub \edieresis by \e \uni0308 ;
+    sub \idieresis by \dotlessi \uni0308 ;
+    sub \odieresis by \o \uni0308 ;
+    sub \udieresis by \u \uni0308 ;
+    sub \yacute by \y \acutecomb ;
+    sub \ydieresis by \y \uni0308 ;
+    sub \uni0233 by \y \uni0304 ;
+    sub \Aacute by \A \acutecomb ;
+    sub \Adieresis by \A \uni0308 ;
+    sub \Oacute by \O \acutecomb ;
+    sub \Odieresis by \O \uni0308 ;
+    sub \Uacute by \U \acutecomb ;
+    sub \Udieresis by \U \uni0308 ;
+    sub \Eacute by \E \acutecomb ;
+    sub \Edieresis by \E \uni0308 ;
+    sub \Iacute by \I \acutecomb ;
+    sub \Idieresis by \I \uni0308 ;
+    sub \Ydieresis by \Y \uni0308 ;
+    sub \uni1E05 by \b \dotbelowcomb ;
+    sub \uni1E0D by \d \dotbelowcomb ;
+    sub \uni1E25 by \h \dotbelowcomb ;
+    sub \uni1E33 by \k \dotbelowcomb ;
+    sub \uni1E37 by \l \dotbelowcomb ;
+    sub \uni1E43 by \m \dotbelowcomb ;
+    sub \uni1E47 by \n \dotbelowcomb ;
+    sub \uni1E5B by \r \dotbelowcomb ;
+    sub \uni1E63 by \s \dotbelowcomb ;
+    sub \uni1E6D by \t \dotbelowcomb ;
+    sub \uni1E7F by \v \dotbelowcomb ;
+    sub \uni1E89 by \w \dotbelowcomb ;
+    sub \uni1E93 by \z \dotbelowcomb ;
+    sub \uni1EA1 by \a \dotbelowcomb ;
+    sub \uni1EB9 by \e \dotbelowcomb ;
+    sub \uni1ECB by \i \dotbelowcomb ;
+    sub \uni1ECD by \o \dotbelowcomb ;
+    sub \uni1EE5 by \u \dotbelowcomb ;
+    sub \uni1EF5 by \y \dotbelowcomb ;
+    sub \uni00630323 by \c \dotbelowcomb ;
+    sub \uni00660323 by \f \dotbelowcomb ;
+    sub \uni00670323 by \g \dotbelowcomb ;
+    sub \uni006A0323 by \j \dotbelowcomb ;
+    sub \uni00700323 by \p \dotbelowcomb ;
+    sub \uni00710323 by \q \dotbelowcomb ;
+    sub \uni0232 by \Y \uni0304 ;
+    sub \Amacron by \A \uni0304 ;
+    sub \Emacron by \E \uni0304 ;
+    sub \Imacron by \I \uni0304 ;
+    sub \Omacron by \O \uni0304 ;
+    sub \Umacron by \U \uni0304 ;
+    sub \uni004503280304 by \E \uni0328 \uni0304 ;
+    sub \uni006503280304 by \e \uni0328 \uni0304 ;
+    sub \Yacute by \Y \acutecomb ;
+    sub \Agrave by \A \gravecomb ;
+    sub \Acircumflex by \A \uni0302 ;
+    sub \Atilde by \A \tildecomb ;
+    sub \agrave by \a \gravecomb ;
+    sub \egrave by \e \gravecomb ;
+    sub \igrave by \dotlessi \gravecomb ;
+    sub \ograve by \o \gravecomb ;
+    sub \ugrave by \u \gravecomb ;
+    sub \Egrave by \E \gravecomb ;
+    sub \Igrave by \I \gravecomb ;
+    sub \Ograve by \O \gravecomb ;
+    sub \Ugrave by \U \gravecomb ;
+    sub \Ecircumflex by \E \uni0302 ;
+    sub \Icircumflex by \I \uni0302 ;
+    sub \Ocircumflex by \O \uni0302 ;
+    sub \Ucircumflex by \U \uni0302 ;
+    sub \acircumflex by \a \uni0302 ;
+    sub \ecircumflex by \e \uni0302 ;
+    sub \icircumflex by \dotlessi \uni0302 ;
+    sub \ocircumflex by \o \uni0302 ;
+    sub \ucircumflex by \u \uni0302 ;
+    sub \atilde by \a \tildecomb ;
+    sub \otilde by \o \tildecomb ;
+    sub \ntilde by \n \tildecomb ;
+    sub \Ntilde by \N \tildecomb ;
+    sub \Otilde by \O \tildecomb ;
+    sub \Ccedilla by \C \uni0327 ;
+    sub \ccedilla by \c \uni0327 ;
+    sub \aring by \a \uni0366 ;
+    sub \Aring by \A \uni0366 ;
+    sub \uni1E04 by \B \dotbelowcomb ;
+    sub \uni1E0C by \D \dotbelowcomb ;
+    sub \uni1E24 by \H \dotbelowcomb ;
+    sub \uni1E32 by \K \dotbelowcomb ;
+    sub \uni1E36 by \L \dotbelowcomb ;
+    sub \uni1E42 by \M \dotbelowcomb ;
+    sub \uni1E46 by \N \dotbelowcomb ;
+    sub \uni1E5A by \R \dotbelowcomb ;
+    sub \uni1E6C by \T \dotbelowcomb ;
+    sub \uni1E7E by \V \dotbelowcomb ;
+    sub \uni1E88 by \W \dotbelowcomb ;
+    sub \uni1E62 by \S \dotbelowcomb ;
+    sub \uni1E92 by \Z \dotbelowcomb ;
+    sub \uni1EE4 by \U \dotbelowcomb ;
+    sub \uni1EF4 by \Y \dotbelowcomb ;
+    sub \uni1ECA by \I \dotbelowcomb ;
+    sub \uni1ECC by \O \dotbelowcomb ;
+    sub \uni1EA0 by \A \dotbelowcomb ;
+    sub \uni1EB8 by \E \dotbelowcomb ;
+    sub \uni00460323 by \F \dotbelowcomb ;
+    sub \uni00430323 by \C \dotbelowcomb ;
+    sub \uni00470323 by \G \dotbelowcomb ;
+    sub \uni004A0323 by \J \dotbelowcomb ;
+    sub \uni00500323 by \P \dotbelowcomb ;
+    sub \uni00510323 by \Q \dotbelowcomb ;
+    sub \uni01E3 by \ae \uni0304 ;
+    sub \aeacute by \ae \acutecomb ;
+    sub \uni01E2 by \AE \uni0304 ;
+    sub \AEacute by \AE \acutecomb ;
+} ccmpGlyphCompositionDecompositi;
+
+lookup smcpLowercasetoSmallCapitalsinL {
+  lookupflag 0;
+    sub \a by \a.sc ;
+    sub \b by \b.sc ;
+    sub \c by \c.sc ;
+    sub \g by \g.sc ;
+    sub \d by \d.sc ;
+    sub \e by \e.sc ;
+    sub \f by \f.sc ;
+    sub \h by \h.sc ;
+    sub \i by \i.sc ;
+    sub \l by \l.sc ;
+    sub \m by \m.sc ;
+    sub \n by \n.sc ;
+    sub \o by \o.sc ;
+    sub \p by \p.sc ;
+    sub \r by \r.sc ;
+    sub \q by \q.sc ;
+    sub \t by \t.sc ;
+    sub \u by \u.sc ;
+    sub \x by \x.sc ;
+    sub \y by \y.sc ;
+    sub \v by \v.sc ;
+    sub \k by \k.sc ;
+    sub \w by \w.sc ;
+    sub \s by \s.sc ;
+    sub \j by \j.sc ;
+    sub \z by \z.sc ;
+    sub \uni019A by \uni019A.sc ;
+    sub \uni0304 by \macron.sc ;
+    sub \eth by \eth.sc ;
+    sub \thorn by \thorn.sc ;
+    sub \ae by \ae.sc ;
+} smcpLowercasetoSmallCapitalsinL;
+
+lookup titlTitlingcapsfromlc {
+  lookupflag 0;
+    sub \a by \A.titling ;
+    sub \b by \B.titling ;
+    sub \c by \C.titling ;
+    sub \g by \G.titling ;
+    sub \d by \D.titling ;
+    sub \e by \E.titling ;
+    sub \f by \F.titling ;
+    sub \h by \H.titling ;
+    sub \i by \I.titling ;
+    sub \l by \L.titling ;
+    sub \m by \M.titling ;
+    sub \n by \N.titling ;
+    sub \o by \O.titling ;
+    sub \p by \P.titling ;
+    sub \r by \R.titling ;
+    sub \q by \Q.titling ;
+    sub \t by \T.titling ;
+    sub \u by \U.titling ;
+    sub \x by \X.titling ;
+    sub \longs by \S.titling ;
+    sub \y by \Y.titling ;
+    sub \v by \V.titling ;
+    sub \k by \K.titling ;
+    sub \w by \W.titling ;
+    sub \s by \S.titling ;
+    sub \dotlessi by \I.titling ;
+    sub \j by \J.titling ;
+    sub \z by \Z.titling ;
+    sub \hyphen by \hyphen.titling ;
+    sub \emdash by \emdash.titling ;
+    sub \endash by \endash.titling ;
+    sub \uni0304 by \macron.titling ;
+    sub \eth by \Eth.titling ;
+    sub \thorn by \Thorn.titling ;
+    sub \ae by \AE.titling ;
+} titlTitlingcapsfromlc;
+
+lookup histMedievalize {
+  lookupflag 0;
+    sub \i by \dotlessi ;
+    sub \y by \uni1E8F ;
+    sub \v by \u ;
+    sub \w by \w.alt ;
+    sub \s by \longs ;
+    sub \y.sc by \uni1E8F.sc ;
+    sub \j by \dotlessi ;
+    sub \W by \W.medieval1 ;
+    sub \question by \uniF160 ;
+    sub \W.titling by \W.titling1 ;
+} histMedievalize;
+
+lookup ss07Underdotted {
+  lookupflag 0;
+    sub \a by \uni1EA1 ;
+    sub \b by \uni1E05 ;
+    sub \c by \uni00630323 ;
+    sub \g by \uni00670323 ;
+    sub \d by \uni1E0D ;
+    sub \e by \uni1EB9 ;
+    sub \f by \uni00660323 ;
+    sub \h by \uni1E25 ;
+    sub \i by \uni1ECB ;
+    sub \l by \uni1E37 ;
+    sub \m by \uni1E43 ;
+    sub \n by \uni1E47 ;
+    sub \o by \uni1ECD ;
+    sub \p by \uni00700323 ;
+    sub \r by \uni1E5B ;
+    sub \q by \uni00710323 ;
+    sub \t by \uni1E6D ;
+    sub \u by \uni1EE5 ;
+    sub \x by \xdotbelowcomb ;
+    sub \longs by \uni017F0323 ;
+    sub \y by \uni1EF5 ;
+    sub \v by \uni1E7F ;
+    sub \k by \uni1E33 ;
+    sub \w by \uni1E89 ;
+    sub \s by \uni1E63 ;
+    sub \A by \uni1EA0 ;
+    sub \E by \uni1EB8 ;
+    sub \U by \uni1EE4 ;
+    sub \D by \uni1E0C ;
+    sub \C by \uni00430323 ;
+    sub \I by \uni1ECA ;
+    sub \Q by \uni00510323 ;
+    sub \N by \uni1E46 ;
+    sub \X by \Xdotbelowcomb ;
+    sub \T by \uni1E6C ;
+    sub \S by \uni1E62 ;
+    sub \R by \uni1E5A ;
+    sub \j by \uni006A0323 ;
+    sub \z by \uni1E93 ;
+    sub \M by \uni1E42 ;
+    sub \O by \uni1ECC ;
+    sub \B by \uni1E04 ;
+    sub \F by \uni00460323 ;
+    sub \G by \uni00470323 ;
+    sub \H by \uni1E24 ;
+    sub \J by \uni004A0323 ;
+    sub \K by \uni1E32 ;
+    sub \L by \uni1E36 ;
+    sub \P by \uni00500323 ;
+    sub \V by \uni1E7E ;
+    sub \W by \uni1E88 ;
+    sub \Y by \uni1EF4 ;
+    sub \Z by \uni1E92 ;
+    sub \uniA75B by \uniA75B0323 ;
+} ss07Underdotted;
+
+lookup ss10Alternatey {
+  lookupflag 0;
+    sub \y by \y.alt ;
+    sub \uni1E8F by \uni1E8F.alt ;
+} ss10Alternatey;
+
+lookup ss11Sentencecapsfromcaps {
+  lookupflag 0;
+    sub \A by \A.titling ;
+    sub \E by \E.medium ;
+    sub \U by \U.titling ;
+    sub \D by \D.medium ;
+    sub \C by \C.titling ;
+    sub \I by \I.medium ;
+    sub \Q by \Q.medium ;
+    sub \N by \N.titling ;
+    sub \X by \X.titling ;
+    sub \T by \T.medium ;
+    sub \S by \S.medium ;
+    sub \R by \R.titling ;
+    sub \M by \M.medium ;
+    sub \O by \O.medium ;
+    sub \B by \B.medium ;
+    sub \F by \F.titling ;
+    sub \G by \G.medium ;
+    sub \H by \H.medium ;
+    sub \J by \J.titling ;
+    sub \K by \K.titling ;
+    sub \L by \L.titling ;
+    sub \P by \P.titling ;
+    sub \V by \V.titling ;
+    sub \W by \W.titling ;
+    sub \Y by \Y.titling ;
+    sub \Z by \Z.titling ;
+} ss11Sentencecapsfromcaps;
+
+lookup ss12Titlingcapsfromcaps {
+  lookupflag 0;
+    sub \A by \A.titling ;
+    sub \E by \E.titling ;
+    sub \U by \U.titling ;
+    sub \D by \D.titling ;
+    sub \C by \C.titling ;
+    sub \I by \I.titling ;
+    sub \Q by \Q.titling ;
+    sub \N by \N.titling ;
+    sub \X by \X.titling ;
+    sub \T by \T.titling ;
+    sub \S by \S.titling ;
+    sub \R by \R.titling ;
+    sub \M by \M.titling ;
+    sub \O by \O.titling ;
+    sub \B by \B.titling ;
+    sub \F by \F.titling ;
+    sub \G by \G.titling ;
+    sub \H by \H.titling ;
+    sub \J by \J.titling ;
+    sub \K by \K.titling ;
+    sub \L by \L.titling ;
+    sub \P by \P.titling ;
+    sub \V by \V.titling ;
+    sub \W by \W.titling ;
+    sub \Y by \Y.titling ;
+    sub \Z by \Z.titling ;
+    sub \W.medieval1 by \W.titling1 ;
+    sub \W.medieval2 by \W.titling2 ;
+    sub \AE by \AE.titling ;
+    sub \Eth by \Eth.titling ;
+    sub \Thorn by \Thorn.titling ;
+} ss12Titlingcapsfromcaps;
+
+lookup ss13Alternatediacritics {
+  lookupflag 0;
+    sub \uni0328 by \ogonek.alt ;
+    sub \uni0304 by \uni0304.alt ;
+    sub \uni1DE3 by \uni1DE3.alt ;
+} ss13Alternatediacritics;
+
+lookup ss14Enlargedminuscules {
+  lookupflag 0;
+    sub \a by \a.enlarged ;
+    sub \c by \c.enlarged ;
+    sub \d by \d.enlarged ;
+    sub \f by \f.enlarged ;
+    sub \p by \p.enlarged ;
+} ss14Enlargedminuscules;
+
+lookup swshSwashinLatinlookup22 {
+  lookupflag 0;
+    sub \a by \a.swash ;
+    sub \e by \e.alt01 ;
+    sub \i by \i.swash ;
+    sub \n by \n.swash ;
+    sub \t by \t.swash ;
+    sub \dotlessi by \dotlessi.swash ;
+    sub \M by \M.swash ;
+    sub \F by \F.swash ;
+} swshSwashinLatinlookup22;
+
+lookup saltStylisticAlternativesinLati {
+  lookupflag 0;
+    sub \a from [\a.alt01 \a.alt02 \a.enlarged ];
+    sub \c from [\c.enlarged ];
+    sub \d from [\d.enlarged ];
+    sub \e from [\e.alt02 \e.alt04 ];
+    sub \f from [\f.enlarged ];
+    sub \n from [\n.alt2 ];
+    sub \p from [\p.enlarged ];
+    sub \r from [\uniA75B ];
+    sub \y from [\y.alt ];
+    sub \uni1E8F from [\uni1E8F.alt ];
+    sub \A from [\A.alt ];
+    sub \D from [\uniA779 ];
+    sub \Q from [\Q.alt ];
+    sub \l.sc from [\l.sc2 ];
+    sub \s.sc from [\s.sc2 ];
+    sub \G from [\G.alt1 \G.alt2 ];
+    sub \H from [\H.alt ];
+    sub \Y from [\Y.alt \uni1E8E.alt ];
+    sub \semicolon from [\uniF1EA \uniF161 ];
+    sub \A.titling from [\A.titling1 ];
+    sub \D.titling from [\D.titling1 ];
+    sub \E.titling from [\E.titling1 ];
+    sub \M.titling from [\M.alt ];
+    sub \N.titling from [\N.titling1 ];
+    sub \W.medieval1 from [\W.medieval2 ];
+    sub \W.titling1 from [\W.titling2 ];
+} saltStylisticAlternativesinLati;
+
+lookup ss18_pseudo_salt {
+  lookupflag 0;
+    sub \a by \a.alt01;
+    sub \c by \c.enlarged ;
+    sub \d by \d.enlarged ;
+    sub \e by \e.alt02 ;
+    sub \f by \f.enlarged ;
+    sub \n by \n.alt2 ;
+    sub \p by \p.enlarged ;
+    sub \r by \uniA75B ;
+    sub \y by \y.alt ;
+    sub \uni1E8F by \uni1E8F.alt ;
+    sub \A by \A.alt ;
+    sub \D by \uniA779 ;
+    sub \Q by \Q.alt ;
+    sub \l.sc by \l.sc2 ;
+    sub \s.sc by \s.sc2 ;
+    sub \G by \G.alt1;
+    sub \H by \H.alt ;
+    sub \Y by \Y.alt;
+    sub \semicolon by \uniF1EA;
+    sub \A.titling by \A.titling1 ;
+    sub \D.titling by \D.titling1 ;
+    sub \E.titling by \E.titling1 ;
+    sub \M.titling by \M.alt ;
+    sub \N.titling by \N.titling1 ;
+    sub \W.medieval1 by \W.medieval2 ;
+    sub \W.titling1 by \W.titling2 ;
+} ss18_pseudo_salt;
+
+lookup SingleSubstitutionnotag {
+  lookupflag 0;
+    sub \a by \a.alt01 ;
+    sub \c by \c.alt ;
+    sub \g by \g.alt1 ;
+    sub \e by \e.alt01 ;
+    sub \f by \f.alt2 ;
+    sub \i by \i.alt ;
+    sub \m by \m.alt ;
+    sub \n by \n.alt1 ;
+    sub \p by \p.alt ;
+    sub \r by \r.alt ;
+    sub \t by \t.alt2 ;
+    sub \u by \u.alt ;
+    sub \dotlessi by \dotlessi.alt ;
+    sub \l.sc by \l.sc2 ;
+    sub \s.sc by \s.sc2 ;
+    sub \j by \j.alt ;
+    sub \f.alt2 by \f.alt3 ;
+    sub \eth by \eth.alt ;
+} SingleSubstitutionnotag;
+
+lookup caltContextualAlternatesforc {
+  lookupflag IgnoreMarks;
+    sub \c' [\a \f \g \i \j \m \n \p \r \s \t \u \x \z \dotlessi \uniF161] by \c.alt;
+} caltContextualAlternatesforc;
+
+lookup SingleSubstitutionnotag3 {
+  lookupflag 0;
+    sub \g by \g.alt1 ;
+    sub \e by \e.alt03 ;
+    sub \f by \f.alt1 ;
+    sub \t by \t.alt ;
+    sub \f.alt2 by \f.alt3 ;
+    sub \ae by \ae.alt ;
+} SingleSubstitutionnotag3;
+
+lookup caltContextualAlternatesfort {
+  lookupflag IgnoreMarks;
+    @cc14_match_1 = [\t ];
+    @cc14_match_3 = [\f \i \dotlessi \j \m \n \p \r \u ];
+    @cc14_ahead_2 = [\a \c \s \x ];
+    sub \t' [\a \c \s \x] by \t.alt2;
+    sub @cc14_match_1' lookup SingleSubstitutionnotag3  @cc14_match_3' lookup SingleSubstitutionnotag ;
+} caltContextualAlternatesfort;
+
+lookup SingleSubstitutionnotag2 {
+  lookupflag 0;
+    sub \a by \a.alt02 ;
+    sub \g by \g.alt2 ;
+    sub \e by \e.alt02 ;
+    sub \f by \f.alt2 ;
+    sub \f.alt1 by \f.alt3 ;
+} SingleSubstitutionnotag2;
+
+lookup caltContextualAlternatesgandfbe {
+  lookupflag IgnoreMarks;
+    sub \g' [\i \j \m \n \r \u \dotlessi \w.alt] by \g.alt1;
+    sub \g' [\e \o \s \eth] by \g.alt2;
+    sub [\f \f.alt2]' [\e \o \s \eth] by [\f.alt1 \f.alt3];
+} caltContextualAlternatesgandfbe;
+
+lookup caltContextualAlternatesebefore {
+  lookupflag IgnoreMarks;
+    sub \e' [\b \h \k \l] by \e.alt01;
+} caltContextualAlternatesebefore;
+
+lookup sub_context_caltlatn_0 {
+  lookupflag IgnoreMarks;
+    sub \e' [\d \g \s \g.alt1 \g.alt2 \e.alt01 \e.alt03 \y \uni1E8F] by \e.alt02;
+    sub \e' [\c \q \c.alt] by \e.alt04;
+    sub [\e \g \ae]' [\f \f.alt1] by [\e.alt03 \g.alt1 \ae.alt];
+} sub_context_caltlatn_0;
+
+lookup caltContextualAlternatesalta {
+  lookupflag IgnoreMarks;
+    sub [\r \t \t.alt2 \v \w \y \longs \uni0233 \uni1E5B \uni1E7F \uni1E89 \uni1E8F \r.alt \t.alt \y.alt \uni1E8F.alt ] \a' by \a.alt01;
+#  subtable;
+    @cc21_match_1 = [\b \d \e \e.alt04 \f \j \l \n \p \r \s \t \v \x \z \longs \f.alt1 \i.swash \n.alt1 \j.alt \r.alt 
+	\p.alt \f.alt2 \t.alt \e.alt01 ];
+    @cc21_match_2 = [\c \g \h \i \k \m \o \q \u \y \c.alt \dotlessi \g.alt1 \g.alt2 \uni1E8F.sc 
+	\dotlessi.swash \m.alt \dotlessi.alt \i.alt ];
+    @cc21_match_3 = [\a ];
+    sub @cc21_match_1' @cc21_match_2' @cc21_match_3'lookup SingleSubstitutionnotag2  ;
+} caltContextualAlternatesalta;
+
+lookup caltContextualAlternatessmallca {
+  lookupflag 0;
+    sub  \f.sc \l.sc'   by \l.sc2;
+    sub  \f.sc \s.sc'   by \s.sc2;
+} caltContextualAlternatessmallca;
+
+lookup caltNoncollidingeth {
+  lookupflag 0;
+    sub [\d \f \i \j \l \longs \f.alt1 ] \eth' by \eth.alt;
+} caltNoncollidingeth;
+
+lookup dligDiscretionaryLigaturesinLat {
+  lookupflag IgnoreMarks;
+    sub \longs \t \dotlessi  by \longs_t_dotlessi;
+    sub \longs \t \i  by \longs_t_i;
+#  subtable;
+    sub \t \dotlessi  by \t_dotlessi;
+    sub \t \i  by \t_i;
+    sub \E \T  by \E_T;
+    sub \n \t  by \n_t;
+    sub \r.alt \a  by \r_a.alt;
+} dligDiscretionaryLigaturesinLat;
+
+lookup hligHistoricLigaturesinLatinloo {
+  lookupflag IgnoreMarks;
+    sub \e \r \r \a  by \e_r_r_a;
+#  subtable;
+    sub \r \t \u  by \r_t_u;
+    sub \e \r \a  by \e_r_a.alt;
+    sub \r \r \a  by \r_r_a;
+    sub \r \t \y.alt  by \r_t_y;
+    sub \r \t \uni1E8F.alt  by \r_t_uni1E8F;
+#  subtable;
+    sub \r \a  by \r_a;
+    sub \r \t  by \r_t;
+    sub \c \t  by \c_t;
+    sub \o \r  by \o_uniA75B;
+} hligHistoricLigaturesinLatinloo;
+
+lookup ligaStandardLigaturesinLatinloo {
+  lookupflag IgnoreMarks;
+    sub \e \longs \longs \dotlessi  by \e_longs_longs_i;
+    sub \e \longs \longs \i  by \e_longs_longs_i;
+    sub \ae \longs \longs \dotlessi  by \ae_longs_longs_i;
+    sub \ae \longs \longs \i  by \ae_longs_longs_i;
+#  subtable;
+    sub \e \t \u  by \e_t_u;
+    sub \e \r \i  by \e_r_i;
+    sub \e \r \dotlessi  by \e_r_dotlessi;
+    sub \e \r \n  by \e_r_n;
+    sub \e \longs \dotlessi  by \e_longs_i;
+    sub \e \longs \i  by \e_longs_i;
+    sub \e \t \i  by \e_t_i;
+    sub \e \t \i.alt  by \e_t_i;
+    sub \longs \longs \dotlessi  by \longs_longs_i;
+    sub \longs \longs \i  by \longs_longs_i;
+    sub \e \longs \longs  by \e_longs_longs;
+    sub \e \longs \t  by \e_longs_t;
+    sub \e \r \a  by \e_r_a;
+    sub \e \t \dotlessi.alt  by \e_t_dotlessi;
+    sub \f \f \u  by \f_f_u;
+    sub \f \f \dotlessi  by \uniFB03;
+    sub \f \f \i  by \uniFB03;
+    sub \f \f \l  by \uniFB04;
+    sub \f \f \a  by \f_f_a;
+    sub \e \t \t  by \e_t_t;
+    sub \ae \longs \longs  by \ae_longs_longs;
+    sub \ae \longs \t  by \ae_longs_t;
+    sub \ae \longs \dotlessi  by \ae_longs_i;
+    sub \ae \longs \i  by \ae_longs_i;
+    sub \ae \r \a  by \ae_r_a;
+    sub \ae \t \t  by \ae_t_t;
+#  subtable;
+    sub \f \l  by \uniFB02;
+    sub \f \i  by \uniFB01;
+    sub \f \dotlessi  by \uniFB01;
+    sub \longs \t  by \uniFB05;
+    sub \f \a  by \f_a;
+    sub \longs \i  by \longs_i;
+    sub \longs \dotlessi  by \longs_i;
+    sub \e \n  by \e_n;
+    sub \e \a  by \e_a;
+    sub \e \t  by \e_t;
+    sub \e \x  by \e_x;
+    sub \t \u  by \t_u;
+    sub \f \u  by \f_u;
+    sub \r \m  by \r_m;
+    sub \e \u  by \e_u;
+    sub \e \longs  by \e_longs;
+    sub \r \n  by \r_n;
+    sub \e \m  by \e_m;
+    sub \e \o  by \e_o;
+    sub \g \o  by \g_o;
+    sub \f \o  by \f_o;
+    sub \e \r  by \e_r;
+    sub \f.alt2 \i  by \f_i.alt;
+    sub \f.alt2 \dotlessi  by \f_i.alt;
+    sub \f.alt2 \l  by \f_l.alt;
+    sub \f.alt2 \o  by \f_o.alt;
+    sub \f.alt2 \a  by \f_a.alt;
+    sub \f.alt2 \u  by \f_u.alt;
+    sub \e \t.alt  by \e_t.alt;
+    sub \e \p  by \e_p;
+    sub \f \t  by \f_t;
+    sub \f \r  by \f_r;
+    sub \longs \longs  by \longs_longs;
+    sub \g \a  by \g_a;
+    sub \e \i  by \e_i;
+    sub \e \dotlessi  by \e_dotlessi;
+    sub \f \f  by \uniFB00;
+    sub \f \f.alt1  by \f_f.alt;
+    sub \t \t  by \t_t;
+    sub \e \j  by \e_j;
+    sub \g \y  by \g_y;
+    sub \ae \t  by \ae_t;
+    sub \ae \i  by \ae_i;
+    sub \ae \dotlessi  by \ae_dotlessi;
+    sub \ae \n  by \ae_n;
+    sub \ae \m  by \ae_m;
+    sub \ae \r  by \ae_r;
+    sub \ae \p  by \ae_p;
+    sub \ae \uni01BF  by \ae_uni01BF;
+    sub \ae \longs  by \ae_longs;
+    sub \e \t.alt2  by \e_t.alt2;
+} ligaStandardLigaturesinLatinloo;
+
+lookup ligaStandardLigatureslowerprior {
+  lookupflag IgnoreMarks;
+    sub \e \e  by \e_e;
+    sub \uni019A \uni019A  by \uni019A_uni019A;
+    sub \f \j  by \f_j;
+    sub \f \j.alt by \f_j.alt;
+} ligaStandardLigatureslowerprior;
+
+feature ccmp {
+  lookup ccmpDotlessi;
+  lookup ccmpGlyphCompositionDecompositi;
+} ccmp;
+
+feature smcp {
+  lookup smcpLowercasetoSmallCapitalsinL;
+} smcp;
+
+feature titl {
+  lookup titlTitlingcapsfromlc;
+} titl;
+
+feature hist {
+  #
+  # Duplicated as ss16.
+  #
+  lookup histMedievalize;
+} hist;
+
+feature ss03 {
+  #
+  # Duplicates smcp, for Word users.
+  #
+  lookup smcpLowercasetoSmallCapitalsinL;
+} ss03;
+
+feature ss07 {
+  lookup ss07Underdotted;
+} ss07;
+
+feature ss09 {
+  #
+  # Duplicates titl, for Word users.
+  #
+  lookup titlTitlingcapsfromlc;
+} ss09;
+
+feature ss10 {
+  lookup ss10Alternatey;
+} ss10;
+
+feature ss11 {
+  lookup ss11Sentencecapsfromcaps;
+} ss11;
+
+feature ss12 {
+  lookup ss12Titlingcapsfromcaps;
+} ss12;
+
+feature ss13 {
+  lookup ss13Alternatediacritics;
+} ss13;
+
+feature ss14 {
+  lookup ss14Enlargedminuscules;
+} ss14;
+
+feature ss16 {
+  #
+  # Duplicates hist, for Word users.
+  #
+  lookup histMedievalize;
+} ss16;
+
+feature ss17 {
+  #
+  # Duplicates swsh, for Word users.
+  #
+  lookup swshSwashinLatinlookup22;
+} ss17;
+
+feature ss18 {
+  #
+  # For Word users, provides access to the first of each class in salt.
+  #
+  lookup ss18_pseudo_salt;
+} ss18;
+
+feature swsh {
+  #
+  # Duplicated as ss17.
+  #
+  lookup swshSwashinLatinlookup22;
+} swsh;
+
+feature salt {
+   lookup saltStylisticAlternativesinLati;
+} salt;
+
+feature calt {
+  lookup caltContextualAlternatesforc;
+  lookup caltContextualAlternatesfort;
+  lookup caltContextualAlternatesgandfbe;
+  lookup caltContextualAlternatesebefore;
+  lookup sub_context_caltlatn_0;
+  lookup caltContextualAlternatesalta;
+  lookup caltContextualAlternatessmallca;
+  lookup caltNoncollidingeth;
+} calt;
+
+feature dlig {
+  lookup dligDiscretionaryLigaturesinLat;
+} dlig;
+
+feature hlig {
+  lookup hligHistoricLigaturesinLatinloo;
+} hlig;
+
+feature liga {
+  lookup ligaStandardLigaturesinLatinloo;
+  lookup ligaStandardLigatureslowerprior;
+} liga;
+
+# GPOS 
+
+lookup kernHorizontalKerninginLatinloo {
+  lookupflag IgnoreMarks;
+    @kc37_first_1 = [\a \aacute \adieresis \amacron \g_a \a.alt01 \e_r_a \uni1EA1 \ae_r_a ];
+    @kc37_first_2 = [\e_a ];
+    @kc37_first_3 = [\c \uni00630323 ];
+    @kc37_first_4 = [\c.alt ];
+    @kc37_first_5 = [\d \uni1E0D ];
+    @kc37_first_6 = [\e \uni1EB9 \ae \aeacute \uni01E3 ];
+    @kc37_first_7 = [\e.alt02 ];
+    @kc37_first_8 = [\e.alt04 ];
+    @kc37_first_9 = [\f \f.alt1 \f_f.alt \uni00660323 \uniFB00 \f.alt3 ];
+    @kc37_first_10 = [\f_a \f_f_a ];
+    @kc37_first_11 = [\g ];
+    @kc37_first_12 = [\g.alt2 ];
+    @kc37_first_13 = [\h \uni1E25 ];
+    @kc37_first_14 = [\i \longs_i \e_r_i \e_r_dotlessi \e_longs_i \t_i \t_dotlessi \longs_t_i \uniFB01 
+	\f_i.alt \dotlessi \e_i \e_dotlessi \longs_longs_i \e_longs_longs_i 
+	\i.alt \dotlessi.alt \uni1ECB \ae_i \ae_dotlessi \ae_longs_longs_i 
+	\ae_longs_i ];
+    @kc37_first_15 = [\j \f_j \uni0237 \j.alt \e_j \uni006A0323 ];
+    @kc37_first_16 = [\k \uni1E33 ];
+    @kc37_first_17 = [\l \uni1E37 ];
+    @kc37_first_18 = [\longs \e_longs_longs \longs_longs \ae_longs \ae_longs_longs ];
+    @kc37_first_19 = [\n \m \uni1E43 \uni1E47 \e_n \e_m \r_n \e_r_n \ae_n \ae_m ];
+    @kc37_first_20 = [\o \e_o \g_o \f_o \uni1ECD \eth \eth.alt ];
+    @kc37_first_21 = [\p \e_p \b \uni00700323 \uni1E05 \ae_p ];
+    @kc37_first_22 = [\quoteleft \quotedblleft ];
+    @kc37_first_23 = [\r \e_r \r.alt \f_r \uni1E5B \ae_r ];
+    @kc37_first_24 = [\s \uni1E63 ];
+    @kc37_first_25 = [\t \e_t \c_t \uniFB05 \uni1E6D \ae_t \ae_longs_t \ae_t_t ];
+    @kc37_first_26 = [\t.alt \t_t \e_t_t \t.alt2 \e_t.alt2 ];
+    @kc37_first_27 = [\thorn \uni01BF ];
+    @kc37_first_28 = [\u \uacute \udieresis \umacron \uni1EE5 ];
+    @kc37_first_29 = [\v \w \uni1E7F \uni1E89 ];
+    @kc37_first_30 = [\x \e_x \xdotbelowcomb ];
+    @kc37_first_31 = [\y \yacute \ydieresis \uni0233 \uni1E8F \uni1EF5 ];
+    @kc37_first_32 = [\y.alt \uni1E8F.alt \r_t_y \r_t_uni1E8F \g_y ];
+    @kc37_first_33 = [\z \uni1E93 ];
+    @kc37_first_34 = [\A ];
+    @kc37_first_35 = [\L ];
+    @kc37_first_36 = [\P ];
+    @kc37_first_37 = [\T ];
+    @kc37_first_38 = [\V \W \W.medieval1 ];
+    @kc37_first_39 = [\Y \Y.alt \uni1E8E.alt ];
+    @kc37_first_40 = [\A.titling ];
+    @kc37_first_41 = [\A.titling1 ];
+    @kc37_first_42 = [\B.titling ];
+    @kc37_first_43 = [\D.titling \Eth.titling \O.titling ];
+    @kc37_first_44 = [\C.titling ];
+    @kc37_first_45 = [\H.titling ];
+    @kc37_first_46 = [\K.titling ];
+    @kc37_first_47 = [\L.titling ];
+    @kc37_first_48 = [\M.alt ];
+    @kc37_first_49 = [\P.titling ];
+    @kc37_first_50 = [\R.titling ];
+    @kc37_first_51 = [\T.titling ];
+    @kc37_first_52 = [\Thorn.titling ];
+    @kc37_first_53 = [\V.titling \W.titling1 ];
+    @kc37_first_54 = [\W.titling ];
+    @kc37_first_55 = [\X.titling ];
+    @kc37_first_56 = [\Y.titling ];
+    @kc37_first_57 = [\uniA75B \o_uniA75B ];
+    @kc37_first_58 = [\zero ];
+    @kc37_first_59 = [\one ];
+    @kc37_first_60 = [\two ];
+    @kc37_first_61 = [\three ];
+    @kc37_first_62 = [\four ];
+    @kc37_first_63 = [\five ];
+    @kc37_first_64 = [\six ];
+    @kc37_first_65 = [\seven ];
+    @kc37_first_66 = [\eight ];
+    @kc37_first_67 = [\nine ];
+    @kc37_first_68 = [\hyphen \endash \emdash ];
+    @kc37_first_69 = [\hyphen.titling \endash.titling \emdash.titling ];
+    @kc37_first_70 = [\quoteright ];
+    @kc37_second_1 = [\a \aacute \adieresis \amacron \a.alt02 \uni1EA1 \a.swash \ae \ae_t \ae_i 
+	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs 
+	\ae_longs_longs \ae_longs_longs_i \ae_longs_t \ae_longs_i \ae_r_a 
+	\ae_t_t \ae.alt \aeacute \uni01E3 ];
+    @kc37_second_2 = [\a.alt01 ];
+    @kc37_second_3 = [\b ];
+    @kc37_second_4 = [\c \c.alt \uni00630323 ];
+    @kc37_second_5 = [\d \uni1E0D ];
+    @kc37_second_6 = [\e \e.alt01 \e_n \e_m \e_p \e_t_u \e_a \e_t \e_x \e_r_i \e_r_dotlessi \e_r_n 
+	\uni1E8F.sc \e_u \e_longs_i \e_longs \e_r_a.alt \e_o \e_r \e_t.alt 
+	\eacute \edieresis \emacron \e_i \e_dotlessi \e_t_i \e_t_dotlessi 
+	\e_longs_t \e_longs_longs \e_longs_longs_i \e.alt02 \e_e \e.alt03 
+	\e_t_t \e_r_a \uni1EB9 ];
+    @kc37_second_7 = [\e.alt04 ];
+    @kc37_second_8 = [\f \f_t \f_u \f_r \f_o \f_a \uniFB01 \uniFB02 \f_f_a \f_f.alt \f_f_u 
+	\uni00660323 \f.alt1 ];
+    @kc37_second_9 = [\g \g.alt1 \g.alt2 \g_o \g_a \uni00670323 \g_y ];
+    @kc37_second_10 = [\h \uni1E25 ];
+    @kc37_second_11 = [\i \iacute \idieresis \imacron \dotlessi \uni1ECB ];
+    @kc37_second_12 = [\j ];
+    @kc37_second_13 = [\l \uni019A \uni1E37 ];
+    @kc37_second_14 = [\longs \longs_i \longs_t_dotlessi \longs_t_i ];
+    @kc37_second_15 = [\m \n ];
+    @kc37_second_16 = [\o \oacute \odieresis \omacron \o_uniA75B \uni1ECD ];
+    @kc37_second_17 = [\p \p.alt \uni00700323 ];
+    @kc37_second_18 = [\quotedblright \quoteright ];
+    @kc37_second_19 = [\quotedbl \quotesingle ];
+    @kc37_second_20 = [\r \uni1E5B ];
+    @kc37_second_21 = [\s \uni1E63 ];
+    @kc37_second_22 = [\t \t_u \t_i \t_dotlessi \t.alt \t.swash \t_t \uni1E6D ];
+    @kc37_second_23 = [\u \uacute \udieresis \umacron \uni1EE5 ];
+    @kc37_second_24 = [\v \w \uni1E7F \uni1E89 ];
+    @kc37_second_25 = [\x \xdotbelowcomb ];
+    @kc37_second_26 = [\y \yacute \ydieresis \uni1EF5 \uni1E8F ];
+    @kc37_second_27 = [\y.alt \uni1E8F.alt ];
+    @kc37_second_28 = [\z \uni1E93 ];
+    @kc37_second_29 = [\V \W ];
+    @kc37_second_30 = [\B ];
+    @kc37_second_31 = [\H ];
+    @kc37_second_32 = [\I \J \Igrave \Iacute \Icircumflex \Idieresis ];
+    @kc37_second_33 = [\K ];
+    @kc37_second_34 = [\L ];
+    @kc37_second_35 = [\R ];
+    @kc37_second_36 = [\U ];
+    @kc37_second_37 = [\A.titling ];
+    @kc37_second_38 = [\A.titling1 \AE.titling ];
+    @kc37_second_39 = [\E.titling ];
+    @kc37_second_40 = [\I.titling ];
+    @kc37_second_41 = [\O.titling \C.titling ];
+    @kc37_second_42 = [\T.titling ];
+    @kc37_second_43 = [\U.titling \W.titling2 ];
+    @kc37_second_44 = [\V.titling \W.titling1 ];
+    @kc37_second_45 = [\W.titling ];
+    @kc37_second_46 = [\Y.titling ];
+    @kc37_second_47 = [\uniA770 ];
+    @kc37_second_48 = [\uniA75B ];
+    @kc37_second_49 = [\period ];
+    @kc37_second_50 = [\comma ];
+    @kc37_second_51 = [\colon \semicolon \uniF160 \uniF161 \uniF1EA ];
+    @kc37_second_52 = [\one ];
+    @kc37_second_53 = [\two ];
+    @kc37_second_54 = [\three ];
+    @kc37_second_55 = [\four ];
+    @kc37_second_56 = [\five ];
+    @kc37_second_57 = [\six ];
+    @kc37_second_58 = [\seven ];
+    @kc37_second_59 = [\zero ];
+    @kc37_second_60 = [\hyphen \endash \emdash ];
+    @kc37_second_61 = [\hyphen.titling \endash.titling \emdash.titling ];
+    @kc37_second_62 = [\X.titling ];
+    @kc37_second_63 = [\eth \eth.alt ];
+    pos @kc37_first_1 @kc37_second_18 -29;
+    pos @kc37_first_1 @kc37_second_22 -10;
+    pos @kc37_first_1 @kc37_second_24 -29;
+    pos @kc37_first_1 @kc37_second_25 -20;
+    pos @kc37_first_1 @kc37_second_26 -5;
+    pos @kc37_first_1 @kc37_second_48 93;
+    pos @kc37_first_1 @kc37_second_51 15;
+    pos @kc37_first_1 @kc37_second_62 98;
+    pos @kc37_first_2 @kc37_second_4 -24;
+    pos @kc37_first_2 @kc37_second_5 -24;
+    pos @kc37_first_2 @kc37_second_8 -34;
+    pos @kc37_first_2 @kc37_second_9 -39;
+    pos @kc37_first_2 @kc37_second_22 -24;
+    pos @kc37_first_2 @kc37_second_23 -20;
+    pos @kc37_first_2 @kc37_second_24 -59;
+    pos @kc37_first_2 @kc37_second_62 88;
+    pos @kc37_first_3 @kc37_second_4 -17;
+    pos @kc37_first_3 @kc37_second_6 -10;
+    pos @kc37_first_3 @kc37_second_7 -13;
+    pos @kc37_first_3 @kc37_second_50 20;
+    pos @kc37_first_3 @kc37_second_51 24;
+    pos @kc37_first_3 @kc37_second_62 26;
+    pos @kc37_first_4 @kc37_second_1 -14;
+    pos @kc37_first_4 @kc37_second_9 -20;
+    pos @kc37_first_4 @kc37_second_62 28;
+    pos @kc37_first_5 @kc37_second_1 -20;
+    pos @kc37_first_5 @kc37_second_7 -24;
+    pos @kc37_first_5 @kc37_second_9 -44;
+    pos @kc37_first_5 @kc37_second_13 24;
+    pos @kc37_first_5 @kc37_second_24 -29;
+    pos @kc37_first_5 @kc37_second_26 -20;
+    pos @kc37_first_5 @kc37_second_47 80;
+    pos @kc37_first_5 @kc37_second_62 88;
+    pos @kc37_first_6 @kc37_second_5 -10;
+    pos @kc37_first_6 @kc37_second_9 -32;
+    pos @kc37_first_6 @kc37_second_24 -29;
+    pos @kc37_first_6 @kc37_second_62 28;
+    pos @kc37_first_7 @kc37_second_9 -24;
+    pos @kc37_first_7 @kc37_second_26 40;
+    pos @kc37_first_7 @kc37_second_62 21;
+    pos @kc37_first_8 @kc37_second_4 -20;
+    pos @kc37_first_8 @kc37_second_62 -5;
+    pos @kc37_first_9 @kc37_second_1 -40;
+    pos @kc37_first_9 @kc37_second_3 67;
+    pos @kc37_first_9 @kc37_second_4 -46;
+    pos @kc37_first_9 @kc37_second_5 -34;
+    pos @kc37_first_9 @kc37_second_6 -10;
+    pos @kc37_first_9 @kc37_second_7 -45;
+    pos @kc37_first_9 @kc37_second_9 -67;
+    pos @kc37_first_9 @kc37_second_10 71;
+    pos @kc37_first_9 @kc37_second_16 -40;
+    pos @kc37_first_9 @kc37_second_18 46;
+    pos @kc37_first_9 @kc37_second_19 67;
+    pos @kc37_first_9 @kc37_second_47 187;
+    pos @kc37_first_9 @kc37_second_49 -67;
+    pos @kc37_first_9 @kc37_second_50 -40;
+    pos @kc37_first_9 @kc37_second_62 -87;
+    pos @kc37_first_9 @kc37_second_63 -20;
+    pos @kc37_first_10 @kc37_second_4 -44;
+    pos @kc37_first_10 @kc37_second_21 -40;
+    pos @kc37_first_10 @kc37_second_22 -65;
+    pos @kc37_first_10 @kc37_second_24 -106;
+    pos @kc37_first_10 @kc37_second_25 -27;
+    pos @kc37_first_10 @kc37_second_26 -80;
+    pos @kc37_first_10 @kc37_second_62 79;
+    pos @kc37_first_11 @kc37_second_1 -53;
+    pos @kc37_first_11 @kc37_second_9 -59;
+    pos @kc37_first_11 @kc37_second_13 -33;
+    pos @kc37_first_11 @kc37_second_17 40;
+    pos @kc37_first_11 @kc37_second_22 -41;
+    pos @kc37_first_11 @kc37_second_24 -80;
+    pos @kc37_first_11 @kc37_second_49 -39;
+    pos @kc37_first_11 @kc37_second_50 61;
+    pos @kc37_first_11 @kc37_second_51 54;
+    pos @kc37_first_11 @kc37_second_62 -112;
+    pos @kc37_first_12 @kc37_second_7 -32;
+    pos @kc37_first_12 @kc37_second_62 -35;
+    pos @kc37_first_13 @kc37_second_1 -34;
+    pos @kc37_first_13 @kc37_second_7 -15;
+    pos @kc37_first_13 @kc37_second_18 -24;
+    pos @kc37_first_13 @kc37_second_21 -15;
+    pos @kc37_first_13 @kc37_second_24 -24;
+    pos @kc37_first_13 @kc37_second_26 -20;
+    pos @kc37_first_13 @kc37_second_62 -66;
+    pos @kc37_first_14 @kc37_second_1 -34;
+    pos @kc37_first_14 @kc37_second_9 -39;
+    pos @kc37_first_14 @kc37_second_13 10;
+    pos @kc37_first_14 @kc37_second_21 -20;
+    pos @kc37_first_14 @kc37_second_24 -54;
+    pos @kc37_first_14 @kc37_second_25 -44;
+    pos @kc37_first_14 @kc37_second_28 -24;
+    pos @kc37_first_14 @kc37_second_62 40;
+    pos @kc37_first_15 @kc37_second_1 -54;
+    pos @kc37_first_15 @kc37_second_6 -15;
+    pos @kc37_first_15 @kc37_second_7 -29;
+    pos @kc37_first_15 @kc37_second_16 -24;
+    pos @kc37_first_15 @kc37_second_49 -40;
+    pos @kc37_first_15 @kc37_second_62 -22;
+    pos @kc37_first_16 @kc37_second_7 -27;
+    pos @kc37_first_16 @kc37_second_8 -42;
+    pos @kc37_first_16 @kc37_second_9 -24;
+    pos @kc37_first_16 @kc37_second_18 -81;
+    pos @kc37_first_16 @kc37_second_22 -17;
+    pos @kc37_first_16 @kc37_second_24 -73;
+    pos @kc37_first_16 @kc37_second_26 -68;
+    pos @kc37_first_16 @kc37_second_27 -82;
+    pos @kc37_first_16 @kc37_second_47 -93;
+    pos @kc37_first_16 @kc37_second_62 54;
+    pos @kc37_first_17 @kc37_second_1 -10;
+    pos @kc37_first_17 @kc37_second_5 -12;
+    pos @kc37_first_17 @kc37_second_8 -27;
+    pos @kc37_first_17 @kc37_second_9 -44;
+    pos @kc37_first_17 @kc37_second_11 -10;
+    pos @kc37_first_17 @kc37_second_12 -12;
+    pos @kc37_first_17 @kc37_second_15 -24;
+    pos @kc37_first_17 @kc37_second_17 -10;
+    pos @kc37_first_17 @kc37_second_18 -49;
+    pos @kc37_first_17 @kc37_second_20 -10;
+    pos @kc37_first_17 @kc37_second_24 -34;
+    pos @kc37_first_17 @kc37_second_26 -13;
+    pos @kc37_first_17 @kc37_second_47 53;
+    pos @kc37_first_17 @kc37_second_49 49;
+    pos @kc37_first_17 @kc37_second_50 40;
+    pos @kc37_first_17 @kc37_second_51 39;
+    pos @kc37_first_17 @kc37_second_62 70;
+    pos @kc37_first_18 @kc37_second_2 -39;
+    pos @kc37_first_18 @kc37_second_4 -15;
+    pos @kc37_first_18 @kc37_second_6 -5;
+    pos @kc37_first_18 @kc37_second_7 -24;
+    pos @kc37_first_18 @kc37_second_14 -27;
+    pos @kc37_first_18 @kc37_second_47 213;
+    pos @kc37_first_18 @kc37_second_49 -27;
+    pos @kc37_first_18 @kc37_second_50 -40;
+    pos @kc37_first_18 @kc37_second_62 126;
+    pos @kc37_first_19 @kc37_second_1 -24;
+    pos @kc37_first_19 @kc37_second_7 -20;
+    pos @kc37_first_19 @kc37_second_9 -29;
+    pos @kc37_first_19 @kc37_second_18 -15;
+    pos @kc37_first_19 @kc37_second_24 -12;
+    pos @kc37_first_19 @kc37_second_26 -15;
+    pos @kc37_first_19 @kc37_second_28 -34;
+    pos @kc37_first_19 @kc37_second_62 57;
+    pos @kc37_first_20 @kc37_second_1 -15;
+    pos @kc37_first_20 @kc37_second_5 15;
+    pos @kc37_first_20 @kc37_second_9 -24;
+    pos @kc37_first_20 @kc37_second_18 -15;
+    pos @kc37_first_20 @kc37_second_21 -24;
+    pos @kc37_first_20 @kc37_second_24 -27;
+    pos @kc37_first_20 @kc37_second_25 -20;
+    pos @kc37_first_20 @kc37_second_26 -20;
+    pos @kc37_first_20 @kc37_second_62 -65;
+    pos @kc37_first_21 @kc37_second_1 -15;
+    pos @kc37_first_21 @kc37_second_6 12;
+    pos @kc37_first_21 @kc37_second_11 24;
+    pos @kc37_first_21 @kc37_second_18 -15;
+    pos @kc37_first_21 @kc37_second_23 -10;
+    pos @kc37_first_21 @kc37_second_24 -15;
+    pos @kc37_first_21 @kc37_second_26 -20;
+    pos @kc37_first_21 @kc37_second_62 -62;
+    pos @kc37_first_22 @kc37_second_30 67;
+    pos @kc37_first_22 @kc37_second_31 133;
+    pos @kc37_first_22 @kc37_second_32 67;
+    pos @kc37_first_22 @kc37_second_33 67;
+    pos @kc37_first_22 @kc37_second_34 106;
+    pos @kc37_first_22 @kc37_second_35 53;
+    pos @kc37_first_22 @kc37_second_36 67;
+    pos @kc37_first_22 @kc37_second_62 43;
+    pos @kc37_first_23 @kc37_second_1 -22;
+    pos @kc37_first_23 @kc37_second_2 -66;
+    pos @kc37_first_23 @kc37_second_4 -24;
+    pos @kc37_first_23 @kc37_second_5 -38;
+    pos @kc37_first_23 @kc37_second_6 -17;
+    pos @kc37_first_23 @kc37_second_7 -49;
+    pos @kc37_first_23 @kc37_second_9 -59;
+    pos @kc37_first_23 @kc37_second_16 -32;
+    pos @kc37_first_23 @kc37_second_18 29;
+    pos @kc37_first_23 @kc37_second_21 -20;
+    pos @kc37_first_23 @kc37_second_27 29;
+    pos @kc37_first_23 @kc37_second_28 -10;
+    pos @kc37_first_23 @kc37_second_49 -80;
+    pos @kc37_first_23 @kc37_second_50 -78;
+    pos @kc37_first_23 @kc37_second_51 24;
+    pos @kc37_first_23 @kc37_second_62 -118;
+    pos @kc37_first_24 @kc37_second_4 10;
+    pos @kc37_first_24 @kc37_second_6 20;
+    pos @kc37_first_24 @kc37_second_7 -15;
+    pos @kc37_first_24 @kc37_second_8 -15;
+    pos @kc37_first_24 @kc37_second_10 15;
+    pos @kc37_first_24 @kc37_second_18 -24;
+    pos @kc37_first_24 @kc37_second_21 -22;
+    pos @kc37_first_24 @kc37_second_24 -44;
+    pos @kc37_first_24 @kc37_second_26 -39;
+    pos @kc37_first_24 @kc37_second_27 -40;
+    pos @kc37_first_24 @kc37_second_48 27;
+    pos @kc37_first_24 @kc37_second_62 8;
+    pos @kc37_first_25 @kc37_second_1 -29;
+    pos @kc37_first_25 @kc37_second_2 -60;
+    pos @kc37_first_25 @kc37_second_6 -9;
+    pos @kc37_first_25 @kc37_second_7 -9;
+    pos @kc37_first_25 @kc37_second_9 -27;
+    pos @kc37_first_25 @kc37_second_13 27;
+    pos @kc37_first_25 @kc37_second_14 -41;
+    pos @kc37_first_25 @kc37_second_18 54;
+    pos @kc37_first_25 @kc37_second_26 34;
+    pos @kc37_first_25 @kc37_second_27 44;
+    pos @kc37_first_25 @kc37_second_28 34;
+    pos @kc37_first_25 @kc37_second_49 39;
+    pos @kc37_first_25 @kc37_second_50 39;
+    pos @kc37_first_25 @kc37_second_51 54;
+    pos @kc37_first_25 @kc37_second_62 4;
+    pos @kc37_first_26 @kc37_second_62 20;
+    pos @kc37_first_27 @kc37_second_1 -44;
+    pos @kc37_first_27 @kc37_second_49 -39;
+    pos @kc37_first_27 @kc37_second_50 -39;
+    pos @kc37_first_27 @kc37_second_62 -89;
+    pos @kc37_first_28 @kc37_second_1 -34;
+    pos @kc37_first_28 @kc37_second_7 -24;
+    pos @kc37_first_28 @kc37_second_9 -15;
+    pos @kc37_first_28 @kc37_second_23 -10;
+    pos @kc37_first_28 @kc37_second_24 -24;
+    pos @kc37_first_28 @kc37_second_26 -15;
+    pos @kc37_first_28 @kc37_second_48 80;
+    pos @kc37_first_28 @kc37_second_62 49;
+    pos @kc37_first_29 @kc37_second_1 -49;
+    pos @kc37_first_29 @kc37_second_2 -59;
+    pos @kc37_first_29 @kc37_second_4 -20;
+    pos @kc37_first_29 @kc37_second_5 -24;
+    pos @kc37_first_29 @kc37_second_6 -15;
+    pos @kc37_first_29 @kc37_second_7 -15;
+    pos @kc37_first_29 @kc37_second_9 -39;
+    pos @kc37_first_29 @kc37_second_16 -20;
+    pos @kc37_first_29 @kc37_second_21 -39;
+    pos @kc37_first_29 @kc37_second_24 -20;
+    pos @kc37_first_29 @kc37_second_49 -65;
+    pos @kc37_first_29 @kc37_second_50 -61;
+    pos @kc37_first_29 @kc37_second_62 -94;
+    pos @kc37_first_30 @kc37_second_1 -67;
+    pos @kc37_first_30 @kc37_second_4 -49;
+    pos @kc37_first_30 @kc37_second_6 -53;
+    pos @kc37_first_30 @kc37_second_7 -53;
+    pos @kc37_first_30 @kc37_second_8 -24;
+    pos @kc37_first_30 @kc37_second_17 -39;
+    pos @kc37_first_30 @kc37_second_22 -15;
+    pos @kc37_first_30 @kc37_second_23 -44;
+    pos @kc37_first_30 @kc37_second_26 -34;
+    pos @kc37_first_30 @kc37_second_27 -44;
+    pos @kc37_first_30 @kc37_second_62 11;
+    pos @kc37_first_31 @kc37_second_2 -98;
+    pos @kc37_first_31 @kc37_second_4 -39;
+    pos @kc37_first_31 @kc37_second_5 -34;
+    pos @kc37_first_31 @kc37_second_6 -29;
+    pos @kc37_first_31 @kc37_second_7 -80;
+    pos @kc37_first_31 @kc37_second_9 -54;
+    pos @kc37_first_31 @kc37_second_16 -32;
+    pos @kc37_first_31 @kc37_second_21 -37;
+    pos @kc37_first_31 @kc37_second_25 -15;
+    pos @kc37_first_31 @kc37_second_49 -78;
+    pos @kc37_first_31 @kc37_second_50 -78;
+    pos @kc37_first_31 @kc37_second_62 -121;
+    pos @kc37_first_32 @kc37_second_1 -40;
+    pos @kc37_first_32 @kc37_second_2 -93;
+    pos @kc37_first_32 @kc37_second_4 -33;
+    pos @kc37_first_32 @kc37_second_5 -33;
+    pos @kc37_first_32 @kc37_second_6 -26;
+    pos @kc37_first_32 @kc37_second_7 -26;
+    pos @kc37_first_32 @kc37_second_9 -53;
+    pos @kc37_first_32 @kc37_second_16 -31;
+    pos @kc37_first_32 @kc37_second_21 -33;
+    pos @kc37_first_32 @kc37_second_22 14;
+    pos @kc37_first_32 @kc37_second_49 -133;
+    pos @kc37_first_32 @kc37_second_50 -120;
+    pos @kc37_first_32 @kc37_second_62 -149;
+    pos @kc37_first_33 @kc37_second_1 -29;
+    pos @kc37_first_33 @kc37_second_6 -29;
+    pos @kc37_first_33 @kc37_second_7 -53;
+    pos @kc37_first_33 @kc37_second_16 -34;
+    pos @kc37_first_33 @kc37_second_18 20;
+    pos @kc37_first_33 @kc37_second_23 -29;
+    pos @kc37_first_33 @kc37_second_24 -44;
+    pos @kc37_first_33 @kc37_second_26 -29;
+    pos @kc37_first_33 @kc37_second_27 -39;
+    pos @kc37_first_33 @kc37_second_28 -44;
+    pos @kc37_first_33 @kc37_second_62 41;
+    pos @kc37_first_34 @kc37_second_4 -15;
+    pos @kc37_first_34 @kc37_second_5 -15;
+    pos @kc37_first_34 @kc37_second_6 -20;
+    pos @kc37_first_34 @kc37_second_7 -20;
+    pos @kc37_first_34 @kc37_second_9 -80;
+    pos @kc37_first_34 @kc37_second_16 -15;
+    pos @kc37_first_34 @kc37_second_18 -227;
+    pos @kc37_first_34 @kc37_second_19 -173;
+    pos @kc37_first_34 @kc37_second_21 40;
+    pos @kc37_first_34 @kc37_second_22 -26;
+    pos @kc37_first_34 @kc37_second_24 -93;
+    pos @kc37_first_34 @kc37_second_25 40;
+    pos @kc37_first_34 @kc37_second_26 -40;
+    pos @kc37_first_34 @kc37_second_27 -54;
+    pos @kc37_first_34 @kc37_second_28 15;
+    pos @kc37_first_34 @kc37_second_29 -173;
+    pos @kc37_first_34 @kc37_second_62 100;
+    pos @kc37_first_35 @kc37_second_18 -146;
+    pos @kc37_first_35 @kc37_second_19 -93;
+    pos @kc37_first_35 @kc37_second_24 -93;
+    pos @kc37_first_35 @kc37_second_26 -80;
+    pos @kc37_first_35 @kc37_second_62 75;
+    pos @kc37_first_36 @kc37_second_1 -65;
+    pos @kc37_first_36 @kc37_second_2 -106;
+    pos @kc37_first_36 @kc37_second_6 -44;
+    pos @kc37_first_36 @kc37_second_7 -53;
+    pos @kc37_first_36 @kc37_second_10 15;
+    pos @kc37_first_36 @kc37_second_16 -59;
+    pos @kc37_first_36 @kc37_second_27 -24;
+    pos @kc37_first_36 @kc37_second_49 -160;
+    pos @kc37_first_36 @kc37_second_50 -160;
+    pos @kc37_first_36 @kc37_second_62 2;
+    pos @kc37_first_37 @kc37_second_1 -146;
+    pos @kc37_first_37 @kc37_second_2 -165;
+    pos @kc37_first_37 @kc37_second_6 -133;
+    pos @kc37_first_37 @kc37_second_7 -133;
+    pos @kc37_first_37 @kc37_second_11 -53;
+    pos @kc37_first_37 @kc37_second_16 -120;
+    pos @kc37_first_37 @kc37_second_20 -106;
+    pos @kc37_first_37 @kc37_second_21 -146;
+    pos @kc37_first_37 @kc37_second_23 -133;
+    pos @kc37_first_37 @kc37_second_24 -160;
+    pos @kc37_first_37 @kc37_second_26 -133;
+    pos @kc37_first_37 @kc37_second_27 -160;
+    pos @kc37_first_37 @kc37_second_49 -133;
+    pos @kc37_first_37 @kc37_second_50 -133;
+    pos @kc37_first_37 @kc37_second_62 -222;
+    pos @kc37_first_38 @kc37_second_1 -120;
+    pos @kc37_first_38 @kc37_second_2 -146;
+    pos @kc37_first_38 @kc37_second_4 -93;
+    pos @kc37_first_38 @kc37_second_5 -80;
+    pos @kc37_first_38 @kc37_second_6 -93;
+    pos @kc37_first_38 @kc37_second_7 -93;
+    pos @kc37_first_38 @kc37_second_8 -29;
+    pos @kc37_first_38 @kc37_second_9 -107;
+    pos @kc37_first_38 @kc37_second_11 -53;
+    pos @kc37_first_38 @kc37_second_14 -67;
+    pos @kc37_first_38 @kc37_second_16 -103;
+    pos @kc37_first_38 @kc37_second_20 -80;
+    pos @kc37_first_38 @kc37_second_21 -93;
+    pos @kc37_first_38 @kc37_second_22 -54;
+    pos @kc37_first_38 @kc37_second_23 -66;
+    pos @kc37_first_38 @kc37_second_24 -88;
+    pos @kc37_first_38 @kc37_second_25 -67;
+    pos @kc37_first_38 @kc37_second_26 -78;
+    pos @kc37_first_38 @kc37_second_27 -93;
+    pos @kc37_first_38 @kc37_second_28 -88;
+    pos @kc37_first_38 @kc37_second_49 -120;
+    pos @kc37_first_38 @kc37_second_50 -106;
+    pos @kc37_first_38 @kc37_second_62 -128;
+    pos @kc37_first_39 @kc37_second_1 -107;
+    pos @kc37_first_39 @kc37_second_4 -66;
+    pos @kc37_first_39 @kc37_second_5 -80;
+    pos @kc37_first_39 @kc37_second_6 -93;
+    pos @kc37_first_39 @kc37_second_7 -93;
+    pos @kc37_first_39 @kc37_second_9 -93;
+    pos @kc37_first_39 @kc37_second_10 40;
+    pos @kc37_first_39 @kc37_second_16 -67;
+    pos @kc37_first_39 @kc37_second_17 -53;
+    pos @kc37_first_39 @kc37_second_18 67;
+    pos @kc37_first_39 @kc37_second_20 -67;
+    pos @kc37_first_39 @kc37_second_21 -80;
+    pos @kc37_first_39 @kc37_second_22 -53;
+    pos @kc37_first_39 @kc37_second_23 -54;
+    pos @kc37_first_39 @kc37_second_24 -70;
+    pos @kc37_first_39 @kc37_second_25 -49;
+    pos @kc37_first_39 @kc37_second_28 -65;
+    pos @kc37_first_39 @kc37_second_49 -133;
+    pos @kc37_first_39 @kc37_second_50 -133;
+    pos @kc37_first_39 @kc37_second_62 -110;
+    pos @kc37_first_40 @kc37_second_42 -120;
+    pos @kc37_first_40 @kc37_second_43 -67;
+    pos @kc37_first_40 @kc37_second_44 -107;
+    pos @kc37_first_40 @kc37_second_45 -67;
+    pos @kc37_first_40 @kc37_second_61 -73;
+    pos @kc37_first_40 @kc37_second_62 135;
+    pos @kc37_first_41 @kc37_second_39 -34;
+    pos @kc37_first_41 @kc37_second_41 -24;
+    pos @kc37_first_41 @kc37_second_42 -106;
+    pos @kc37_first_41 @kc37_second_43 -34;
+    pos @kc37_first_41 @kc37_second_44 -80;
+    pos @kc37_first_41 @kc37_second_45 -53;
+    pos @kc37_first_41 @kc37_second_46 -106;
+    pos @kc37_first_41 @kc37_second_62 100;
+    pos @kc37_first_42 @kc37_second_38 -67;
+    pos @kc37_first_42 @kc37_second_44 -49;
+    pos @kc37_first_42 @kc37_second_45 -20;
+    pos @kc37_first_42 @kc37_second_46 -93;
+    pos @kc37_first_42 @kc37_second_62 -21;
+    pos @kc37_first_43 @kc37_second_37 -37;
+    pos @kc37_first_43 @kc37_second_38 -106;
+    pos @kc37_first_43 @kc37_second_42 -49;
+    pos @kc37_first_43 @kc37_second_44 -24;
+    pos @kc37_first_43 @kc37_second_46 -34;
+    pos @kc37_first_43 @kc37_second_62 -81;
+    pos @kc37_first_44 @kc37_second_40 20;
+    pos @kc37_first_44 @kc37_second_45 27;
+    pos @kc37_first_44 @kc37_second_62 36;
+    pos @kc37_first_45 @kc37_second_42 -120;
+    pos @kc37_first_45 @kc37_second_44 -67;
+    pos @kc37_first_45 @kc37_second_45 -40;
+    pos @kc37_first_45 @kc37_second_46 -133;
+    pos @kc37_first_45 @kc37_second_62 -55;
+    pos @kc37_first_46 @kc37_second_61 -103;
+    pos @kc37_first_46 @kc37_second_62 123;
+    pos @kc37_first_47 @kc37_second_45 -53;
+    pos @kc37_first_47 @kc37_second_61 -59;
+    pos @kc37_first_47 @kc37_second_62 50;
+    pos @kc37_first_48 @kc37_second_37 -10;
+    pos @kc37_first_48 @kc37_second_38 -66;
+    pos @kc37_first_48 @kc37_second_42 -80;
+    pos @kc37_first_48 @kc37_second_44 -54;
+    pos @kc37_first_48 @kc37_second_46 -93;
+    pos @kc37_first_48 @kc37_second_62 -56;
+    pos @kc37_first_49 @kc37_second_37 -40;
+    pos @kc37_first_49 @kc37_second_38 -106;
+    pos @kc37_first_49 @kc37_second_42 -80;
+    pos @kc37_first_49 @kc37_second_44 -54;
+    pos @kc37_first_49 @kc37_second_46 -80;
+    pos @kc37_first_49 @kc37_second_62 -102;
+    pos @kc37_first_50 @kc37_second_39 -80;
+    pos @kc37_first_50 @kc37_second_41 -67;
+    pos @kc37_first_50 @kc37_second_42 -146;
+    pos @kc37_first_50 @kc37_second_43 -67;
+    pos @kc37_first_50 @kc37_second_44 -112;
+    pos @kc37_first_50 @kc37_second_45 -80;
+    pos @kc37_first_50 @kc37_second_46 -146;
+    pos @kc37_first_50 @kc37_second_61 -63;
+    pos @kc37_first_50 @kc37_second_62 102;
+    pos @kc37_first_51 @kc37_second_37 -53;
+    pos @kc37_first_51 @kc37_second_38 -120;
+    pos @kc37_first_51 @kc37_second_40 20;
+    pos @kc37_first_51 @kc37_second_41 -40;
+    pos @kc37_first_51 @kc37_second_44 13;
+    pos @kc37_first_51 @kc37_second_45 27;
+    pos @kc37_first_51 @kc37_second_61 -63;
+    pos @kc37_first_51 @kc37_second_62 23;
+    pos @kc37_first_52 @kc37_second_38 -93;
+    pos @kc37_first_52 @kc37_second_42 -67;
+    pos @kc37_first_52 @kc37_second_46 -106;
+    pos @kc37_first_52 @kc37_second_49 -78;
+    pos @kc37_first_52 @kc37_second_50 -73;
+    pos @kc37_first_52 @kc37_second_62 -124;
+    pos @kc37_first_53 @kc37_second_37 -45;
+    pos @kc37_first_53 @kc37_second_38 -120;
+    pos @kc37_first_53 @kc37_second_39 -77;
+    pos @kc37_first_53 @kc37_second_40 59;
+    pos @kc37_first_53 @kc37_second_41 -82;
+    pos @kc37_first_53 @kc37_second_43 27;
+    pos @kc37_first_53 @kc37_second_49 -133;
+    pos @kc37_first_53 @kc37_second_50 -146;
+    pos @kc37_first_53 @kc37_second_61 -81;
+    pos @kc37_first_53 @kc37_second_62 -39;
+    pos @kc37_first_54 @kc37_second_45 40;
+    pos @kc37_first_54 @kc37_second_61 -66;
+    pos @kc37_first_54 @kc37_second_62 10;
+    pos @kc37_first_55 @kc37_second_41 -147;
+    pos @kc37_first_55 @kc37_second_42 -106;
+    pos @kc37_first_55 @kc37_second_45 -53;
+    pos @kc37_first_55 @kc37_second_61 -160;
+    pos @kc37_first_55 @kc37_second_62 48;
+    pos @kc37_first_56 @kc37_second_45 53;
+    pos @kc37_first_56 @kc37_second_61 -78;
+    pos @kc37_first_56 @kc37_second_62 -47;
+    pos @kc37_first_57 @kc37_second_21 27;
+    pos @kc37_first_57 @kc37_second_62 81;
+    pos @kc37_first_58 @kc37_second_52 -37;
+    pos @kc37_first_58 @kc37_second_53 -24;
+    pos @kc37_first_58 @kc37_second_62 -64;
+    pos @kc37_first_59 @kc37_second_56 20;
+    pos @kc37_first_59 @kc37_second_62 45;
+    pos @kc37_first_60 @kc37_second_52 -78;
+    pos @kc37_first_60 @kc37_second_53 -34;
+    pos @kc37_first_60 @kc37_second_54 -29;
+    pos @kc37_first_60 @kc37_second_55 -10;
+    pos @kc37_first_60 @kc37_second_56 -29;
+    pos @kc37_first_60 @kc37_second_57 -34;
+    pos @kc37_first_60 @kc37_second_58 -73;
+    pos @kc37_first_60 @kc37_second_59 -44;
+    pos @kc37_first_60 @kc37_second_62 65;
+    pos @kc37_first_61 @kc37_second_52 -29;
+    pos @kc37_first_61 @kc37_second_53 -15;
+    pos @kc37_first_61 @kc37_second_54 -24;
+    pos @kc37_first_61 @kc37_second_56 -10;
+    pos @kc37_first_61 @kc37_second_57 -20;
+    pos @kc37_first_61 @kc37_second_58 -34;
+    pos @kc37_first_61 @kc37_second_59 -15;
+    pos @kc37_first_61 @kc37_second_62 76;
+    pos @kc37_first_62 @kc37_second_52 -49;
+    pos @kc37_first_62 @kc37_second_53 -10;
+    pos @kc37_first_62 @kc37_second_54 -29;
+    pos @kc37_first_62 @kc37_second_56 -15;
+    pos @kc37_first_62 @kc37_second_57 -29;
+    pos @kc37_first_62 @kc37_second_58 -34;
+    pos @kc37_first_62 @kc37_second_59 -32;
+    pos @kc37_first_62 @kc37_second_62 80;
+    pos @kc37_first_63 @kc37_second_57 -20;
+    pos @kc37_first_63 @kc37_second_62 80;
+    pos @kc37_first_64 @kc37_second_52 -24;
+    pos @kc37_first_64 @kc37_second_53 -29;
+    pos @kc37_first_64 @kc37_second_54 -10;
+    pos @kc37_first_64 @kc37_second_55 -24;
+    pos @kc37_first_64 @kc37_second_58 -49;
+    pos @kc37_first_64 @kc37_second_62 -30;
+    pos @kc37_first_65 @kc37_second_55 -78;
+    pos @kc37_first_65 @kc37_second_59 -39;
+    pos @kc37_first_65 @kc37_second_62 -80;
+    pos @kc37_first_66 @kc37_second_52 -20;
+    pos @kc37_first_66 @kc37_second_53 -29;
+    pos @kc37_first_66 @kc37_second_55 -15;
+    pos @kc37_first_66 @kc37_second_58 -29;
+    pos @kc37_first_66 @kc37_second_62 23;
+    pos @kc37_first_67 @kc37_second_52 -29;
+    pos @kc37_first_67 @kc37_second_53 -29;
+    pos @kc37_first_67 @kc37_second_54 -10;
+    pos @kc37_first_67 @kc37_second_55 -24;
+    pos @kc37_first_67 @kc37_second_58 -34;
+    pos @kc37_first_67 @kc37_second_59 -10;
+    pos @kc37_first_67 @kc37_second_62 9;
+    pos @kc37_first_68 @kc37_second_62 -191;
+    pos @kc37_first_69 @kc37_second_42 -93;
+    pos @kc37_first_69 @kc37_second_44 -24;
+    pos @kc37_first_69 @kc37_second_62 -178;
+    pos @kc37_first_70 @kc37_second_1 -63;
+    pos @kc37_first_70 @kc37_second_5 -78;
+    pos @kc37_first_70 @kc37_second_6 -63;
+    pos @kc37_first_70 @kc37_second_11 -20;
+    pos @kc37_first_70 @kc37_second_13 15;
+    pos @kc37_first_70 @kc37_second_15 -34;
+    pos @kc37_first_70 @kc37_second_16 -63;
+    pos @kc37_first_70 @kc37_second_20 -44;
+    pos @kc37_first_70 @kc37_second_21 -78;
+    pos @kc37_first_70 @kc37_second_22 -44;
+    pos @kc37_first_70 @kc37_second_23 -29;
+    pos @kc37_first_70 @kc37_second_24 -34;
+    pos @kc37_first_70 @kc37_second_62 -19;
+} kernHorizontalKerninginLatinloo;
+
+lookup kernHorizontalKerningrusticcaps {
+  lookupflag IgnoreMarks;
+    @kc38_first_1 = [\a.sc ];
+    @kc38_first_2 = [\b.sc ];
+    @kc38_first_3 = [\c.sc ];
+    @kc38_first_4 = [\d.sc \eth.sc ];
+    @kc38_first_5 = [\e.sc \ae.sc ];
+    @kc38_first_6 = [\f.sc ];
+    @kc38_first_7 = [\g.sc ];
+    @kc38_first_8 = [\h.sc ];
+    @kc38_first_9 = [\i.sc ];
+    @kc38_first_10 = [\j.sc ];
+    @kc38_first_11 = [\k.sc ];
+    @kc38_first_12 = [\l.sc \l.sc2 ];
+    @kc38_first_13 = [\m.sc ];
+    @kc38_first_14 = [\n.sc ];
+    @kc38_first_15 = [\o.sc ];
+    @kc38_first_16 = [\p.sc \thorn.sc ];
+    @kc38_first_17 = [\r.sc ];
+    @kc38_first_18 = [\s.sc \s.sc2 ];
+    @kc38_first_19 = [\t.sc ];
+    @kc38_first_20 = [\u.sc ];
+    @kc38_first_21 = [\v.sc \w.sc ];
+    @kc38_first_22 = [\x.sc ];
+    @kc38_first_23 = [\y.sc ];
+    @kc38_first_24 = [\z.sc ];
+    @kc38_second_1 = [\a.sc \ae.sc ];
+    @kc38_second_2 = [\c.sc ];
+    @kc38_second_3 = [\g.sc ];
+    @kc38_second_4 = [\m.sc ];
+    @kc38_second_5 = [\o.sc ];
+    @kc38_second_6 = [\q.sc ];
+    @kc38_second_7 = [\s.sc ];
+    @kc38_second_8 = [\s.sc2 ];
+    @kc38_second_9 = [\t.sc ];
+    @kc38_second_10 = [\u.sc ];
+    @kc38_second_11 = [\v.sc \w.sc ];
+    @kc38_second_12 = [\x.sc ];
+    @kc38_second_13 = [\y.sc \uni1E8F.sc ];
+    pos @kc38_first_1 @kc38_second_9 -60;
+    pos @kc38_first_1 @kc38_second_10 -53;
+    pos @kc38_first_1 @kc38_second_11 -107;
+    pos @kc38_first_2 @kc38_second_1 -49;
+    pos @kc38_first_2 @kc38_second_4 -59;
+    pos @kc38_first_2 @kc38_second_9 -73;
+    pos @kc38_first_2 @kc38_second_10 -27;
+    pos @kc38_first_2 @kc38_second_11 -33;
+    pos @kc38_first_2 @kc38_second_12 -47;
+    pos @kc38_first_3 @kc38_second_1 -27;
+    pos @kc38_first_3 @kc38_second_2 -15;
+    pos @kc38_first_3 @kc38_second_4 -27;
+    pos @kc38_first_3 @kc38_second_5 -30;
+    pos @kc38_first_3 @kc38_second_9 -39;
+    pos @kc38_first_3 @kc38_second_10 -20;
+    pos @kc38_first_3 @kc38_second_11 -29;
+    pos @kc38_first_4 @kc38_second_1 -62;
+    pos @kc38_first_4 @kc38_second_4 -77;
+    pos @kc38_first_4 @kc38_second_12 -34;
+    pos @kc38_first_5 @kc38_second_2 -16;
+    pos @kc38_first_5 @kc38_second_5 -20;
+    pos @kc38_first_5 @kc38_second_7 15;
+    pos @kc38_first_6 @kc38_second_1 -21;
+    pos @kc38_first_6 @kc38_second_5 -20;
+    pos @kc38_first_6 @kc38_second_9 -39;
+    pos @kc38_first_6 @kc38_second_10 -20;
+    pos @kc38_first_6 @kc38_second_11 -24;
+    pos @kc38_first_7 @kc38_second_1 -54;
+    pos @kc38_first_7 @kc38_second_4 -53;
+    pos @kc38_first_7 @kc38_second_9 -53;
+    pos @kc38_first_7 @kc38_second_10 -20;
+    pos @kc38_first_7 @kc38_second_11 -40;
+    pos @kc38_first_7 @kc38_second_12 -20;
+    pos @kc38_first_8 @kc38_second_1 16;
+    pos @kc38_first_9 @kc38_second_1 -20;
+    pos @kc38_first_9 @kc38_second_4 -15;
+    pos @kc38_first_9 @kc38_second_5 -15;
+    pos @kc38_first_9 @kc38_second_9 -44;
+    pos @kc38_first_10 @kc38_second_1 -53;
+    pos @kc38_first_10 @kc38_second_5 -20;
+    pos @kc38_first_11 @kc38_second_1 -43;
+    pos @kc38_first_11 @kc38_second_5 -29;
+    pos @kc38_first_11 @kc38_second_9 -47;
+    pos @kc38_first_11 @kc38_second_10 -29;
+    pos @kc38_first_11 @kc38_second_11 -40;
+    pos @kc38_first_12 @kc38_second_1 -27;
+    pos @kc38_first_12 @kc38_second_9 -61;
+    pos @kc38_first_12 @kc38_second_10 -87;
+    pos @kc38_first_12 @kc38_second_11 -54;
+    pos @kc38_first_13 @kc38_second_5 -24;
+    pos @kc38_first_13 @kc38_second_9 -67;
+    pos @kc38_first_13 @kc38_second_10 -53;
+    pos @kc38_first_13 @kc38_second_13 -73;
+    pos @kc38_first_14 @kc38_second_1 -20;
+    pos @kc38_first_14 @kc38_second_5 -29;
+    pos @kc38_first_14 @kc38_second_9 -39;
+    pos @kc38_first_15 @kc38_second_1 -64;
+    pos @kc38_first_15 @kc38_second_4 -46;
+    pos @kc38_first_15 @kc38_second_5 -40;
+    pos @kc38_first_15 @kc38_second_9 -40;
+    pos @kc38_first_15 @kc38_second_12 -59;
+    pos @kc38_first_16 @kc38_second_1 -64;
+    pos @kc38_first_16 @kc38_second_4 -86;
+    pos @kc38_first_16 @kc38_second_9 -20;
+    pos @kc38_first_16 @kc38_second_12 -53;
+    pos @kc38_first_17 @kc38_second_1 -20;
+    pos @kc38_first_17 @kc38_second_2 -24;
+    pos @kc38_first_17 @kc38_second_4 -36;
+    pos @kc38_first_17 @kc38_second_5 -22;
+    pos @kc38_first_17 @kc38_second_9 -82;
+    pos @kc38_first_17 @kc38_second_10 -34;
+    pos @kc38_first_17 @kc38_second_11 -80;
+    pos @kc38_first_17 @kc38_second_13 -98;
+    pos @kc38_first_18 @kc38_second_1 -36;
+    pos @kc38_first_18 @kc38_second_4 -47;
+    pos @kc38_first_18 @kc38_second_5 -29;
+    pos @kc38_first_18 @kc38_second_7 -15;
+    pos @kc38_first_18 @kc38_second_9 -68;
+    pos @kc38_first_18 @kc38_second_10 -29;
+    pos @kc38_first_18 @kc38_second_11 -20;
+    pos @kc38_first_18 @kc38_second_12 -40;
+    pos @kc38_first_19 @kc38_second_1 -44;
+    pos @kc38_first_19 @kc38_second_2 -13;
+    pos @kc38_first_19 @kc38_second_3 -20;
+    pos @kc38_first_19 @kc38_second_4 -7;
+    pos @kc38_first_19 @kc38_second_5 -27;
+    pos @kc38_first_19 @kc38_second_6 -27;
+    pos @kc38_first_19 @kc38_second_7 -7;
+    pos @kc38_first_19 @kc38_second_8 -34;
+    pos @kc38_first_19 @kc38_second_9 -29;
+    pos @kc38_first_19 @kc38_second_12 -20;
+    pos @kc38_first_20 @kc38_second_1 -68;
+    pos @kc38_first_20 @kc38_second_4 -53;
+    pos @kc38_first_20 @kc38_second_5 -49;
+    pos @kc38_first_20 @kc38_second_12 -40;
+    pos @kc38_first_21 @kc38_second_1 -102;
+    pos @kc38_first_21 @kc38_second_2 -66;
+    pos @kc38_first_21 @kc38_second_3 -47;
+    pos @kc38_first_21 @kc38_second_4 -100;
+    pos @kc38_first_21 @kc38_second_5 -61;
+    pos @kc38_first_21 @kc38_second_6 -51;
+    pos @kc38_first_21 @kc38_second_8 -34;
+    pos @kc38_first_21 @kc38_second_12 -60;
+    pos @kc38_first_22 @kc38_second_1 -15;
+    pos @kc38_first_22 @kc38_second_9 -21;
+    pos @kc38_first_23 @kc38_second_1 -117;
+    pos @kc38_first_23 @kc38_second_2 -47;
+    pos @kc38_first_23 @kc38_second_4 -120;
+    pos @kc38_first_23 @kc38_second_5 -51;
+    pos @kc38_first_23 @kc38_second_6 -40;
+    pos @kc38_first_23 @kc38_second_9 -33;
+    pos @kc38_first_23 @kc38_second_12 -60;
+    pos @kc38_first_24 @kc38_second_9 -47;
+} kernHorizontalKerningrusticcaps;
+
+lookup LigatureMarkus {
+  lookupflag 0;
+  markClass [\uni1DD2 ] <anchor -234 391> @us_ligature_anchor;
+  pos ligature \uniFB02 <anchor 229 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 560 391> mark @us_ligature_anchor;
+  pos ligature \uniFB01 <anchor 227 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 431 391> mark @us_ligature_anchor;
+  pos ligature \uniFB05 <anchor 205 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 526 391> mark @us_ligature_anchor;
+  pos ligature \f_a <anchor 397 474> mark @us_ligature_anchor
+    ligComponent
+      <anchor 482 391> mark @us_ligature_anchor;
+  pos ligature \r_a <anchor 226 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 526 391> mark @us_ligature_anchor;
+  pos ligature \longs_t_dotlessi <anchor 420 509> mark @us_ligature_anchor
+    ligComponent
+      <anchor 479 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 586 391> mark @us_ligature_anchor;
+  pos ligature \r_t_u <anchor 217 634> mark @us_ligature_anchor
+    ligComponent
+      <anchor 456 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 775 391> mark @us_ligature_anchor;
+  pos ligature \r_t <anchor 224 625> mark @us_ligature_anchor
+    ligComponent
+      <anchor 488 391> mark @us_ligature_anchor;
+  pos ligature \longs_i <anchor 188 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 409 391> mark @us_ligature_anchor;
+  pos ligature \e_n <anchor 267 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 538 391> mark @us_ligature_anchor;
+  pos ligature \e_t_u <anchor 245 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 545 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 854 391> mark @us_ligature_anchor;
+  pos ligature \e_a <anchor 255 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 542 391> mark @us_ligature_anchor;
+  pos ligature \e_t <anchor 215 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 517 391> mark @us_ligature_anchor;
+  pos ligature \c_t <anchor 220 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 498 391> mark @us_ligature_anchor;
+  pos ligature \e_x <anchor 242 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 587 391> mark @us_ligature_anchor;
+  pos ligature \t_u <anchor 258 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 571 391> mark @us_ligature_anchor;
+  pos ligature \f_u <anchor 252 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 562 391> mark @us_ligature_anchor;
+  pos ligature \e_r_i <anchor 221 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 472 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 696 391> mark @us_ligature_anchor;
+  pos ligature \e_r_dotlessi <anchor 223 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 464 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 608 391> mark @us_ligature_anchor;
+  pos ligature \r_m <anchor 229 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 844 391> mark @us_ligature_anchor;
+  pos ligature \e_r_n <anchor 221 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 490 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 838 391> mark @us_ligature_anchor;
+  pos ligature \e_u <anchor 215 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 536 391> mark @us_ligature_anchor;
+  pos ligature \e_longs_i <anchor 220 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 461 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 668 391> mark @us_ligature_anchor;
+  pos ligature \e_longs <anchor 221 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 649 391> mark @us_ligature_anchor;
+  pos ligature \t_dotlessi <anchor 230 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 364 391> mark @us_ligature_anchor;
+  pos ligature \r_n <anchor 204 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 560 391> mark @us_ligature_anchor;
+  pos ligature \e_m <anchor 241 383> mark @us_ligature_anchor
+    ligComponent
+      <anchor 794 383> mark @us_ligature_anchor;
+  pos ligature \e_r_a.alt <anchor 234 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 482 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 789 391> mark @us_ligature_anchor;
+  pos ligature \e_o <anchor 207 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 517 391> mark @us_ligature_anchor;
+  pos ligature \g_o <anchor 280 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 675 391> mark @us_ligature_anchor;
+  pos ligature \f_o <anchor 217 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 514 391> mark @us_ligature_anchor;
+  pos ligature \t_i <anchor 228 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 467 391> mark @us_ligature_anchor;
+  pos ligature \longs_t_i <anchor 230 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 466 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 662 391> mark @us_ligature_anchor;
+  pos ligature \e_r <anchor 216 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor;
+  pos ligature \f_i.alt <anchor 179 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 418 391> mark @us_ligature_anchor;
+  pos ligature \f_l.alt <anchor 212 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 544 391> mark @us_ligature_anchor;
+  pos ligature \f_o.alt <anchor 195 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 492 391> mark @us_ligature_anchor;
+  pos ligature \f_a.alt <anchor 213 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 440 391> mark @us_ligature_anchor;
+  pos ligature \f_u.alt <anchor 216 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 547 391> mark @us_ligature_anchor;
+  pos ligature \e_t.alt <anchor 221 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 517 391> mark @us_ligature_anchor;
+  pos ligature \e_p <anchor 207 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 580 391> mark @us_ligature_anchor;
+  pos ligature \f_t <anchor 209 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 483 391> mark @us_ligature_anchor;
+  pos ligature \f_r <anchor 289 520> mark @us_ligature_anchor
+    ligComponent
+      <anchor 443 400> mark @us_ligature_anchor;
+  pos ligature \e_t_i <anchor 239 400> mark @us_ligature_anchor
+    ligComponent
+      <anchor 509 400> mark @us_ligature_anchor
+    ligComponent
+      <anchor 703 458> mark @us_ligature_anchor;
+  pos ligature \e_longs_longs_i <anchor 256 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 476 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 696 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 897 391> mark @us_ligature_anchor;
+  pos ligature \longs_longs_i <anchor 168 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 390 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 604 391> mark @us_ligature_anchor;
+  pos ligature \e_longs_longs <anchor 246 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 500 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 876 391> mark @us_ligature_anchor ;
+  pos ligature \longs_longs <anchor 188 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 574 391> mark @us_ligature_anchor ;
+  pos ligature \e_longs_t <anchor 240 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 472 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 757 391> mark @us_ligature_anchor;
+  pos ligature \g_a <anchor 297 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 620 391> mark @us_ligature_anchor;
+  pos ligature \e_r_r_a <anchor 236 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 482 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 672 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 967 391> mark @us_ligature_anchor ;
+  pos ligature \r_r_a <anchor 185 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 368 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 664 391> mark @us_ligature_anchor;
+  pos ligature \o_uniA75B <anchor 265 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 489 391> mark @us_ligature_anchor;
+  pos ligature \e_r_a <anchor 216 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 688 391> mark @us_ligature_anchor ;
+  pos ligature \e_t_dotlessi <anchor 237 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 505 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 693 436> mark @us_ligature_anchor;
+  pos ligature \n_t <anchor 185 515> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 394 515> mark @us_ligature_anchor ;
+  pos ligature \e_i <anchor 209 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 481 391> mark @us_ligature_anchor;
+  pos ligature \e_dotlessi <anchor 208 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 373 391> mark @us_ligature_anchor;
+  pos ligature \e_e <anchor 255 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 560 391> mark @us_ligature_anchor;
+  pos ligature \f_f_u <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 814 391> mark @us_ligature_anchor ;
+  pos ligature \uniFB00 <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 647 391> mark @us_ligature_anchor ;
+  pos ligature \uniFB03 <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 652 391> mark @us_ligature_anchor ;
+  pos ligature \uniFB04 <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 782 391> mark @us_ligature_anchor;
+  pos ligature \f_f.alt <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor ;
+  pos ligature \f_f_a <anchor 240 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 665 391> mark @us_ligature_anchor ;
+  pos ligature \e_t_t <anchor 221 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 517 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 844 391> mark @us_ligature_anchor;
+  pos ligature \t_t <anchor 284 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 589 391> mark @us_ligature_anchor;
+  pos ligature \e_j <anchor 209 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 481 391> mark @us_ligature_anchor;
+  pos ligature \uni019A_uni019A <anchor 183 594> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 469 593> mark @us_ligature_anchor;
+  pos ligature \r_a.alt <anchor 226 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 526 391> mark @us_ligature_anchor;
+  pos ligature \r_t_y <anchor 196 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 456 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 696 391> mark @us_ligature_anchor ;
+  pos ligature \r_t_uni1E8F <anchor 196 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 456 391> mark @us_ligature_anchor
+    ligComponent
+      <anchor 746 584> mark @us_ligature_anchor;
+  pos ligature \g_y  <anchor 280 391> mark @us_ligature_anchor 
+    ligComponent
+       <anchor 726 391> mark @us_ligature_anchor ;
+  pos ligature \ae_t  <anchor 350 391> mark @us_ligature_anchor 
+    ligComponent
+       <anchor 699 391> mark @us_ligature_anchor ;
+  pos ligature \ae_i <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 646 391> mark @us_ligature_anchor ;
+  pos ligature \ae_dotlessi <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 549 391> mark @us_ligature_anchor ;
+  pos ligature \ae_n <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 757 391> mark @us_ligature_anchor ;
+  pos ligature \ae_m <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 964 383> mark @us_ligature_anchor ;
+  pos ligature \ae_r <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 658 391> mark @us_ligature_anchor ;
+  pos ligature \ae_p <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 775 391> mark @us_ligature_anchor ;
+  pos ligature \ae_uni01BF <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 734 391> mark @us_ligature_anchor ;
+  pos ligature \ae_longs <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 801 391> mark @us_ligature_anchor ;
+  pos ligature \ae_longs_longs <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 662 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 1039 391> mark @us_ligature_anchor  ;
+  pos ligature \ae_longs_longs_i <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 636 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 855 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 1057 391> mark @us_ligature_anchor  ;
+  pos ligature \ae_longs_t <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 661 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 946 391> mark @us_ligature_anchor  ;
+  pos ligature \ae_longs_i <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 606 391> mark @us_ligature_anchor 
+    ligComponent
+       <anchor 813 391> mark @us_ligature_anchor ;
+  pos ligature \ae_r_a <anchor 350 391> mark @us_ligature_anchor  
+    ligComponent
+       <anchor 663 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 879 391> mark @us_ligature_anchor  ;
+  pos ligature \ae_t_t  <anchor 341 391> mark @us_ligature_anchor 
+    ligComponent
+       <anchor 679 391> mark @us_ligature_anchor 
+    ligComponent
+      <anchor 1006 391> mark @us_ligature_anchor  ;
+  pos ligature \f_j <anchor 227 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 431 391> mark @us_ligature_anchor  ;
+  pos ligature \f_j.alt <anchor 227 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 431 391> mark @us_ligature_anchor  ;
+  pos ligature \e_t.alt2 <anchor 215 391> mark @us_ligature_anchor  
+    ligComponent
+      <anchor 517 391> mark @us_ligature_anchor  ;
+} LigatureMarkus;
+
+lookup LigatureMarkbelow {
+  lookupflag 0;
+  markClass [\uni0328 \ogonek.alt \dotbelowcomb \uni0327 ] <anchor 0 -24> @ligature_below;
+  pos ligature \uniFB02 <anchor 174 -54> mark @ligature_below 
+    ligComponent
+      <anchor 432 -24> mark @ligature_below ;
+  pos ligature \uniFB01 <anchor 182 -54> mark @ligature_below 
+    ligComponent
+      <anchor 371 -24> mark @ligature_below ;
+  pos ligature \uniFB05 <anchor 135 -54> mark @ligature_below 
+    ligComponent
+      <anchor 375 -24> mark @ligature_below ;
+  pos ligature \f_a <anchor 188 -54> mark @ligature_below 
+    ligComponent
+      <anchor 404 -24> mark @ligature_below ;
+  pos ligature \r_a <anchor 151 -24> mark @ligature_below 
+    ligComponent
+      <anchor 420 -24> mark @ligature_below ;
+  pos ligature \longs_t_dotlessi <anchor 155 -54> mark @ligature_below 
+    ligComponent
+      <anchor 419 -24> mark @ligature_below 
+    ligComponent
+      <anchor 584 -54> mark @ligature_below ;
+  pos ligature \r_t_u <anchor 149 -54> mark @ligature_below 
+    ligComponent
+      <anchor 372 -24> mark @ligature_below 
+    ligComponent
+      <anchor 650 -24> mark @ligature_below ;
+  pos ligature \r_t <anchor 142 -54> mark @ligature_below 
+    ligComponent
+      <anchor 385 -24> mark @ligature_below ;
+  pos ligature \longs_i <anchor 108 -49> mark @ligature_below 
+    ligComponent
+      <anchor 306 -24> mark @ligature_below ;
+  pos ligature \e_n <anchor 151 -24> mark @ligature_below 
+    ligComponent
+      <anchor 442 -24> mark @ligature_below ;
+  pos ligature \e_t_u <anchor 158 -24> mark @ligature_below 
+    ligComponent
+      <anchor 457 -24> mark @ligature_below 
+    ligComponent
+      <anchor 759 -24> mark @ligature_below ;
+  pos ligature \e_a <anchor 148 -24> mark @ligature_below 
+    ligComponent
+      <anchor 448 -24> mark @ligature_below ;
+  pos ligature \e_t <anchor 146 -24> mark @ligature_below 
+    ligComponent
+      <anchor 430 -24> mark @ligature_below ;
+  pos ligature \c_t <anchor 149 -24> mark @ligature_below
+    ligComponent
+      <anchor 423 -24> mark @ligature_below ;
+  pos ligature \e_x <anchor 78 14> mark @ligature_below 
+    ligComponent
+      <anchor 454 -24> mark @ligature_below ;
+  pos ligature \t_u <anchor 174 -24> mark @ligature_below 
+    ligComponent
+      <anchor 459 -24> mark @ligature_below ;
+  pos ligature \f_u <anchor 186 -54> mark @ligature_below 
+    ligComponent
+      <anchor 453 -24> mark @ligature_below ;
+  pos ligature \e_r_i <anchor 148 -24> mark @ligature_below 
+    ligComponent
+      <anchor 418 -24> mark @ligature_below 
+    ligComponent
+      <anchor 618 -24> mark @ligature_below ;
+  pos ligature \e_r_dotlessi <anchor 148 -24> mark @ligature_below 
+    ligComponent
+      <anchor 418 -24> mark @ligature_below 
+    ligComponent
+      <anchor 618 -24> mark @ligature_below ;
+  pos ligature \r_m <anchor 176 -24> mark @ligature_below 
+    ligComponent
+      <anchor 634 -24> mark @ligature_below ;
+  pos ligature \e_r_n <anchor 139 -24> mark @ligature_below 
+    ligComponent
+      <anchor 437 -24> mark @ligature_below 
+    ligComponent
+      <anchor 743 -24> mark @ligature_below ;
+  pos ligature \e_u <anchor 146 -24> mark @ligature_below 
+    ligComponent
+      <anchor 441 -24> mark @ligature_below ;
+  pos ligature \e_longs_i <anchor 129 -24> mark @ligature_below 
+    ligComponent
+      <anchor 405 -24> mark @ligature_below 
+    ligComponent
+      <anchor 581 -24> mark @ligature_below ;
+  pos ligature \e_longs <anchor 129 -24> mark @ligature_below 
+    ligComponent
+      <anchor 403 -24> mark @ligature_below ;
+  pos ligature \t_dotlessi <anchor 152 -24> mark @ligature_below 
+    ligComponent
+      <anchor 378 -24> mark @ligature_below ;
+  pos ligature \r_n <anchor 153 -24> mark @ligature_below 
+    ligComponent
+      <anchor 473 -24> mark @ligature_below ;
+  pos ligature \e_m <anchor 151 -24> mark @ligature_below 
+    ligComponent
+      <anchor 592 -24> mark @ligature_below ;
+  pos ligature \e_r_a.alt <anchor 154 -24> mark @ligature_below 
+    ligComponent
+      <anchor 446 -24> mark @ligature_below 
+    ligComponent
+      <anchor 729 -24> mark @ligature_below ;
+  pos ligature \e_o <anchor 139 -24> mark @ligature_below 
+    ligComponent
+      <anchor 441 -24> mark @ligature_below ;
+  pos ligature \g_o <anchor 168 -383> mark @ligature_below 
+    ligComponent
+      <anchor 566 -24> mark @ligature_below ;
+  pos ligature \f_o <anchor 157 -54> mark @ligature_below 
+    ligComponent
+      <anchor 407 -24> mark @ligature_below ;
+  pos ligature \t_i <anchor 155 -24> mark @ligature_below 
+    ligComponent
+      <anchor 376 -24> mark @ligature_below ;
+  pos ligature \longs_t_i <anchor 154 -49> mark @ligature_below 
+    ligComponent
+      <anchor 385 -24> mark @ligature_below 
+    ligComponent
+      <anchor 570 -24> mark @ligature_below ;
+  pos ligature \e_r <anchor 120 -24> mark @ligature_below 
+    ligComponent
+      <anchor 437 -24> mark @ligature_below ;
+  pos ligature \f_i.alt <anchor 158 -54> mark @ligature_below 
+    ligComponent
+      <anchor 340 -24> mark @ligature_below ;
+  pos ligature \f_l.alt <anchor 161 -54> mark @ligature_below 
+    ligComponent
+      <anchor 405 -24> mark @ligature_below ;
+  pos ligature \f_o.alt <anchor 149 -54> mark @ligature_below 
+    ligComponent
+      <anchor 398 -24> mark @ligature_below ;
+  pos ligature \f_a.alt <anchor 167 -98> mark @ligature_below 
+    ligComponent
+      <anchor 381 -24> mark @ligature_below ;
+  pos ligature \f_u.alt <anchor 169 -54> mark @ligature_below 
+    ligComponent
+      <anchor 429 -24> mark @ligature_below ;
+  pos ligature \e_t.alt <anchor 142 -24> mark @ligature_below 
+    ligComponent
+      <anchor 448 -24> mark @ligature_below ;
+  pos ligature \e_p <anchor 141 -24> mark @ligature_below 
+    ligComponent
+      <anchor 485 -24> mark @ligature_below ;
+  pos ligature \f_t <anchor 157 -54> mark @ligature_below 
+    ligComponent
+      <anchor 387 -24> mark @ligature_below ;
+  pos ligature \f_r <anchor 170 -98> mark @ligature_below 
+    ligComponent
+      <anchor 394 -24> mark @ligature_below ;
+  pos ligature \e_t_i <anchor 142 -24> mark @ligature_below 
+    ligComponent
+      <anchor 451 -24> mark @ligature_below 
+    ligComponent
+      <anchor 669 -24> mark @ligature_below ;
+  pos ligature \e_longs_longs_i <anchor 143 -24> mark @ligature_below 
+    ligComponent
+      <anchor 395 -73> mark @ligature_below
+    ligComponent
+      <anchor 609 -73> mark @ligature_below
+    ligComponent
+      <anchor 830 -24> mark @ligature_below ;
+  pos ligature \longs_longs_i <anchor 73 -73> mark @ligature_below 
+    ligComponent
+      <anchor 303 -73> mark @ligature_below 
+    ligComponent
+      <anchor 526 -24> mark @ligature_below ;
+  pos ligature \e_longs_longs <anchor 130 -24> mark @ligature_below 
+    ligComponent
+      <anchor 387 -73> mark @ligature_below 
+    ligComponent
+      <anchor 609 -73> mark @ligature_below ;
+  pos ligature \longs_longs <anchor 78 -73> mark @ligature_below 
+    ligComponent
+      <anchor 307 -73> mark @ligature_below ;
+  pos ligature \e_longs_t <anchor 135 -24> mark @ligature_below 
+    ligComponent
+      <anchor 354 -73> mark @ligature_below 
+    ligComponent
+      <anchor 614 -24> mark @ligature_below ;
+  pos ligature \g_a <anchor 166 -383> mark @ligature_below 
+    ligComponent
+      <anchor 584 -24> mark @ligature_below ;
+  pos ligature \e_r_r_a <anchor 158 -24> mark @ligature_below 
+    ligComponent
+      <anchor 422 -24> mark @ligature_below 
+    ligComponent
+      <anchor 617 -24> mark @ligature_below 
+    ligComponent
+      <anchor 869 -24> mark @ligature_below ;
+  pos ligature \r_r_a <anchor 126 -24> mark @ligature_below 
+    ligComponent
+      <anchor 340 -24> mark @ligature_below 
+    ligComponent
+      <anchor 595 -24> mark @ligature_below ;
+  pos ligature \o_uniA75B <anchor 144 -24> mark @ligature_below 
+    ligComponent
+      <anchor 435 -24> mark @ligature_below ;
+  pos ligature \e_r_a <anchor 120 -24> mark @ligature_below 
+    ligComponent
+      <anchor 437 -24> mark @ligature_below 
+    ligComponent
+      <anchor 639 -24> mark @ligature_below ;
+  pos ligature \e_t_dotlessi <anchor 142 -24> mark @ligature_below 
+    ligComponent
+      <anchor 451 -24> mark @ligature_below 
+    ligComponent
+      <anchor 669 -24> mark @ligature_below ;
+  pos ligature \n_t <anchor 110 -24> mark @ligature_below 
+    ligComponent
+      <anchor 363 -65> mark @ligature_below ;
+  pos ligature \e_i <anchor 141 -24> mark @ligature_below 
+    ligComponent
+      <anchor 384 -24> mark @ligature_below ;
+  pos ligature \e_dotlessi <anchor 140 -24> mark @ligature_below 
+    ligComponent
+      <anchor 389 -24> mark @ligature_below ;
+  pos ligature \e_e <anchor 154 -24> mark @ligature_below 
+    ligComponent
+      <anchor 453 -24> mark @ligature_below ;
+  pos ligature \f_f_u <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below 
+    ligComponent
+      <anchor 678 -24> mark @ligature_below ;
+  pos ligature \uniFB00 <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below ;
+  pos ligature \uniFB03 <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below 
+    ligComponent
+      <anchor 576 -24> mark @ligature_below ;
+  pos ligature \uniFB04 <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below 
+    ligComponent
+      <anchor 646 -21> mark @ligature_below ;
+  pos ligature \f_f.alt <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below ;
+  pos ligature \f_f_a <anchor 149 -73> mark @ligature_below 
+    ligComponent
+      <anchor 371 -73> mark @ligature_below 
+    ligComponent
+      <anchor 599 -24> mark @ligature_below ;
+  pos ligature \e_t_t <anchor 142 -24> mark @ligature_below 
+    ligComponent
+      <anchor 448 -24> mark @ligature_below 
+    ligComponent
+      <anchor 709 -24> mark @ligature_below ;
+  pos ligature \t_t <anchor 162 -24> mark @ligature_below 
+    ligComponent
+      <anchor 450 -21> mark @ligature_below ;
+  pos ligature \e_j <anchor 141 -24> mark @ligature_below 
+    ligComponent
+      <anchor 384 -24> mark @ligature_below ;
+  pos ligature \uni019A_uni019A <anchor 128 -24> mark @ligature_below 
+    ligComponent
+      <anchor 319 -24> mark @ligature_below ;
+  pos ligature \r_a.alt <anchor 151 -24> mark @ligature_below 
+    ligComponent
+      <anchor 420 -24> mark @ligature_below ;
+  pos ligature \r_t_y <anchor 182 -24> mark @ligature_below 
+    ligComponent
+      <anchor 396 -24> mark @ligature_below 
+    ligComponent
+      <anchor 656 -19> mark @ligature_below ;
+  pos ligature \r_t_uni1E8F <anchor 182 -24> mark @ligature_below 
+    ligComponent
+      <anchor 396 -24> mark @ligature_below 
+    ligComponent
+      <anchor 656 -19> mark @ligature_below ;
+  pos ligature \g_y <anchor 168 -383> mark @ligature_below 
+    ligComponent
+      <anchor 684 -103> mark @ligature_below ;
+  pos ligature \ae_t <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 601 -24> mark @ligature_below ;
+  pos ligature \ae_i <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 548 -24> mark @ligature_below ;
+  pos ligature \ae_dotlessi <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 564 -24> mark @ligature_below ;
+  pos ligature \ae_n <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 662 -24> mark @ligature_below ;
+  pos ligature \ae_m <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 762 -24> mark @ligature_below ;
+  pos ligature \ae_r <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 622 -24> mark @ligature_below ;
+  pos ligature \ae_p <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 680 -24> mark @ligature_below ;
+  pos ligature \ae_uni01BF <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 680 -24> mark @ligature_below ;
+  pos ligature \ae_longs <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 556 -24> mark @ligature_below ;
+  pos ligature \ae_longs_longs <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 549 -73> mark @ligature_below 
+    ligComponent
+      <anchor 772 -73> mark @ligature_below ;
+  pos ligature \ae_longs_longs_i <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 554 -73> mark @ligature_below 
+    ligComponent
+      <anchor 769 -73> mark @ligature_below 
+    ligComponent
+      <anchor 990 -24> mark @ligature_below ;
+  pos ligature \ae_longs_t <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 543 -73> mark @ligature_below 
+    ligComponent
+      <anchor 803 -24> mark @ligature_below ;
+  pos ligature \ae_longs_i <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 550 -24> mark @ligature_below 
+    ligComponent
+      <anchor 726 -24> mark @ligature_below ;
+  pos ligature \ae_r_a <anchor 193 -24> mark @ligature_below 
+    ligComponent
+      <anchor 627 -24> mark @ligature_below 
+    ligComponent
+      <anchor 829 -24> mark @ligature_below ;
+  pos ligature \ae_t_t <anchor 197 -24> mark @ligature_below 
+    ligComponent
+      <anchor 583 -24> mark @ligature_below 
+    ligComponent
+      <anchor 866 -24> mark @ligature_below ;
+  pos ligature \f_j <anchor 182 -54> mark @ligature_below 
+    ligComponent
+      <anchor 371 -24> mark @ligature_below ;
+  pos ligature \f_j.alt <anchor 182 -54> mark @ligature_below 
+    ligComponent
+      <anchor 371 -24> mark @ligature_below ;
+  pos ligature \e_t.alt2 <anchor 146 -24> mark @ligature_below 
+    ligComponent
+      <anchor 430 -24> mark @ligature_below ;
+} LigatureMarkbelow;
+
+lookup markLigaturemark {
+  lookupflag 0;
+  markClass [\macron.titling ] <anchor 0 537> @ligature_anchor;
+  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni035B \uni1DE3
+  	    \uni0365\uni0307 \uni0304.alt \uni1DE3.alt \uni0366] <anchor 0 391> @ligature_anchor;
+  pos ligature \uniFB02 <anchor 199 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 434 659> mark @ligature_anchor ;
+  pos ligature \uniFB01 <anchor 184 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 364 659> mark @ligature_anchor ;
+  pos ligature \uniFB05 <anchor 158 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 356 659> mark @ligature_anchor ;
+  pos ligature \f_a <anchor 163 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 404 391> mark @ligature_anchor ;
+  pos ligature \r_a <anchor 149 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 432 391> mark @ligature_anchor ;
+  pos ligature \longs_t_dotlessi <anchor 149 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 354 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 596 391> mark @ligature_anchor ;
+  pos ligature \r_t_u <anchor 164 757> mark @ligature_anchor 
+    ligComponent
+      <anchor 407 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 700 391> mark @ligature_anchor ;
+  pos ligature \r_t <anchor 132 757> mark @ligature_anchor 
+    ligComponent
+      <anchor 401 659> mark @ligature_anchor ;
+  pos ligature \longs_i <anchor 138 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 303 659> mark @ligature_anchor ;
+  pos ligature \e_n <anchor 186 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 474 391> mark @ligature_anchor ;
+  pos ligature \e_t_u <anchor 195 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 494 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 771 391> mark @ligature_anchor ;
+  pos ligature \e_a <anchor 196 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 482 391> mark @ligature_anchor ;
+  pos ligature \e_t <anchor 163 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 467 391> mark @ligature_anchor ;
+  pos ligature \c_t <anchor 210 659> mark @ligature_anchor
+    ligComponent
+      <anchor 439 659> mark @ligature_anchor ;
+  pos ligature \e_x <anchor 201 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 510 391> mark @ligature_anchor ;
+  pos ligature \t_u <anchor 211 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 467 391> mark @ligature_anchor ;
+  pos ligature \f_u <anchor 220 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 469 391> mark @ligature_anchor ;
+  pos ligature \e_r_i <anchor 164 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 423 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 631 586> mark @ligature_anchor ;
+  pos ligature \e_r_dotlessi <anchor 164 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 416 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 631 391> mark @ligature_anchor ;
+  pos ligature \r_m <anchor 176 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 662 391> mark @ligature_anchor ;
+  pos ligature \e_r_n <anchor 182 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 441 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 750 391> mark @ligature_anchor ;
+  pos ligature \e_u <anchor 180 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 453 391> mark @ligature_anchor ;
+  pos ligature \e_longs_i <anchor 179 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 526 586> mark @ligature_anchor 
+    ligComponent
+      <anchor 643 586> mark @ligature_anchor ;
+  pos ligature \e_longs <anchor 179 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 479 535> mark @ligature_anchor ;
+  pos ligature \t_dotlessi <anchor 171 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 381 391> mark @ligature_anchor ;
+  pos ligature \r_n <anchor 160 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 476 391> mark @ligature_anchor ;
+  pos ligature \e_m <anchor 189 383> mark @ligature_anchor 
+    ligComponent
+      <anchor 618 383> mark @ligature_anchor ;
+  pos ligature \e_r_a.alt <anchor 188 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 436 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 719 391> mark @ligature_anchor ;
+  pos ligature \e_o <anchor 157 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 445 391> mark @ligature_anchor ;
+  pos ligature \g_o <anchor 221 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 594 391> mark @ligature_anchor ;
+  pos ligature \f_o <anchor 226 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 447 391> mark @ligature_anchor ;
+  pos ligature \t_i <anchor 157 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 382 586> mark @ligature_anchor ;
+  pos ligature \longs_t_i <anchor 215 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 381 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 587 586> mark @ligature_anchor ;
+  pos ligature \e_r <anchor 174 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 415 391> mark @ligature_anchor ;
+  pos ligature \f_i.alt <anchor 178 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 326 391> mark @ligature_anchor ;
+  pos ligature \f_l.alt <anchor 161 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 367 659> mark @ligature_anchor ;
+  pos ligature \f_o.alt <anchor 168 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 417 391> mark @ligature_anchor ;
+  pos ligature \f_a.alt <anchor 156 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 396 391> mark @ligature_anchor ;
+  pos ligature \f_u.alt <anchor 196 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 448 391> mark @ligature_anchor ;
+  pos ligature \e_t.alt <anchor 179 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 460 391> mark @ligature_anchor ;
+  pos ligature \e_p <anchor 166 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 489 391> mark @ligature_anchor ;
+  pos ligature \f_t <anchor 157 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 376 659> mark @ligature_anchor ;
+  pos ligature \f_r <anchor 160 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 398 391> mark @ligature_anchor ;
+  pos ligature \e_t_i <anchor 192 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 664 586> mark @ligature_anchor ;
+  pos ligature \e_longs_longs_i <anchor 178 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 486 513> mark @ligature_anchor
+    ligComponent
+      <anchor 713 513> mark @ligature_anchor
+    ligComponent
+      <anchor 811 513> mark @ligature_anchor ;
+  pos ligature \longs_longs_i <anchor 171 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 396 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 527 513> mark @ligature_anchor ;
+  pos ligature \e_longs_longs <anchor 176 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 463 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 690 513> mark @ligature_anchor ;
+  pos ligature \longs_longs <anchor 188 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 399 513> mark @ligature_anchor ;
+  pos ligature \e_longs_t <anchor 185 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 453 608> mark @ligature_anchor 
+    ligComponent
+      <anchor 664 608> mark @ligature_anchor ;
+  pos ligature \g_a <anchor 224 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 565 391> mark @ligature_anchor ;
+  pos ligature \e_r_r_a <anchor 170 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 416 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 615 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 869 391> mark @ligature_anchor ;
+  pos ligature \r_r_a <anchor 127 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 327 390> mark @ligature_anchor 
+    ligComponent
+      <anchor 595 391> mark @ligature_anchor ;
+  pos ligature \o_uniA75B <anchor 193 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 426 391> mark @ligature_anchor ;
+  pos ligature \e_r_a <anchor 174 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 415 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 657 391> mark @ligature_anchor ;
+  pos ligature \e_t_dotlessi <anchor 192 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 473 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 664 437> mark @ligature_anchor ;
+  pos ligature \n_t <anchor 126 515> mark @ligature_anchor 
+    ligComponent
+      <anchor 347 515> mark @ligature_anchor ;
+  pos ligature \e_i <anchor 155 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 401 537> mark @ligature_anchor ;
+  pos ligature \e_dotlessi <anchor 159 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 392 391> mark @ligature_anchor ;
+  pos ligature \e_e <anchor 192 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 489 391> mark @ligature_anchor ;
+  pos ligature \f_f_u <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 700 391> mark @ligature_anchor ;
+  pos ligature \uniFB00 <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor ;
+  pos ligature \uniFB03 <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 564 659> mark @ligature_anchor ;
+  pos ligature \uniFB04 <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 623 659> mark @ligature_anchor ;
+  pos ligature \f_f.alt <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor ;
+  pos ligature \f_f_a <anchor 209 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 412 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 617 391> mark @ligature_anchor ;
+  pos ligature \e_t_t <anchor 179 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 460 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 749 391> mark @ligature_anchor ;
+  pos ligature \t_t <anchor 185 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 497 391> mark @ligature_anchor ;
+  pos ligature \e_j <anchor 155 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 400 537> mark @ligature_anchor ;
+  pos ligature \uni019A_uni019A <anchor 89 593> mark @ligature_anchor 
+    ligComponent
+      <anchor 312 602> mark @ligature_anchor ;
+  pos ligature \r_a.alt <anchor 149 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 432 391> mark @ligature_anchor ;
+  pos ligature \r_t_y <anchor 189 899> mark @ligature_anchor 
+    ligComponent
+      <anchor 410 606> mark @ligature_anchor 
+    ligComponent
+      <anchor 621 391> mark @ligature_anchor ;
+  pos ligature \r_t_uni1E8F <anchor 189 899> mark @ligature_anchor 
+    ligComponent
+      <anchor 410 606> mark @ligature_anchor 
+    ligComponent
+      <anchor 645 635> mark @ligature_anchor ;
+  pos ligature \g_y <anchor 221 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 645 391> mark @ligature_anchor ;
+  pos ligature \ae_t <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 642 391> mark @ligature_anchor ;
+  pos ligature \ae_i <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 565 537> mark @ligature_anchor ;
+  pos ligature \ae_dotlessi <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 568 391> mark @ligature_anchor ;
+  pos ligature \ae_n <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 693 391> mark @ligature_anchor ;
+  pos ligature \ae_m <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 788 383> mark @ligature_anchor ;
+  pos ligature \ae_r <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 601 391> mark @ligature_anchor ;
+  pos ligature \ae_p <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 684 391> mark @ligature_anchor ;
+  pos ligature \ae_uni01BF <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 665 391> mark @ligature_anchor ;
+  pos ligature \ae_longs <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 631 535> mark @ligature_anchor ;
+  pos ligature \ae_longs_longs <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 625 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 853 513> mark @ligature_anchor ;
+  pos ligature \ae_longs_longs_i <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 646 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 873 513> mark @ligature_anchor 
+    ligComponent
+      <anchor 970 513> mark @ligature_anchor ;
+  pos ligature \ae_longs_t <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 642 608> mark @ligature_anchor 
+    ligComponent
+      <anchor 853 608> mark @ligature_anchor ;
+  pos ligature \ae_longs_i <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 671 586> mark @ligature_anchor 
+    ligComponent
+      <anchor 788 586> mark @ligature_anchor ;
+  pos ligature \ae_r_a <anchor 241 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 605 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 848 391> mark @ligature_anchor ;
+  pos ligature \ae_t_t <anchor 245 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 622 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 911 391> mark @ligature_anchor ;
+  pos ligature \f_j <anchor 184 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 364 659> mark @ligature_anchor ;
+  pos ligature \f_j.alt <anchor 184 659> mark @ligature_anchor 
+    ligComponent
+      <anchor 364 659> mark @ligature_anchor ;
+  pos ligature \e_t.alt2 <anchor 163 391> mark @ligature_anchor 
+    ligComponent
+      <anchor 467 391> mark @ligature_anchor ;
+} markLigaturemark;
+
+lookup MarkAbove {
+  lookupflag 0;
+  markClass [\macron.sc ] <anchor 0 483> @std_above_anchor;
+  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni035B
+  	    \uni1DE3 \uni0365 \uni0307 \uni0304.alt \uni1DE3.alt \uni0366] <anchor 0 439> @std_above_anchor;
+  pos base [\a ] <anchor 171 439> mark @std_above_anchor;
+  pos base [\b ] <anchor 193 659> mark @std_above_anchor;
+  pos base [\c \y ] <anchor 189 439> mark @std_above_anchor;
+  pos base [\g ] <anchor 201 439> mark @std_above_anchor;
+  pos base [\d \A.alt ] <anchor 185 659> mark @std_above_anchor;
+  pos base [\e \a.alt01 ] <anchor 168 439> mark @std_above_anchor;
+  pos base [\f ] <anchor 172 659> mark @std_above_anchor;
+  pos base [\h \thorn ] <anchor 179 659> mark @std_above_anchor;
+  pos base [\i ] <anchor 101 586> mark @std_above_anchor;
+  pos base [\l \dotlessi.swash ] <anchor 144 659> mark @std_above_anchor;
+  pos base [\m ] <anchor 327 439> mark @std_above_anchor;
+  pos base [\n \L.titling ] <anchor 213 439> mark @std_above_anchor;
+  pos base [\o ] <anchor 187 439> mark @std_above_anchor;
+  pos base [\p \uni01BF ] <anchor 223 439> mark @std_above_anchor;
+  pos base [\r ] <anchor 137 439> mark @std_above_anchor;
+  pos base [\q ] <anchor 207 439> mark @std_above_anchor;
+  pos base [\t \z ] <anchor 187 439> mark @std_above_anchor;
+  pos base [\u \O.titling \u.alt ] <anchor 228 439> mark @std_above_anchor;
+  pos base [\x ] <anchor 224 439> mark @std_above_anchor;
+  pos base [\longs ] <anchor 212 571> mark @std_above_anchor  ;
+  pos base [\ampersand ] <anchor 312 498> mark @std_above_anchor  ;
+  pos base [\v ] <anchor 206 439> mark @std_above_anchor;
+  pos base [\k ] <anchor 182 659> mark @std_above_anchor;
+  pos base [\w ] <anchor 330 439> mark @std_above_anchor;
+  pos base [\eogonek ] <anchor 172 439> mark @std_above_anchor;
+  pos base [\s ] <anchor 163 439> mark @std_above_anchor;
+  pos base [\dotlessi ] <anchor 93 439> mark @std_above_anchor;
+  pos base [\A ] <anchor 180 562> mark @std_above_anchor;
+  pos base [\E ] <anchor 309 562> mark @std_above_anchor ;
+  pos base [\U ] <anchor 333 562> mark @std_above_anchor ;
+  pos base [\D \Eth ] <anchor 330 562> mark @std_above_anchor ;
+  pos base [\C ] <anchor 309 562> mark @std_above_anchor;
+  pos base [\I ] <anchor 114 562> mark @std_above_anchor ;
+  pos base [\Q ] <anchor 350 562> mark @std_above_anchor ;
+  pos base [\N ] <anchor 376 562> mark @std_above_anchor ;
+  pos base [\X \N.titling ] <anchor 350 562> mark @std_above_anchor ;
+  pos base [\T ] <anchor 299 562> mark @std_above_anchor ;
+  pos base [\S ] <anchor 224 562> mark @std_above_anchor ;
+  pos base [\R ] <anchor 262 562> mark @std_above_anchor ;
+  pos base [\uniA751 ] <anchor 282 439> mark @std_above_anchor  ;
+  pos base [\a.sc \ae.sc ] <anchor 195 483> mark @std_above_anchor ;
+  pos base [\b.sc ] <anchor 145 483> mark @std_above_anchor  ;
+  pos base [\c.sc ] <anchor 190 483> mark @std_above_anchor ;
+  pos base [\d.sc \eth.sc ] <anchor 158 483> mark @std_above_anchor  ;
+  pos base [\e.sc ] <anchor 155 483> mark @std_above_anchor  ;
+  pos base [\f.sc ] <anchor 50 483> mark @std_above_anchor  ;
+  pos base [\g.sc ] <anchor 192 483> mark @std_above_anchor  ;
+  pos base [\h.sc \Q.titling ] <anchor 176 483> mark @std_above_anchor  ;
+  pos base [\i.sc ] <anchor 96 483> mark @std_above_anchor  ;
+  pos base [\j.sc ] <anchor 100 483> mark @std_above_anchor ;
+  pos base [\k.sc ] <anchor 122 531> mark @std_above_anchor  ;
+  pos base [\l.sc ] <anchor 111 609> mark @std_above_anchor  ;
+  pos base [\m.sc \U.titling ] <anchor 278 483> mark @std_above_anchor  ;
+  pos base [\n.sc ] <anchor 194 483> mark @std_above_anchor  ;
+  pos base [\o.sc ] <anchor 217 483> mark @std_above_anchor  ;
+  pos base [\p.sc \thorn.sc ] <anchor 173 483> mark @std_above_anchor  ;
+  pos base [\q.sc ] <anchor 157 483> mark @std_above_anchor  ;
+  pos base [\r.sc ] <anchor 144 483> mark @std_above_anchor  ;
+  pos base [\s.sc ] <anchor 171 502> mark @std_above_anchor  ;
+  pos base [\t.sc ] <anchor 184 483> mark @std_above_anchor  ;
+  pos base [\u.sc ] <anchor 214 483> mark @std_above_anchor  ;
+  pos base [\v.sc ] <anchor 232 483> mark @std_above_anchor  ;
+  pos base [\w.sc ] <anchor 348 483> mark @std_above_anchor  ;
+  pos base [\x.sc ] <anchor 274 483> mark @std_above_anchor  ;
+  pos base [\y.sc ] <anchor 205 483> mark @std_above_anchor  ;
+  pos base [\z.sc ] <anchor 234 483> mark @std_above_anchor  ;
+  pos base [\j ] <anchor 104 586> mark @std_above_anchor;
+  pos base [\g.alt1 ] <anchor 227 439> mark @std_above_anchor;
+  pos base [\g.alt2 ] <anchor 229 439> mark @std_above_anchor;
+  pos base [\uni1E8F.sc \P.titling ] <anchor 256 684> mark @std_above_anchor  ;
+  pos base [\uniA753 \F.titling ] <anchor 245 439> mark @std_above_anchor  ;
+  pos base [\e.alt01 ] <anchor 147 439> mark @std_above_anchor;
+  pos base [\M ] <anchor 357 562> mark @std_above_anchor ;
+  pos base [\O ] <anchor 316 562> mark @std_above_anchor ;
+  pos base [\B ] <anchor 166 562> mark @std_above_anchor;
+  pos base [\F \F.swash ] <anchor 278 562> mark @std_above_anchor ;
+  pos base [\G ] <anchor 316 562> mark @std_above_anchor ;
+  pos base [\H \Thorn ] <anchor 278 586> mark @std_above_anchor ;
+  pos base [\J ] <anchor 116 562> mark @std_above_anchor ;
+  pos base [\K \H.alt ] <anchor 261 562> mark @std_above_anchor ;
+  pos base [\L ] <anchor 211 610> mark @std_above_anchor ;
+  pos base [\P ] <anchor 255 562> mark @std_above_anchor ;
+  pos base [\V ] <anchor 284 562> mark @std_above_anchor ;
+  pos base [\W ] <anchor 396 562> mark @std_above_anchor ;
+  pos base [\Y ] <anchor 356 562> mark @std_above_anchor ;
+  pos base [\Z ] <anchor 344 562> mark @std_above_anchor  ;
+  pos base [\f.alt1 \f.alt3 ] <anchor 208 708> mark @std_above_anchor;
+  pos base [\uniA75D ] <anchor 167 439> mark @std_above_anchor  ;
+  pos base [\uniA779 ] <anchor 302 -49> mark @std_above_anchor  ;
+  pos base [\uniA787 ] <anchor 192 439> mark @std_above_anchor ;
+  pos base [\w.alt ] <anchor 439 439> mark @std_above_anchor ;
+  pos base [\c.alt ] <anchor 171 439> mark @std_above_anchor;
+  pos base [\A.titling1 ] <anchor 270 513> mark @std_above_anchor;
+  pos base [\M.alt ] <anchor 476 513> mark @std_above_anchor;
+  pos base [\A.titling ] <anchor 287 513> mark @std_above_anchor;
+  pos base [\B.titling ] <anchor 229 513> mark @std_above_anchor;
+  pos base [\C.titling ] <anchor 264 513> mark @std_above_anchor;
+  pos base [\D.titling \Eth.titling ] <anchor 309 513> mark @std_above_anchor;
+  pos base [\E.titling ] <anchor 279 513> mark @std_above_anchor;
+  pos base [\G.titling \T.titling ] <anchor 273 513> mark @std_above_anchor;
+  pos base [\H.titling ] <anchor 250 610> mark @std_above_anchor;
+  pos base [\I.titling ] <anchor 133 513> mark @std_above_anchor;
+  pos base [\J.titling ] <anchor 119 513> mark @std_above_anchor;
+  pos base [\K.titling ] <anchor 209 513> mark @std_above_anchor;
+  pos base [\M.titling ] <anchor 381 513> mark @std_above_anchor;
+  pos base [\R.titling ] <anchor 275 513> mark @std_above_anchor;
+  pos base [\S.titling \uniEEE2 ] <anchor 213 513> mark @std_above_anchor;
+  pos base [\V.titling ] <anchor 322 513> mark @std_above_anchor;
+  pos base [\W.titling ] <anchor 363 513> mark @std_above_anchor;
+  pos base [\X.titling ] <anchor 357 513> mark @std_above_anchor;
+  pos base [\Y.titling ] <anchor 320 513> mark @std_above_anchor;
+  pos base [\Z.titling ] <anchor 362 513> mark @std_above_anchor ;
+  pos base [\N.titling1 ] <anchor 332 513> mark @std_above_anchor;
+  pos base [\E.titling1 ] <anchor 300 513> mark @std_above_anchor;
+  pos base [\uni0237 ] <anchor 95 439> mark @std_above_anchor;
+  pos base [\Q.alt ] <anchor 300 562> mark @std_above_anchor  ;
+  pos base [\n.alt1 ] <anchor 220 439> mark @std_above_anchor;
+  pos base [\m.alt ] <anchor 329 439> mark @std_above_anchor;
+  pos base [\j.alt ] <anchor 105 586> mark @std_above_anchor;
+  pos base [\r.alt ] <anchor 135 439> mark @std_above_anchor;
+  pos base [\p.alt ] <anchor 224 439> mark @std_above_anchor;
+  pos base [\f.alt2 ] <anchor 177 659> mark @std_above_anchor;
+  pos base [\W.medieval1 ] <anchor 542 586> mark @std_above_anchor  ;
+  pos base [\W.medieval2 ] <anchor 686 586> mark @std_above_anchor  ;
+  pos base [\W.titling1 ] <anchor 570 537> mark @std_above_anchor;
+  pos base [\W.titling2 ] <anchor 559 537> mark @std_above_anchor;
+  pos base [\a.alt02 ] <anchor 209 439> mark @std_above_anchor  ;
+  pos base [\n.swash ] <anchor 480 439> mark @std_above_anchor  ;
+  pos base [\dotlessi.alt ] <anchor 94 439> mark @std_above_anchor;
+  pos base [\i.alt ] <anchor 100 586> mark @std_above_anchor;
+  pos base [\uni1E8F.alt ] <anchor 223 542> mark @std_above_anchor;
+  pos base [\D.titling1 ] <anchor 293 513> mark @std_above_anchor;
+  pos base [\t.alt \t.alt2 ] <anchor 187 439> mark @std_above_anchor;
+  pos base [\uniEEE0 \a.enlarged ] <anchor 213 586> mark @std_above_anchor ;
+  pos base [\uniEEE7 \f.enlarged ] <anchor 248 670> mark @std_above_anchor  ;
+  pos base [\uniEEF1 \p.enlarged ] <anchor 245 469> mark @std_above_anchor;
+  pos base [\uniA75B ] <anchor 91 439> mark @std_above_anchor ;
+  pos base [\e.alt02 \a.swash ] <anchor 175 439> mark @std_above_anchor  ;
+  pos base [\t.swash ] <anchor 186 439> mark @std_above_anchor ;
+  pos base [\e.alt03 ] <anchor 169 439> mark @std_above_anchor  ;
+  pos base [\y.alt ] <anchor 218 439> mark @std_above_anchor;
+  pos base [\l.sc2 ] <anchor 158 439> mark @std_above_anchor  ;
+  pos base [\s.sc2 ] <anchor 149 439> mark @std_above_anchor  ;
+  pos base [\M.swash ] <anchor 426 464> mark @std_above_anchor  ;
+  pos base [\e.alt04 ] <anchor 203 439> mark @std_above_anchor  ;
+  pos base [\n.alt2 ] <anchor 257 415> mark @std_above_anchor  ;
+  pos base [\Y.alt ] <anchor 326 562> mark @std_above_anchor ;
+  pos base [\uni1E8E.alt ] <anchor 356 684> mark @std_above_anchor  ;
+  pos base [\G.alt1 ] <anchor 519 654> mark @std_above_anchor  ;
+  pos base [\uniEEE4 \d.enlarged ] <anchor 371 474> mark @std_above_anchor;
+  pos base [\G.alt2 ] <anchor 335 562> mark @std_above_anchor  ;
+  pos base [\B.medium ] <anchor 231 681> mark @std_above_anchor;
+  pos base [\D.medium ] <anchor 224 571> mark @std_above_anchor  ;
+  pos base [\E.medium ] <anchor 169 632> mark @std_above_anchor ;
+  pos base [\G.medium ] <anchor 282 640> mark @std_above_anchor;
+  pos base [\H.medium ] <anchor 229 610> mark @std_above_anchor ;
+  pos base [\I.medium ] <anchor 122 610> mark @std_above_anchor;
+  pos base [\M.medium ] <anchor 347 547> mark @std_above_anchor  ;
+  pos base [\O.medium ] <anchor 284 674> mark @std_above_anchor;
+  pos base [\Q.medium ] <anchor 227 610> mark @std_above_anchor;
+  pos base [\S.medium ] <anchor 210 605> mark @std_above_anchor ;
+  pos base [\T.medium ] <anchor 283 610> mark @std_above_anchor ;
+  pos base [\c.enlarged ] <anchor 234 488> mark @std_above_anchor ;
+  pos base [\AE ] <anchor 350 562> mark @std_above_anchor ;
+  pos base [\eth ] <anchor 149 722> mark @std_above_anchor;
+  pos base [\ae ] <anchor 242 439> mark @std_above_anchor;
+  pos base [\ae.alt ] <anchor 244 439> mark @std_above_anchor;
+  pos base [\eth.alt ] <anchor 179 694> mark @std_above_anchor  ;
+  pos base [\AE.titling ] <anchor 394 513> mark @std_above_anchor;
+  pos base [\Thorn.titling ] <anchor 257 564> mark @std_above_anchor  ;
+} MarkAbove;
+
+lookup MarkBelow {
+  lookupflag 0;
+  markClass [\uni0328 \ogonek.alt \dotbelowcomb \uni0327 ] <anchor 0 -49> @std_below_anchor;
+  pos base [\a ] <anchor 147 -49> mark @std_below_anchor ;
+  pos base [\b ] <anchor 160 -49> mark @std_below_anchor ;
+  pos base [\c \y ] <anchor 134 -49> mark @std_below_anchor ;
+  pos base [\g ] <anchor 141 -408> mark @std_below_anchor ;
+  pos base [\d \A.alt ] <anchor 211 -49> mark @std_below_anchor ;
+  pos base [\e \a.alt01 ] <anchor 146 -49> mark @std_below_anchor ;
+  pos base [\f ] <anchor 176 -78> mark @std_below_anchor ;
+  pos base [\h \thorn ] <anchor 141 -49> mark @std_below_anchor ;
+  pos base [\i ] <anchor 86 -49> mark @std_below_anchor ;
+  pos base [\l \dotlessi.swash ] <anchor 117 -49> mark @std_below_anchor ;
+  pos base [\m ] <anchor 302 -49> mark @std_below_anchor ;
+  pos base [\n \L.titling ] <anchor 193 -49> mark @std_below_anchor ;
+  pos base [\o ] <anchor 163 -49> mark @std_below_anchor ;
+  pos base [\p \uni01BF ] <anchor 227 -49> mark @std_below_anchor ;
+  pos base [\r ] <anchor 133 -49> mark @std_below_anchor ;
+  pos base [\q ] <anchor 166 -49> mark @std_below_anchor ;
+  pos base [\t \z ] <anchor 165 -49> mark @std_below_anchor ;
+  pos base [\u \O.titling \u.alt ] <anchor 202 -49> mark @std_below_anchor ;
+  pos base [\x ] <anchor 198 -49> mark @std_below_anchor ;
+  pos base [\longs ] <anchor 130 -49> mark @std_below_anchor ;
+  pos base [\ampersand ] <anchor 186 -49> mark @std_below_anchor;
+  pos base [\v ] <anchor 202 -49> mark @std_below_anchor ;
+  pos base [\k ] <anchor 163 -49> mark @std_below_anchor ;
+  pos base [\w ] <anchor 331 -49> mark @std_below_anchor ;
+  pos base [\s ] <anchor 138 -49> mark @std_below_anchor ;
+  pos base [\dotlessi ] <anchor 82 -49> mark @std_below_anchor  ;
+  pos base [\A ] <anchor 217 -49> mark @std_below_anchor ;
+  pos base [\E ] <anchor 287 -49> mark @std_below_anchor;
+  pos base [\U ] <anchor 322 -49> mark @std_below_anchor;
+  pos base [\D \Eth ] <anchor 303 -49> mark @std_below_anchor;
+  pos base [\C ] <anchor 280 -49> mark @std_below_anchor ;
+  pos base [\I ] <anchor 114 -49> mark @std_below_anchor;
+  pos base [\Q ] <anchor 321 -49> mark @std_below_anchor;
+  pos base [\N ] <anchor 354 -49> mark @std_below_anchor;
+  pos base [\X \N.titling ] <anchor 343 -49> mark @std_below_anchor;
+  pos base [\T ] <anchor 294 -49> mark @std_below_anchor;
+  pos base [\S ] <anchor 221 -49> mark @std_below_anchor;
+  pos base [\R ] <anchor 268 -49> mark @std_below_anchor;
+  pos base [\uniA751 ] <anchor 232 -290> mark @std_below_anchor ;
+  pos base [\a.sc \ae.sc ] <anchor 207 -49> mark @std_below_anchor  ;
+  pos base [\b.sc ] <anchor 159 -49> mark @std_below_anchor ;
+  pos base [\c.sc ] <anchor 177 -49> mark @std_below_anchor  ;
+  pos base [\d.sc \eth.sc ] <anchor 156 -49> mark @std_below_anchor ;
+  pos base [\e.sc ] <anchor 132 -50> mark @std_below_anchor ;
+  pos base [\f.sc ] <anchor 106 -49> mark @std_below_anchor ;
+  pos base [\g.sc ] <anchor 165 -49> mark @std_below_anchor ;
+  pos base [\h.sc \Q.titling ] <anchor 192 -49> mark @std_below_anchor ;
+  pos base [\i.sc ] <anchor 82 -49> mark @std_below_anchor ;
+  pos base [\j.sc ] <anchor 114 -96> mark @std_below_anchor  ;
+  pos base [\k.sc ] <anchor 180 -49> mark @std_below_anchor ;
+  pos base [\l.sc ] <anchor 117 -49> mark @std_below_anchor ;
+  pos base [\m.sc \U.titling ] <anchor 270 -49> mark @std_below_anchor ;
+  pos base [\n.sc ] <anchor 151 -49> mark @std_below_anchor ;
+  pos base [\o.sc ] <anchor 185 -49> mark @std_below_anchor ;
+  pos base [\p.sc \thorn.sc ] <anchor 218 -49> mark @std_below_anchor ;
+  pos base [\q.sc ] <anchor 56 -49> mark @std_below_anchor ;
+  pos base [\r.sc ] <anchor 163 -49> mark @std_below_anchor ;
+  pos base [\s.sc ] <anchor 105 -49> mark @std_below_anchor ;
+  pos base [\t.sc ] <anchor 179 -49> mark @std_below_anchor ;
+  pos base [\u.sc ] <anchor 193 -49> mark @std_below_anchor ;
+  pos base [\v.sc ] <anchor 229 -49> mark @std_below_anchor ;
+  pos base [\w.sc ] <anchor 314 -49> mark @std_below_anchor ;
+  pos base [\x.sc ] <anchor 251 -49> mark @std_below_anchor ;
+  pos base [\y.sc ] <anchor 260 -49> mark @std_below_anchor ;
+  pos base [\z.sc ] <anchor 175 -49> mark @std_below_anchor ;
+  pos base [\j ] <anchor 79 -291> mark @std_below_anchor ;
+  pos base [\g.alt1 ] <anchor 183 -409> mark @std_below_anchor  ;
+  pos base [\g.alt2 ] <anchor 185 -418> mark @std_below_anchor  ;
+  pos base [\uni1E8F.sc \P.titling ] <anchor 289 -49> mark @std_below_anchor ;
+  pos base [\uniA753 \F.titling ] <anchor 262 -49> mark @std_below_anchor ;
+  pos base [\e.alt01 ] <anchor 123 -49> mark @std_below_anchor ;
+  pos base [\M ] <anchor 372 -49> mark @std_below_anchor;
+  pos base [\O ] <anchor 315 -49> mark @std_below_anchor;
+  pos base [\B ] <anchor 202 -49> mark @std_below_anchor ;
+  pos base [\F \F.swash ] <anchor 255 -98> mark @std_below_anchor;
+  pos base [\G ] <anchor 300 -49> mark @std_below_anchor;
+  pos base [\H \Thorn ] <anchor 227 -49> mark @std_below_anchor;
+  pos base [\J ] <anchor 138 -98> mark @std_below_anchor;
+  pos base [\K \H.alt ] <anchor 242 -49> mark @std_below_anchor;
+  pos base [\L ] <anchor 199 -49> mark @std_below_anchor;
+  pos base [\P ] <anchor 246 -49> mark @std_below_anchor;
+  pos base [\V ] <anchor 264 -49> mark @std_below_anchor;
+  pos base [\W ] <anchor 371 -49> mark @std_below_anchor;
+  pos base [\Y ] <anchor 352 -49> mark @std_below_anchor;
+  pos base [\Z ] <anchor 346 -49> mark @std_below_anchor ;
+  pos base [\f.alt1 \f.alt3 ] <anchor 154 -73> mark @std_below_anchor ;
+  pos base [\uniA75D ] <anchor 391 -49> mark @std_below_anchor;
+  pos base [\uniA779 ] <anchor 302 562> mark @std_below_anchor ;
+  pos base [\uniA787 ] <anchor 157 -49> mark @std_below_anchor  ;
+  pos base [\w.alt ] <anchor 420 -49> mark @std_below_anchor  ;
+  pos base [\c.alt ] <anchor 142 -49> mark @std_below_anchor ;
+  pos base [\A.titling1 ] <anchor 259 -49> mark @std_below_anchor  ;
+  pos base [\M.alt ] <anchor 455 -49> mark @std_below_anchor  ;
+  pos base [\A.titling ] <anchor 261 -49> mark @std_below_anchor  ;
+  pos base [\B.titling ] <anchor 223 -49> mark @std_below_anchor  ;
+  pos base [\C.titling ] <anchor 245 -49> mark @std_below_anchor  ;
+  pos base [\D.titling \Eth.titling ] <anchor 258 -49> mark @std_below_anchor  ;
+  pos base [\E.titling ] <anchor 272 -49> mark @std_below_anchor  ;
+  pos base [\G.titling \T.titling ] <anchor 256 -49> mark @std_below_anchor  ;
+  pos base [\H.titling ] <anchor 250 -49> mark @std_below_anchor  ;
+  pos base [\I.titling ] <anchor 127 -49> mark @std_below_anchor  ;
+  pos base [\J.titling ] <anchor 164 -73> mark @std_below_anchor  ;
+  pos base [\K.titling ] <anchor 215 -49> mark @std_below_anchor  ;
+  pos base [\M.titling ] <anchor 374 -49> mark @std_below_anchor  ;
+  pos base [\R.titling ] <anchor 267 -49> mark @std_below_anchor  ;
+  pos base [\S.titling \uniEEE2 ] <anchor 196 -49> mark @std_below_anchor  ;
+  pos base [\V.titling ] <anchor 306 -49> mark @std_below_anchor  ;
+  pos base [\W.titling ] <anchor 337 -49> mark @std_below_anchor  ;
+  pos base [\X.titling ] <anchor 356 -49> mark @std_below_anchor  ;
+  pos base [\Y.titling ] <anchor 328 -49> mark @std_below_anchor  ;
+  pos base [\Z.titling ] <anchor 329 -49> mark @std_below_anchor  ;
+  pos base [\N.titling1 ] <anchor 292 -49> mark @std_below_anchor  ;
+  pos base [\E.titling1 ] <anchor 271 -49> mark @std_below_anchor  ;
+  pos base [\uni0237 ] <anchor 79 -291> mark @std_below_anchor ;
+  pos base [\Q.alt ] <anchor 246 -49> mark @std_below_anchor ;
+  pos base [\n.alt1 ] <anchor 196 -49> mark @std_below_anchor ;
+  pos base [\m.alt ] <anchor 298 -49> mark @std_below_anchor ;
+  pos base [\j.alt ] <anchor 94 -291> mark @std_below_anchor ;
+  pos base [\r.alt ] <anchor 144 -49> mark @std_below_anchor ;
+  pos base [\p.alt ] <anchor 220 -49> mark @std_below_anchor ;
+  pos base [\f.alt2 ] <anchor 167 -73> mark @std_below_anchor ;
+  pos base [\W.medieval1 ] <anchor 521 -49> mark @std_below_anchor ;
+  pos base [\W.medieval2 ] <anchor 686 -49> mark @std_below_anchor ;
+  pos base [\W.titling1 ] <anchor 572 -49> mark @std_below_anchor ;
+  pos base [\W.titling2 ] <anchor 574 -49> mark @std_below_anchor ;
+  pos base [\a.alt02 ] <anchor 146 -49> mark @std_below_anchor ;
+  pos base [\n.swash ] <anchor 458 -49> mark @std_below_anchor ;
+  pos base [\dotlessi.alt ] <anchor 85 -49> mark @std_below_anchor ;
+  pos base [\i.alt ] <anchor 85 -49> mark @std_below_anchor ;
+  pos base [\uni1E8F.alt ] <anchor 174 -104> mark @std_below_anchor ;
+  pos base [\D.titling1 ] <anchor 278 -49> mark @std_below_anchor  ;
+  pos base [\t.alt \t.alt2 ] <anchor 176 -49> mark @std_below_anchor ;
+  pos base [\uniEEE0 \a.enlarged ] <anchor 189 -49> mark @std_below_anchor;
+  pos base [\uniEEE7 \f.enlarged ] <anchor 210 -49> mark @std_below_anchor;
+  pos base [\uniEEF1 \p.enlarged ] <anchor 271 -49> mark @std_below_anchor ;
+  pos base [\uniA75B ] <anchor 76 -49> mark @std_below_anchor  ;
+  pos base [\e.alt02 \a.swash ] <anchor 146 -49> mark @std_below_anchor ;
+  pos base [\t.swash ] <anchor 178 -49> mark @std_below_anchor  ;
+  pos base [\e.alt03 ] <anchor 146 -49> mark @std_below_anchor ;
+  pos base [\y.alt ] <anchor 212 -49> mark @std_below_anchor ;
+  pos base [\l.sc2 ] <anchor 145 -49> mark @std_below_anchor ;
+  pos base [\s.sc2 ] <anchor 123 -49> mark @std_below_anchor ;
+  pos base [\M.swash ] <anchor 415 -205> mark @std_below_anchor ;
+  pos base [\e.alt04 ] <anchor 163 -49> mark @std_below_anchor ;
+  pos base [\n.alt2 ] <anchor 324 -49> mark @std_below_anchor ;
+  pos base [\Y.alt ] <anchor 412 -49> mark @std_below_anchor  ;
+  pos base [\uni1E8E.alt ] <anchor 410 -49> mark @std_below_anchor ;
+  pos base [\G.alt1 ] <anchor 469 -249> mark @std_below_anchor ;
+  pos base [\uniEEE4 \d.enlarged ] <anchor 364 -49> mark @std_below_anchor ;
+  pos base [\G.alt2 ] <anchor 180 -49> mark @std_below_anchor ;
+  pos base [\B.medium ] <anchor 236 -49> mark @std_below_anchor  ;
+  pos base [\D.medium ] <anchor 224 -73> mark @std_below_anchor ;
+  pos base [\E.medium ] <anchor 153 -49> mark @std_below_anchor  ;
+  pos base [\G.medium ] <anchor 257 -49> mark @std_below_anchor  ;
+  pos base [\H.medium ] <anchor 225 -49> mark @std_below_anchor  ;
+  pos base [\I.medium ] <anchor 104 -49> mark @std_below_anchor  ;
+  pos base [\M.medium ] <anchor 343 -49> mark @std_below_anchor ;
+  pos base [\O.medium ] <anchor 248 -49> mark @std_below_anchor  ;
+  pos base [\Q.medium ] <anchor 136 -49> mark @std_below_anchor  ;
+  pos base [\S.medium ] <anchor 143 -49> mark @std_below_anchor  ;
+  pos base [\T.medium ] <anchor 283 -49> mark @std_below_anchor  ;
+  pos base [\c.enlarged ] <anchor 202 -61> mark @std_below_anchor  ;
+  pos base [\AE ] <anchor 325 -49> mark @std_below_anchor  ;
+  pos base [\eth ] <anchor 156 -49> mark @std_below_anchor ;
+  pos base [\ae ] <anchor 200 -49> mark @std_below_anchor  ;
+  pos base [\ae.alt ] <anchor 190 -49> mark @std_below_anchor  ;
+  pos base [\eth.alt ] <anchor 156 -49> mark @std_below_anchor ;
+  pos base [\AE.titling ] <anchor 369 -49> mark @std_below_anchor  ;
+  pos base [\Thorn.titling ] <anchor 315 -88> mark @std_below_anchor;
+} MarkBelow;
+
+lookup MarkUSAbbrev {
+  lookupflag 0;
+  markClass [\uni1DD2 ] <anchor -234 439> @us_anchor;
+  pos base [\a ] <anchor 245 439> mark @us_anchor  ;
+  pos base [\b ] <anchor 326 439> mark @us_anchor  ;
+  pos base [\c \y ] <anchor 287 439> mark @us_anchor  ;
+  pos base [\g ] <anchor 354 439> mark @us_anchor  ;
+  pos base [\d \A.alt ] <anchor 486 439> mark @us_anchor  ;
+  pos base [\e \a.alt01 ] <anchor 257 439> mark @us_anchor  ;
+  pos base [\f ] <anchor 440 439> mark @us_anchor  ;
+  pos base [\h \thorn ] <anchor 317 439> mark @us_anchor  ;
+  pos base [\i ] <anchor 177 566> mark @us_anchor  ;
+  pos base [\l \dotlessi.swash ] <anchor 255 439> mark @us_anchor  ;
+  pos base [\m ] <anchor 525 439> mark @us_anchor  ;
+  pos base [\n \L.titling ] <anchor 307 439> mark @us_anchor  ;
+  pos base [\o ] <anchor 267 439> mark @us_anchor  ;
+  pos base [\p \uni01BF ] <anchor 351 439> mark @us_anchor  ;
+  pos base [\r ] <anchor 221 439> mark @us_anchor  ;
+  pos base [\q ] <anchor 330 439> mark @us_anchor  ;
+  pos base [\t \z ] <anchor 291 439> mark @us_anchor  ;
+  pos base [\u \O.titling \u.alt ] <anchor 344 439> mark @us_anchor  ;
+  pos base [\x ] <anchor 308 439> mark @us_anchor  ;
+  pos base [\longs ] <anchor 419 439> mark @us_anchor;
+  pos base [\ampersand ] <anchor 395 485> mark @us_anchor ;
+  pos base [\v ] <anchor 303 439> mark @us_anchor  ;
+  pos base [\k ] <anchor 292 439> mark @us_anchor  ;
+  pos base [\w ] <anchor 555 439> mark @us_anchor  ;
+  pos base [\eogonek ] <anchor 257 439> mark @us_anchor ;
+  pos base [\s ] <anchor 206 439> mark @us_anchor  ;
+  pos base [\dotlessi ] <anchor 82 439> mark @us_anchor ;
+  pos base [\A ] <anchor 354 586> mark @us_anchor  ;
+  pos base [\E ] <anchor 463 586> mark @us_anchor  ;
+  pos base [\U ] <anchor 485 586> mark @us_anchor  ;
+  pos base [\D \Eth ] <anchor 521 586> mark @us_anchor  ;
+  pos base [\C ] <anchor 443 586> mark @us_anchor  ;
+  pos base [\I ] <anchor 97 586> mark @us_anchor  ;
+  pos base [\Q ] <anchor 498 586> mark @us_anchor  ;
+  pos base [\N ] <anchor 546 586> mark @us_anchor  ;
+  pos base [\X \N.titling ] <anchor 482 586> mark @us_anchor  ;
+  pos base [\T ] <anchor 401 586> mark @us_anchor  ;
+  pos base [\S ] <anchor 300 586> mark @us_anchor  ;
+  pos base [\R ] <anchor 320 586> mark @us_anchor  ;
+  pos base [\uniA751 ] <anchor 360 439> mark @us_anchor;
+  pos base [\a.sc \ae.sc ] <anchor 264 483> mark @us_anchor;
+  pos base [\b.sc ] <anchor 211 483> mark @us_anchor;
+  pos base [\c.sc ] <anchor 294 483> mark @us_anchor;
+  pos base [\d.sc \eth.sc ] <anchor 269 483> mark @us_anchor;
+  pos base [\e.sc ] <anchor 224 483> mark @us_anchor;
+  pos base [\f.sc ] <anchor 456 578> mark @us_anchor;
+  pos base [\g.sc ] <anchor 273 483> mark @us_anchor;
+  pos base [\h.sc \Q.titling ] <anchor 288 483> mark @us_anchor;
+  pos base [\i.sc ] <anchor 100 483> mark @us_anchor;
+  pos base [\j.sc ] <anchor 104 483> mark @us_anchor;
+  pos base [\k.sc ] <anchor 245 483> mark @us_anchor;
+  pos base [\l.sc ] <anchor 199 483> mark @us_anchor;
+  pos base [\m.sc \U.titling ] <anchor 419 483> mark @us_anchor;
+  pos base [\n.sc ] <anchor 311 483> mark @us_anchor;
+  pos base [\o.sc ] <anchor 296 483> mark @us_anchor;
+  pos base [\p.sc \thorn.sc ] <anchor 281 483> mark @us_anchor;
+  pos base [\q.sc ] <anchor 265 483> mark @us_anchor;
+  pos base [\r.sc ] <anchor 255 483> mark @us_anchor;
+  pos base [\s.sc ] <anchor 278 483> mark @us_anchor;
+  pos base [\t.sc ] <anchor 245 483> mark @us_anchor;
+  pos base [\u.sc ] <anchor 339 483> mark @us_anchor;
+  pos base [\v.sc ] <anchor 372 483> mark @us_anchor;
+  pos base [\w.sc ] <anchor 538 483> mark @us_anchor;
+  pos base [\x.sc ] <anchor 403 483> mark @us_anchor;
+  pos base [\y.sc ] <anchor 328 483> mark @us_anchor;
+  pos base [\z.sc ] <anchor 336 483> mark @us_anchor;
+  pos base [\j ] <anchor 167 595> mark @us_anchor  ;
+  pos base [\g.alt1 ] <anchor 325 439> mark @us_anchor ;
+  pos base [\g.alt2 ] <anchor 309 439> mark @us_anchor ;
+  pos base [\uni1E8F.sc \P.titling ] <anchor 420 483> mark @us_anchor;
+  pos base [\uniA753 \F.titling ] <anchor 338 439> mark @us_anchor;
+  pos base [\e.alt01 ] <anchor 214 439> mark @us_anchor  ;
+  pos base [\M ] <anchor 582 586> mark @us_anchor  ;
+  pos base [\O ] <anchor 470 586> mark @us_anchor  ;
+  pos base [\B ] <anchor 296 571> mark @us_anchor  ;
+  pos base [\F \F.swash ] <anchor 374 586> mark @us_anchor  ;
+  pos base [\G ] <anchor 457 586> mark @us_anchor  ;
+  pos base [\H \Thorn ] <anchor 334 586> mark @us_anchor  ;
+  pos base [\J ] <anchor 100 586> mark @us_anchor  ;
+  pos base [\K \H.alt ] <anchor 328 586> mark @us_anchor  ;
+  pos base [\L ] <anchor 250 586> mark @us_anchor  ;
+  pos base [\P ] <anchor 350 586> mark @us_anchor  ;
+  pos base [\V ] <anchor 385 586> mark @us_anchor  ;
+  pos base [\W ] <anchor 608 586> mark @us_anchor  ;
+  pos base [\Y ] <anchor 534 586> mark @us_anchor  ;
+  pos base [\Z ] <anchor 508 586> mark @us_anchor;
+  pos base [\f.alt1 \f.alt3 ] <anchor 447 439> mark @us_anchor  ;
+  pos base [\uniA75D ] <anchor 419 439> mark @us_anchor ;
+  pos base [\uniA779 ] <anchor 568 586> mark @us_anchor;
+  pos base [\uniA787 ] <anchor 287 439> mark @us_anchor;
+  pos base [\w.alt ] <anchor 746 439> mark @us_anchor;
+  pos base [\c.alt ] <anchor 240 439> mark @us_anchor  ;
+  pos base [\A.titling1 ] <anchor 376 537> mark @us_anchor ;
+  pos base [\M.alt ] <anchor 845 537> mark @us_anchor ;
+  pos base [\A.titling ] <anchor 425 537> mark @us_anchor ;
+  pos base [\B.titling ] <anchor 337 537> mark @us_anchor ;
+  pos base [\C.titling ] <anchor 403 537> mark @us_anchor ;
+  pos base [\D.titling \Eth.titling ] <anchor 499 537> mark @us_anchor ;
+  pos base [\E.titling ] <anchor 424 537> mark @us_anchor ;
+  pos base [\G.titling \T.titling ] <anchor 418 537> mark @us_anchor ;
+  pos base [\H.titling ] <anchor 406 537> mark @us_anchor ;
+  pos base [\I.titling ] <anchor 185 537> mark @us_anchor ;
+  pos base [\J.titling ] <anchor 159 537> mark @us_anchor ;
+  pos base [\K.titling ] <anchor 374 537> mark @us_anchor ;
+  pos base [\M.titling ] <anchor 603 537> mark @us_anchor ;
+  pos base [\R.titling ] <anchor 378 537> mark @us_anchor ;
+  pos base [\S.titling \uniEEE2 ] <anchor 332 537> mark @us_anchor ;
+  pos base [\V.titling ] <anchor 513 537> mark @us_anchor ;
+  pos base [\W.titling ] <anchor 633 537> mark @us_anchor ;
+  pos base [\X.titling ] <anchor 548 537> mark @us_anchor ;
+  pos base [\Y.titling ] <anchor 510 537> mark @us_anchor ;
+  pos base [\Z.titling ] <anchor 527 536> mark @us_anchor;
+  pos base [\N.titling1 ] <anchor 484 537> mark @us_anchor ;
+  pos base [\E.titling1 ] <anchor 394 537> mark @us_anchor ;
+  pos base [\uni0237 ] <anchor 130 440> mark @us_anchor  ;
+  pos base [\Q.alt ] <anchor 397 586> mark @us_anchor;
+  pos base [\n.alt1 ] <anchor 300 439> mark @us_anchor  ;
+  pos base [\m.alt ] <anchor 499 439> mark @us_anchor  ;
+  pos base [\j.alt ] <anchor 181 439> mark @us_anchor  ;
+  pos base [\r.alt ] <anchor 208 439> mark @us_anchor  ;
+  pos base [\p.alt ] <anchor 327 439> mark @us_anchor  ;
+  pos base [\f.alt2 ] <anchor 431 439> mark @us_anchor  ;
+  pos base [\W.medieval1 ] <anchor 902 586> mark @us_anchor;
+  pos base [\W.medieval2 ] <anchor 1061 586> mark @us_anchor;
+  pos base [\W.titling1 ] <anchor 952 537> mark @us_anchor  ;
+  pos base [\W.titling2 ] <anchor 916 537> mark @us_anchor  ;
+  pos base [\a.alt02 ] <anchor 276 439> mark @us_anchor;
+  pos base [\n.swash ] <anchor 814 439> mark @us_anchor;
+  pos base [\dotlessi.alt ] <anchor 68 439> mark @us_anchor  ;
+  pos base [\i.alt ] <anchor 171 586> mark @us_anchor  ;
+  pos base [\uni1E8F.alt ] <anchor 315 439> mark @us_anchor  ;
+  pos base [\D.titling1 ] <anchor 488 537> mark @us_anchor ;
+  pos base [\t.alt \t.alt2 ] <anchor 250 439> mark @us_anchor  ;
+  pos base [\uniEEE0 \a.enlarged ] <anchor 329 586> mark @us_anchor  ;
+  pos base [\uniEEE7 \f.enlarged ] <anchor 356 658> mark @us_anchor ;
+  pos base [\uniEEF1 \p.enlarged ] <anchor 392 469> mark @us_anchor  ;
+  pos base [\uniA75B ] <anchor 140 439> mark @us_anchor;
+  pos base [\e.alt02 \a.swash ] <anchor 245 439> mark @us_anchor;
+  pos base [\t.swash ] <anchor 260 439> mark @us_anchor;
+  pos base [\e.alt03 ] <anchor 256 439> mark @us_anchor;
+  pos base [\y.alt ] <anchor 323 439> mark @us_anchor  ;
+  pos base [\l.sc2 ] <anchor 211 439> mark @us_anchor;
+  pos base [\s.sc2 ] <anchor 219 439> mark @us_anchor;
+  pos base [\M.swash ] <anchor 612 498> mark @us_anchor;
+  pos base [\e.alt04 ] <anchor 296 439> mark @us_anchor;
+  pos base [\n.alt2 ] <anchor 399 439> mark @us_anchor;
+  pos base [\Y.alt ] <anchor 488 571> mark @us_anchor;
+  pos base [\uni1E8E.alt ] <anchor 495 571> mark @us_anchor;
+  pos base [\G.alt1 ] <anchor 697 654> mark @us_anchor;
+  pos base [\uniEEE4 \d.enlarged ] <anchor 525 513> mark @us_anchor  ;
+  pos base [\G.alt2 ] <anchor 497 586> mark @us_anchor;
+  pos base [\B.medium ] <anchor 379 661> mark @us_anchor ;
+  pos base [\D.medium ] <anchor 372 586> mark @us_anchor;
+  pos base [\E.medium ] <anchor 260 625> mark @us_anchor;
+  pos base [\G.medium ] <anchor 421 634> mark @us_anchor ;
+  pos base [\H.medium ] <anchor 346 627> mark @us_anchor;
+  pos base [\I.medium ] <anchor 94 625> mark @us_anchor ;
+  pos base [\M.medium ] <anchor 507 562> mark @us_anchor;
+  pos base [\O.medium ] <anchor 460 649> mark @us_anchor ;
+  pos base [\Q.medium ] <anchor 387 568> mark @us_anchor ;
+  pos base [\S.medium ] <anchor 314 586> mark @us_anchor;
+  pos base [\T.medium ] <anchor 350 610> mark @us_anchor;
+  pos base [\c.enlarged ] <anchor 332 537> mark @us_anchor;
+  pos base [\AE ] <anchor 513 586> mark @us_anchor;
+  pos base [\eth ] <anchor 356 439> mark @us_anchor  ;
+  pos base [\ae ] <anchor 359 439> mark @us_anchor ;
+  pos base [\ae.alt ] <anchor 380 439> mark @us_anchor ;
+  pos base [\eth.alt ] <anchor 381 439> mark @us_anchor;
+  pos base [\AE.titling ] <anchor 534 537> mark @us_anchor ;
+  pos base [\Thorn.titling ] <anchor 499 537> mark @us_anchor;
+} MarkUSAbbrev;
+
+feature kern {
+  lookup kernHorizontalKerninginLatinloo;
+  lookup kernHorizontalKerningrusticcaps;
+} kern;
+
+feature mark {
+  lookup LigatureMarkus;
+  lookup LigatureMarkbelow;
+  lookup markLigaturemark;
+  lookup MarkAbove;
+  lookup MarkBelow;
+  lookup MarkUSAbbrev;
+} mark;
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+
+@GDEF_Simple = [\a \b \c \g \d \e \f \h \i \l \m \n \o \p \r \q \t \u \x \longs \ampersand \y \v \k 
+	\w \eogonek \s \space \dotlessi \uni1E8F \A \E \U \D \C \I \Q \N \X \T \S \R \period \colon 
+	\uniA751 \a.sc \b.sc \c.sc \d.sc \e.sc \f.sc \g.sc \h.sc \i.sc \j.sc \k.sc \l.sc 
+	\m.sc \n.sc \o.sc \p.sc \q.sc \r.sc \s.sc \t.sc \u.sc \v.sc \w.sc \x.sc \y.sc \z.sc 
+	\umacron \macron \emacron \amacron \imacron \omacron \j \acute \aacute \eacute 
+	\iacute \oacute \uacute \g.alt1 \g.alt2 \uni1E8F.sc \uniA753 \e.alt01 \z \M \O \B \F 
+	\G \H \J \K \L \P \V \W \Y \Z \f.alt1 \bracketleft \backslash \bracketright 
+	\asciicircum \underscore \braceleft \bar \braceright \asciitilde \exclam 
+	\quotedbl \numbersign \dollar \percent \quotesingle \parenleft \parenright 
+	\asterisk \plus \comma \hyphen \slash \zero \one \two \three \four \five \six \seven 
+	\eight \nine \semicolon \less \equal \greater \question \uniA75D \uniA779 
+	\uniA787 \w.alt \i.swash \emdash \endash \afii00208 \figuredash \uni2011 
+	\uni2010 \uniF161 \c.alt \dotlessi.swash \A.titling1 \M.alt \A.titling 
+	\B.titling \C.titling \D.titling \E.titling \F.titling \G.titling \H.titling 
+	\I.titling \J.titling \K.titling \L.titling \M.titling \N.titling \O.titling 
+	\P.titling \Q.titling \R.titling \S.titling \T.titling \U.titling \V.titling 
+	\W.titling \X.titling \Y.titling \Z.titling \N.titling1 \E.titling1 \uni0237 
+	\A.alt \Q.alt \n.alt1 \m.alt \j.alt \r.alt \p.alt \f.alt2 \adieresis \dieresis 
+	\edieresis \idieresis \odieresis \udieresis \germandbls \yacute \ydieresis 
+	\quoteleft \quoteright \quotedblleft \quotedblright \periodcentered \uni0000 
+	\W.medieval1 \W.medieval2 \W.titling1 \W.titling2 \ogonek \u.alt \a.alt02 
+	\n.swash \dotlessi.alt \i.alt \uni1E8F.alt \a.alt01 \xdotbelowcomb \D.titling1 
+	\uni0233 \uniF1EA \t.alt \uniEEE0 \uniEEE2 \uniEEE7 \uniEEF1 \divide 
+	\uni223B \Aacute \Adieresis \Oacute \Odieresis \Uacute \Udieresis \Eacute 
+	\Edieresis \Iacute \Idieresis \Ydieresis \uni1E05 \uni1E0D \uni1E25 \uni1E33 
+	\uni1E37 \uni1E43 \uni1E47 \uni1E5B \uni1E63 \uni1E6D \uni1E7F \uni1E89 \uni1E93 
+	\uni1EA1 \uni1EB9 \uni1ECB \uni1ECD \uni1EE5 \uni1EF5 \uni00630323 \uni00660323 
+	\uni00670323 \uni006A0323 \uni00700323 \uni00710323 \uniA770 \uniA75B \e.alt02 
+	\t.swash \e.alt03 \y.alt \dotaccent \uniF160 \l.sc2 \s.sc2 \M.swash \uni019A.sc 
+	\e.alt04 \H.alt \Xdotbelowcomb \n.alt2 \Y.alt \uni1E8E.alt \emdash.titling 
+	\endash.titling \hyphen.titling \at \grave \G.alt1 \uniEEE4 \a.swash \G.alt2 
+	\uniF1E1 \uni0232 \Amacron \Emacron \Imacron \Omacron \Umacron \uni004503280304 
+	\uni006503280304 \Eogonek \Yacute \F.swash \Agrave \Acircumflex \Atilde \agrave 
+	\egrave \igrave \ograve \ugrave \Egrave \Igrave \Ograve \Ugrave \circumflex 
+	\Ecircumflex \Icircumflex \Ocircumflex \Ucircumflex \acircumflex \ecircumflex 
+	\icircumflex \ocircumflex \ucircumflex \oslash \Oslash \atilde \tilde \otilde 
+	\ntilde \Ntilde \Otilde \cedilla \Ccedilla \ccedilla \aring \Aring \B.medium 
+	\D.medium \E.medium \G.medium \H.medium \I.medium \M.medium \O.medium \Q.medium 
+	\S.medium \T.medium \uni1E04 \uni1E0C \uni1E24 \uni1E32 \uni1E36 \uni1E42 
+	\uni1E46 \uni1E5A \uni1E6C \uni1E7E \uni1E88 \uni1E62 \uni1E92 \uni1EE4 \uni1EF4 
+	\uni1ECA \uni1ECC \uni1EA0 \uni1EB8 \uni1E8E \uni00460323 \uni00430323 
+	\uni00470323 \uni004A0323 \uni00500323 \uni00510323 \uniA75B0323 \uni017F0323 
+	\e.swash \copyright \a.enlarged \c.enlarged \d.enlarged \f.enlarged 
+	\p.enlarged \AE \Eth \eth \thorn \uni01BF \ae \ae.alt \eth.alt \uni01E3 \aeacute 
+	\uni01E2 \AEacute \AE.titling \Eth.titling \Thorn \Thorn.titling \afii301 
+	\afii61664 \uni0337 \uni0338 \eth.sc \ae.sc \thorn.sc \f.alt3 \t.alt2
+	\uni000D \uni2000 \uni2001 \uni2002 \uni2003 \uni2004 \uni2005 \uni2006 \uni2007 \uni2008 \uni2009 \uni200A \uni200B];
+@GDEF_Ligature = [\uniFB02 \uniFB01 \uniFB05 \f_a \r_a \longs_t_dotlessi \r_t_u 
+	\r_t \longs_i \e_n \e_t_u \e_a \e_t \c_t \dcroat \e_x \t_u \f_u \e_r_i \e_r_dotlessi 
+	\r_m \e_r_n \e_u \e_longs_i \e_longs \t_dotlessi \r_n \e_m \e_r_a.alt \e_o \g_o 
+	\f_o \t_i \longs_t_i \e_r \f_i.alt \f_l.alt \f_o.alt \f_a.alt \f_u.alt \e_t.alt 
+	\e_p \f_t \f_r \e_t_i \uni019A \e_longs_longs_i \longs_longs_i \e_longs_longs 
+	\longs_longs \e_longs_t \g_a \e_r_r_a \r_r_a \o_uniA75B \e_r_a \e_t_dotlessi 
+	\E_T \n_t \e_i \e_dotlessi \e_e \f_f_u \uniFB00 \uniFB03 \uniFB04 \f_f.alt \f_f_a 
+	\e_t_t \t_t \e_j \uni019A_uni019A \r_a.alt \r_t_y \r_t_uni1E8F \g_y \ae_t \ae_i 
+	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs \ae_longs_longs 
+	\ae_longs_longs_i \ae_longs_t \ae_longs_i \ae_r_a \ae_t_t \f_j \e_t.alt2 \f_j.alt ];
+@GDEF_Mark = [\uni0328 \macron.titling \ogonek.alt \acutecomb \uni0304 \uni0308 
+	\uni035B \uni1DD2 \uni1DE3 \uni0365 \dotbelowcomb \uni0307 \macron.sc 
+	\uni0304.alt \uni1DE3.alt \uni0366 \gravecomb \uni0302 \tildecomb \uni0327 ];
+
+table GDEF {
+  GlyphClassDef @GDEF_Simple, @GDEF_Ligature, @GDEF_Mark, ;
+
+  LigatureCaretByPos \uniFB02 282;
+  LigatureCaretByPos \uniFB01 259;
+  LigatureCaretByPos \uniFB05 227;
+  LigatureCaretByPos \f_a 233;
+  LigatureCaretByPos \r_a 262;
+  LigatureCaretByPos \longs_t_dotlessi 257 499;
+  LigatureCaretByPos \r_t_u 238 504;
+  LigatureCaretByPos \r_t 237;
+  LigatureCaretByPos \longs_i 202;
+  LigatureCaretByPos \e_n 331;
+  LigatureCaretByPos \e_t_u 305 584;
+  LigatureCaretByPos \e_a 302;
+  LigatureCaretByPos \e_t 297;
+  LigatureCaretByPos \c_t 283;
+  LigatureCaretByPos \e_x 332;
+  LigatureCaretByPos \t_u 293;
+  LigatureCaretByPos \f_u 287;
+  LigatureCaretByPos \e_r_i 305 543;
+  LigatureCaretByPos \e_r_dotlessi 302 554;
+  LigatureCaretByPos \r_m 327;
+  LigatureCaretByPos \e_r_n 300 571;
+  LigatureCaretByPos \e_u 300;
+  LigatureCaretByPos \e_longs_i 334 479;
+  LigatureCaretByPos \e_longs 326;
+  LigatureCaretByPos \t_dotlessi 297;
+  LigatureCaretByPos \r_n 297;
+  LigatureCaretByPos \e_m 338;
+  LigatureCaretByPos \e_r_a.alt 330 543;
+  LigatureCaretByPos \e_o 273;
+  LigatureCaretByPos \g_o 387;
+  LigatureCaretByPos \f_o 245;
+  LigatureCaretByPos \t_i 299;
+  LigatureCaretByPos \longs_t_i 259 507;
+  LigatureCaretByPos \e_r 290;
+  LigatureCaretByPos \f_i.alt 248;
+  LigatureCaretByPos \f_l.alt 249;
+  LigatureCaretByPos \f_o.alt 227;
+  LigatureCaretByPos \f_a.alt 186;
+  LigatureCaretByPos \f_u.alt 248;
+  LigatureCaretByPos \e_p 292;
+  LigatureCaretByPos \f_t 234;
+  LigatureCaretByPos \f_r 246;
+  LigatureCaretByPos \e_longs_longs_i 306 501 727;
+  LigatureCaretByPos \longs_longs_i 193 414;
+  LigatureCaretByPos \e_longs_longs 315 529;
+  LigatureCaretByPos \longs_longs 221;
+  LigatureCaretByPos \e_longs_t 279 489;
+  LigatureCaretByPos \g_a 397;
+  LigatureCaretByPos \e_r_r_a 308 523 721;
+  LigatureCaretByPos \r_r_a 231 438;
+  LigatureCaretByPos \o_uniA75B 331;
+  LigatureCaretByPos \e_r_a 300 502;
+  LigatureCaretByPos \E_T 297;
+  LigatureCaretByPos \n_t 237;
+  LigatureCaretByPos \e_i 299;
+  LigatureCaretByPos \e_dotlessi 313;
+  LigatureCaretByPos \e_e 309;
+  LigatureCaretByPos \f_f_u 271 502;
+  LigatureCaretByPos \uniFB00 267;
+  LigatureCaretByPos \uniFB03 267 485;
+  LigatureCaretByPos \uniFB04 252 508;
+  LigatureCaretByPos \f_f.alt 251;
+  LigatureCaretByPos \f_f_a 261 428;
+  LigatureCaretByPos \e_t_t 302 583;
+  LigatureCaretByPos \t_t 326;
+  LigatureCaretByPos \e_j 294;
+  LigatureCaretByPos \uni019A_uni019A 225;
+  LigatureCaretByPos \r_a.alt 217;
+  LigatureCaretByPos \r_t_y 267 519;
+  LigatureCaretByPos \r_t_uni1E8F 272 526;
+  LigatureCaretByPos \ae_t 454;
+  LigatureCaretByPos \ae_i 462;
+  LigatureCaretByPos \ae_dotlessi 474;
+  LigatureCaretByPos \ae_n 469;
+  LigatureCaretByPos \ae_m 480;
+  LigatureCaretByPos \ae_r 470;
+  LigatureCaretByPos \ae_p 466;
+  LigatureCaretByPos \ae_uni01BF 467;
+  LigatureCaretByPos \ae_longs 463;
+  LigatureCaretByPos \ae_longs_longs 456 650;
+  LigatureCaretByPos \ae_longs_longs_i 449 662 866;
+  LigatureCaretByPos \ae_longs_t 435 647;
+  LigatureCaretByPos \ae_longs_i 453 639;
+  LigatureCaretByPos \ae_r_a 457 701;
+  LigatureCaretByPos \ae_t_t 454 739;
+  LigatureCaretByPos \e_t.alt2 301;
+  LigatureCaretByPos \e_t.alt 301;
+  LigatureCaretByPos \e_t_i 319 590;
+  LigatureCaretByPos \e_t_dotlessi 319 590;
+  LigatureCaretByPos \g_y 444;
+  LigatureCaretByPos \f_j 268;
+  LigatureCaretByPos \f_j.alt 268;
+} GDEF;
+
