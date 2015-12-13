@@ -1,0 +1,41 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    exit
+fi
+FontBaseName=$1
+fontforge -script gen.script $FontBaseName.sfd
+if [ $? -ne 0 ]; then
+    echo "fontforge error"
+    exit
+fi
+sfntedit -d kern $FontBaseName.otf
+if [ $? -ne 0 ]; then
+    echo "sfntedit error"
+    exit
+fi
+tx -t1 -e -1 -f $FontBaseName.otf > $FontBaseName.pfa
+if [ $? -ne 0 ]; then
+    echo "tx error"
+    exit
+fi
+h="-hinted"
+autohint -q -log po.log -o $FontBaseName$h.pfa $FontBaseName.pfa
+if [ $? -ne 0 ]; then
+    echo "autohint error"
+    exit
+fi
+n=NameDB
+if [ -n "$2" ]; then
+  NameFile=$2$n
+else
+  NameFile=$FontBaseName$n
+fi
+g=GlyphDB
+FeatureFile=$FontBaseName.fea
+GlyphFile=$FontBaseName$g
+makeotf -fi fontinfo -f $FontBaseName$h.pfa -o $FontBaseName.otf\
+    -ff $FeatureFile -mf $NameFile -gf $GlyphFile -ga
+if [ $? -ne 0 ]; then
+    echo "makeotf error"
+fi
+rm $FontBaseName.pfa $FontBaseName$h.pfa
