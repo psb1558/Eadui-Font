@@ -1,0 +1,361 @@
+%&program=xelatex
+%&encoding=UTF-8 Unicode
+\ifdefined\suppressfontnotfounderror
+  \expandafter\let\csname xetex_suppressfontnotfounderror:D\endcsname
+    \suppressfontnotfounderror
+\else
+  \expandafter\let\csname xetex_suppressfontnotfounderror:D\endcsname
+    \luatexsuppressfontnotfounderror
+\fi
+\documentclass[11pt,letterpaper,twoside,openany]{book}
+\usepackage[twoside,text={3.8in,502pt},headheight=12pt,headsep=12pt]{geometry}
+\usepackage{xltxtra}
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\usepackage[first=0, last=10, seed=240]{lcg}
+\usepackage{color}
+\definecolor{stdText}{rgb}{0.289,0.218,0.172}
+\definecolor{myRed}{rgb}{0.5,0,0}
+\definecolor{myBlue}{rgb}{0,0,0.5}
+\definecolor{bkRed}{rgb}{0.905,0.281,0.289}
+\definecolor{bkBlue}{rgb}{0.430,0.465,0.688}
+\definecolor{bkGreen}{rgb}{0.234,0.445,0.352}
+\definecolor{bkGold}{rgb}{0.715,0.520,0.25}
+\definecolor{bkMedium}{rgb}{0.312,0.309,0.289}
+\definecolor{bkDark}{rgb}{0.195,0.156,0.117}
+\definecolor{bkBrown}{rgb}{0.637,0.480,0.398}
+\definecolor{bkLtBrown}{rgb}{0.664,0.390,0.352}
+\definecolor{bkText}{rgb}{0.371,0.320,0.285}
+\definecolor{bkPink}{rgb}{0.604,0.320,0.262}
+\definecolor{stdText}{rgb}{0.289,0.218,0.172}
+\definecolor{bkOrange}{rgb}{0.809,0.343,0.219}
+\definecolor{veryDarkBlue}{rgb}{0.097,0.101,0.109}
+\definecolor{GalbaDarkBlue}{rgb}{0.156,0.172,0.258}
+\definecolor{GalbaLightBlue}{rgb}{0.310,0.382,0.496}
+\definecolor{GalbaRed}{rgb}{0.625,0.203,0.090}
+\definecolor{GalbaBrightRed}{rgb}{0.645,0.191,0.063}
+\definecolor{VespGreen}{rgb}{0.418,0.461,0.246}
+\definecolor{VespRed}{rgb}{0.480,0.113,0.082}
+\definecolor{VespTan}{rgb}{0.640,0.363,0.156}
+\definecolor{VespGold}{rgb}{0.796,0.621,0.309}
+\definecolor{VespBrown}{rgb}{0.414,0.297,0.250}
+\definecolor{ForestGreen}{rgb}{0.133,0.445,0.133}
+\newcommand{\myColor}[1]{%
+  \ifcase#1%\relax
+    bkRed%
+  \or
+    GalbaRed%
+  \or
+    bkGreen%
+  \or
+    VespBrown%
+  \or
+    bkBlue%
+  \or
+    VespGreen%
+  \or
+    VespRed%
+  \or
+    VespTan%
+  \or
+    ForestGreen%
+  \or
+    bkPink%
+  \else
+    GalbaLightBlue%
+  \fi
+}
+\newcommand{\randomColor}{\rand\color{\myColor{\therand}}}
+\usepackage{wallpaper}
+\newICUfeature{NarrowT}{on}{+ss03}
+%
+% Some mnemonics to help select Eadui's features.
+\newICUfeature{SentenceCaps}{on}{+ss11}
+\newICUfeature{Alty}{on}{+ss10}
+\newICUfeature{AltCaps}{on}{+ss12}
+\newICUfeature{AltDiacritics}{on}{+ss13}
+\newICUfeature{LargeMinuscules}{on}{+ss14}
+\newICUfeature{Contextual}{on}{+calt}
+% End of Eadui mnemonics
+%
+% N.B. contextuals (calt) should always be on!
+\defaultfontfeatures{Mapping=tex-text,Contextual=on}
+\setromanfont{Eadui}
+%
+% Some convenient commands for working with Eadui.
+\newcommand{\atc}[1]{{\fontspec[Style=TitlingCaps,AltCaps=on]{Eadui}{#1}}}
+\newcommand{\ac}[1]{{\addfontfeatures{AltCaps=on}{#1}}}
+\newcommand{\salt}[1]{{\addfontfeatures{Alternate=0}{#1}}}
+\newcommand{\saltb}[1]{{\addfontfeatures{Alternate=1}{#1}}}
+\newcommand{\altd}[1]{{\addfontfeatures{AltDiacritics=on}{#1}}}
+\newcommand{\dlig}[1]{{\addfontfeatures{Ligatures=Rare}{#1}}}
+\newcommand{\hlig}[1]{{\addfontfeatures{Ligatures=Historical}{#1}}}
+\newcommand{\scap}[1]{{\addfontfeatures{StylisticSet=11}#1}}
+\newcommand{\swash}[1]{{\addfontfeatures{Style=Swash}{#1}}}
+\newcommand{\hist}[1]{{\addfontfeature{Style=Historic}{#1}}}
+\newcommand{\lmin}[1]{{\addfontfeature{LargeMinuscules=on}{#1}}}
+\newcommand{\eadui}[1]{{\fontspec{Eadui} #1}}
+% End of Eadui commands
+%
+\newcommand{\opentype}{Open\kern-2pt Type}
+\newcommand{\xetex}{X\kern-0.5pt e\kern-2pt Te\kern-1pt X}
+\newcommand{\colorcap}[3][-2pt]{\raisebox{#1}[0pt][0pt]{\huge\randomColor #2}}
+\renewcommand{\DefaultLraise}{0.2}
+\renewcommand{\DefaultLhang}{0.5}
+\renewcommand{\DefaultLoversize}{0.1}
+%\renewcommand{\DefaultFindent}{0.5em}
+\renewcommand{\DefaultNindent}{0em}
+\newenvironment{junicode}{\fontspec[NarrowT=on]{Junicode}\normalsize}{}
+%
+% A "medieval" environment turns on historical forms.
+\newenvironment{medieval}{\fontspec[Style=Historic,Alty=on]{Eadui}}{}
+%
+%
+\newcommand{\filltext}[3]{{\fontspec{EaduiFill}\color{#1}#3}%
+\llap{\fontspec{Eadui}\color{#2}#3}}
+\newcommand{\filltitl}[3]{{\fontspec[Style=TitlingCaps]{EaduiFill}\color{#1}#3}%
+\llap{\fontspec[Style=TitlingCaps]{Eadui}\color{#2}#3}}
+\newcommand{\junb}[1]{{\fontspec{Junicode}\bfseries{#1}}}
+\newcommand{\jun}[1]{{\fontspec{Junicode}{#1}}}
+\newcommand{\editem}[1]{{\fontspec{Junicode}\color{myRed}#1}}
+\frenchspacing
+\linespread{1.04}
+\tolerance=1000
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+
+\begin{document}
+%\TileSquareWallPaper{6}{parch-light.jpg}
+\color{stdText}%\pagecolor{bgColor}
+\Large\lettrine[lines=3,lraise=0,lhang=1]{\randomColor E}{}%
+%{\textcolor{myBlue}{}}
+{\addfontfeatures{Style=TitlingCaps}\randomColor adui is
+  named for a scribe who worked at} Christ Church, Canterbury, in the
+first half of the eleventh century and signed himself
+“\scap{Ead\-uuius cognomento Basan}.”
+\colorcap[-1pt]{T}{bkGreen}his \scap{Eadui Basan}
+was a leading practitioner of the scribal hand known to paleographers
+as style \atc{iv} \scap{E}nglish caroline
+minuscule. \colorcap[-3pt]{L}{myRed}\kern-2pt ike caroline minuscules
+generally, this one is notable for its legibility; and \scap{E}adui's
+work, at its best, possesses a formal beauty that is matched by few
+scribes of his time.
+
+\lettrine[lines=2,lraise=0]{\randomColor U}{\randomColor%
+  {unlike}} most “medieval” fonts, this one aims not so much to convey
+a medieval feeling as to reproduce a great scribe's style with
+fidelity, avoiding the machined look of the digital font in favor of
+the irregular and uneven look of a handmade thing. Lines are rarely straight
+and often a little wavery, serifs
+differ in shape from one glyph to another, letters do not always sit
+cleanly on the baseline, and contextual variants vary some of the most
+common letters.
+
+\lettrine[lines=2,lraise=0]{\randomColor \salt{E}}{\randomColor adui}
+the font (like the scribe)
+  employs a variety of capitals for various purposes. The default
+  capitals in the font are those he used for what are now called
+  “drop caps.” Stylistic Set 11 shifts to the kind of capitals he used
+  to begin sentences. These are often identical with Titling Caps,
+  which are suitable for rubrics, titles, and emphasis.
+
+\newpage
+\noindent Historic mode (hist or ss16):\\[1ex]
+
+\begin{medieval}
+\huge\color{bkMedium}\lettrine[lines=3,lraise=0,lhang=1]{\randomColor B}%
+{}{\scshape\color{bkBrown} eat᷒ uir qͥ non abiit in
+consilio impiorum} \& in uia peccatorum non stetit \& in cathedra
+pestilentiae n̄ \kern-2pt sedi\swash{t}.
+
+\lettrine[lhang=1]{\randomColor S\hspace{3pt}}{}ed in lege dn̄i fuit uoluntas eius
+\& in lege eius meditabitur die ac no\hlig{ct}\swash{e}.
+
+\lettrine[lhang=1]{\randomColor E\hspace{3pt}}{}t erit tanquam lignum quod
+plantatum est secus decursus aquarum quod fru\hlig{ct}um suum dabit in
+tempore suo.
+
+\lettrine[lhang=1]{\addfontfeatures{Ligatures=Rare}\randomColor ET\hspace{3pt}}{}foliū
+ei᷒ \kern-1pt non defluet \& omnia quęcumq: faciet prosperabu\swash{n}tᷣ.
+
+\lettrine[lhang=1]{\randomColor N\hspace{3pt}}{}on sic impi\swash{i} \salt{n}on sic sed
+tanquam pul\-uis quem ꝓicit uent᷒ a facie terr\altd{ę}.
+
+\lettrine[lhang=1,nindent=0.2em]{\randomColor I\hspace{3pt}}{}deo non resurgu\dlig{nt} impii in
+iudicio neq: peccat\hlig{or}es in consilio iustorum.
+
+\lettrine[lhang=1]{\addfontfeatures{AltCaps=on}\randomColor Q\hspace{3pt}}{}\altd{m̄} nouit
+dn̄s uiam iustorum \& it͛ impioꝝ ꝑibi\swash{t}.
+
+\end{medieval}
+
+
+\newpage
+\noindent With historic ligatures:\\[0.25ex]
+
+\begin{medieval}
+\Large\noindent{\randomColor\addfontfeatures{Style=TitlingCaps}%
+  \salt{G}\kern+1.5pt loriosissi\salt{m}o regi C\salt{e}oluulfo Baeda
+  f\salt{a}mul᷒ Christi et presbyter}
+
+\addfontfeatures{Ligatures=Historical}\color{bkDark}
+\lettrine[lines=3,lraise=0]{\randomColor H}{istoriam}
+\addfontfeature{SentenceCaps=on}
+gentis Anglorum ecclesiasticam, quam nuper edi\-deram,
+libentissime tibi desideranti, rex, et prius ad legendum ac probandum
+transmisi, et nunc ad transscribendum ac plenius ex tempore meditandum
+retransmitto; satisque studium tuae sinceritatis amplector, quo non
+solum audiendis scripturae sanctae uerbis aurem sedulus accommodas,
+uerum etiam noscendis priorum gestis siue dictis, et maxime nostrae
+gentis uirorum inlustrium, curam uigilanter impendis. Siue enim
+historia de bonis bona referat, ad imitandum bonum auditor sollicitus
+instigatur; seu mala commemoret de prauis, nihilominus religiosus ac
+pius auditor siue lector deuitando quod noxium est ac peruersum, ipse
+sollertius ad exsequenda ea, quae bona ac Deo digna esse cognouerit,
+accenditur. Quod ipsum tu quoque uigilantissime deprehendens,
+historiam memoratam in notitiam tibi simul et eis, quibus te regendis
+diuina praefecit auctoritas, ob generalis curam salutis latius
+propalari desideras. Vt autem in his quae scripsi ƚ tibi, ƚ
+ceteris auditoribus siue lectoribus huius historiae occasionem
+dubitandi subtraham, quibus haec maxime auctoribus didicerim, breuiter
+intimare curabo.
+\end{medieval}
+
+
+\newpage
+\noindent Rustic capitals (small caps):\\[0.25ex]
+
+\begin{medieval}
+\lettrine[lines=3,lraise=0]{\randomColor B}{\randomColor rittania oceani insula,}\scshape\color{bkText}
+\addfontfeatures{AltCaps=on} \ cui quondā
+\salt{Al}bion nomen fuit, inter septentrionē \kern-2pt \& occidentē locata
+est, Germanię, Gallię, Hispanię, maximis \salt{E}uropę partib᷒, multo
+interuallo aduersa. Quae per miliapas\salt{s}uū .dccc. in Boreā
+longa, latitudinis hab\& milia .cc., exceptis dumtaxat pro\-lixiorib᷒
+diuersorū promontoriorū tractib᷒, quibus efficitᷣ, ut circuit᷒ ei᷒
+quadragies octies .lxxv. milia conpleat. Habet a meridie Galliā
+Belgicā, cui᷒ proximū lit᷒ transmeantib᷒ aperit ciuitas, quae dicitᷣ
+Rutubi port᷒, a gente \salt{A}nglorū nunc corrupte Reptacaestir uocata,
+interposito mari a Ges\salt{s}oriaco Morynorū gentis litore proximo,
+traiectu miliū .l., siue, ut quidā scripsere, stadiorum .ccccl. A
+tergo autem, unde Oceano infinito patet, Orcadas insulas habet. Opima
+frugib᷒ atque arborib᷒ insula, \& alendis apta pecorib᷒ ac
+iumentis; uineas \&iam quibusdā in locis germinans; sed \& auiū
+ferax terra mariq: generis diuersi; fluuiis quoq: multū piscosis ac
+fontib᷒ praeclara copiosis, \& quidē praecipue issicio abundat, \&
+anguilla.
+\end{medieval}
+
+\newpage
+\noindent Modern languages:\\[0.25ex]
+
+\huge\color{bkMedium}%
+\lettrine[lines=3,lraise=0,lhang=0.5,findent=-25pt,nindent=25pt]%
+{\randomColor H}{\randomColor eureux}
+l'homme qui ne marche pas selon le conseil des méchants,
+\colorcap[-1pt]{Q}{bkBluea}ui
+ne s'arrête pas sur la voie des pécheurs,
+\colorcap[-1.5pt]{E}{bkGreen}t qui ne s'assied pas en
+compagnie des moqueurs,
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor M}%
+{\randomColor ais}
+qui trouve son plaisir dans la loi de l'Éternel,
+\colorcap[-1.5pt]{E}{bkPinka}t qui la médite
+jour et nuit!
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor I\kern+5pt}%
+{\randomColor l est}
+comme un arbre planté près d'un cou\-rant d'eau,
+\colorcap[-1pt]{\salt{Q}}{bkOrange}ui donne son
+fruit en sa saison,
+\colorcap[-1.5pt]{E}{bkBlue}t dont le feuillage ne se flétrit point:
+\colorcap{T}{bkGold}out ce
+qu'il fait lui réussit.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor I\kern+5pt}%
+{\randomColor l n'en}
+est pas ainsi des méchants:
+\colorcap[0pt]{I}{bkBlue}\kern+1pt ls sont comme la paille que le
+vent dissipe.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor C}%
+{\randomColor 'est}
+pourquoi les méchants ne résistent pas au jour du jugement,
+\colorcap[-1pt]{N}{bkBluea}i
+les pécheurs dans l'assemblée des justes;
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor C}%
+{\randomColor ar}
+l'Éternel connaît la voie des justes,
+\colorcap[-1.5pt]{E}{bkPink}t la voie des pécheurs mène
+à la ruine.
+
+\newpage
+
+\huge\color{bkMedium}\lettrine[lines=2,lraise=0,lhang=1]%
+{\randomColor\salt{D}}{\textcolor{bkOrange}{er Herr}} ist mein
+\salt{H}irte, mir wird nichts mangeln.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor \salt{E}}%
+{\randomColor r} weidet mich auf einer grünen Aue und
+führet mich zum frischen Wasser.
+
+\lettrine[lines=2,lraise=0,lhang=1]%
+{{\randomColor E}}{\randomColor r}
+erquicket meine Seele. Er führet mich auf rechter Straße um seines
+Namens willen.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor U}%
+{\randomColor nd} ob ich schon wanderte im finstern Tal,
+fürchte ich kein Unglück;
+denn du bist bei mir, dein Stecken und Stab trösten mich.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor D}%
+{\randomColor u} bereitest vor mir einen Tisch im
+\salt{A}n\-ge\-sicht meiner Feinde. \salt{D}u
+salbest mein Haupt mit Öl und schenkest mir voll ein.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\randomColor G}%
+{\randomColor utes} und Barmherzigkeit werden mir folgen
+mein Leben lang, und ich
+werde bleiben im Hause des \salt{H}\atc{errn} immerdar.
+
+\newpage
+
+\noindent\randomColor abcdefghijklmnopqrstuvwxyzæðþ
+
+\noindent\randomColor ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+ÆÐÞ
+
+\noindent\randomColor{\addfontfeatures{Style=TitlingCaps}
+  abcdefghijklmnopqrstuvwxyzæðþ}
+
+\noindent\randomColor\textsc{abcdefghijklmnopqrstuvwxyzæðþ fl fs}
+
+\noindent\randomColor 1234567890 (!@\#\$\%\&*-+=?\,,\,.\,:\,;\,“\,”\,‘\,’)
+
+\noindent\randomColor [£\char"20AC ¢¥§¶•ªº\,\{\,\}\,©®¼½¾¡¿]
+
+\noindent\randomColor đ Œ œ ſ ƚ ƿ ę \altd{ę} \char"F1E1\ \char"F160\ \char"F161\ \char"F1EA
+
+\noindent\randomColor uidet\char"1DE3\ ei\char"1DD2\
+ment\char"035B\ g\char"0365\ n\char"0366\ \char"A751ficere
+\char"A753fug\char"1DD2\ o\char"A75Bdines meo\char"A75D
+
+\noindent\randomColor offer first flat afflict office ſt\&it facit \dlig{ſtıpendıū
+  ET ſunt} \swash{M}ater \hist{gaudeamus furore epistola
+ere\hlig{ct}us exercitus ergo euge forceps \char"A751\swash{n}untia\swash{t}}
+
+\newpage
+
+\noindent\Large\color{black} I “Ask Jeff” or ‘Ask Jeff’. Take the chef d’œuvre! Two of [of] (of) ‘of’ “of” of? of! of*. Ydes, Yffignac and Ygrande are in France: so are Ypres, Les Woëvres, the Fôret de Wœvres, the Voire and Vauvise. Yves is in heaven; D’Amboise is in jail. Lyford’s in Texas \& L’Anse-aux-Griffons in Québec; the Łyna in Poland. Yriarte, Yciar and Ysaÿe are at Yale. Kyoto and Ryotsu are both in Japan, Kwikpak on the Yukon delta, Kvæven in Norway, Kyulu in Kenya, not in Rwanda.… Walton’s in West Virginia, but «Wren» is in Oregon. Tlálpan is near Xochimilco in México. The Zygos \& Xylophagou are in Cyprus, Zwettl in Austria, Fænø in Denmark, the Vøringsfossen and Værøy in Norway. Tchula is in Mississippi, the Tittabawassee in Michigan. Twodot is here in Montana, Ywamun in Burma. Yggdrasil and Ymir, Yngvi and Vóden, Vídrið and Skeggjöld and Týr are all in the Eddas. Tørberget and Våg, of course, are in Norway, Ktipas and Tmolos in Greece, but Vázquez is in Argentina, Vreden in Germany, Von-Vincke-Straße in Münster, Vdovino in Russia, Ytterbium in the periodic table. Are Toussaint L’Ouverture, Wölfflin, Wolfe %,Miłosz
+and Wū % Wŭ
+ all in the library?
+1510–1620, 11:00 pm, and the 1980s are over. 
+Ergänzt von Typefacts: 
+Ist da „Jemand“? „Volker?“ – „Wolf“. „Anna?“ – „Yvonne“. „Torsten fragte: ‚Vladimir?‘, später rief er ‚Wolf‘ und ‚Theresa‘, dann ‚Andreas‘ und ‚Yvonne‘“. Eleganter: Ist da »Jemand«? »Volker?« – »Wolf«. »Anna?« – »Yvonne«. »Torsten fragte: ›Vladimir?‹, später rief er ›Wolf‹ und ›Theresa‹, dann ›Andreas‹ und ›Yvonne‹«.
+\end{document}
