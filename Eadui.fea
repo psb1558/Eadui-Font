@@ -4,7 +4,21 @@ languagesystem latn dflt;
 #
 # Feature file for Eadui font. Copyright (c) 2015 by Peter S. Baker
 #
-# GSUB 
+
+# Ligatures with vowels and alternate vowel shapes are common in this font, causing
+# problems with diacritics. Font handles it this way:
+#
+# 1. Decompose precomposed characters into vowel + combining diacritic
+# 2. Let GSUB do its thing
+# 3. Position diacritic over alt vowel or ligature element with GPOS/mark
+#
+# This does not work well with Word, and InDesign defeats the scheme by
+# recomposing vowel+combining diacritic combinations into precomposed characters.
+#
+# However, Harfbuzz handles it well, so it works in the most popular browsers.
+#
+
+# GSUB
 
 lookup ccmpDotlessi {
   lookupflag 0;
@@ -12,7 +26,7 @@ lookup ccmpDotlessi {
             \uni1DD2 \uni1DE3 \uni0365 \uni0366 ] by \dotlessi;
 } ccmpDotlessi;
 
-lookup ccmpGlyphCompositionDecompositi {
+lookup ccmpDecompose {
   lookupflag 0;
     sub \eogonek by \e \uni0328;
     sub \umacron by \u \uni0304;
@@ -33,15 +47,15 @@ lookup ccmpGlyphCompositionDecompositi {
     sub \yacute by \y \acutecomb;
     sub \ydieresis by \y \uni0308;
     sub \uni0233 by \y \uni0304;
-    sub \Aacute by \A \acutecomb;
+    sub \Aacute by \A \acute.cap;
     sub \Adieresis by \A \uni0308;
-    sub \Oacute by \O \acutecomb;
+    sub \Oacute by \O \acute.cap;
     sub \Odieresis by \O \uni0308;
-    sub \Uacute by \U \acutecomb;
+    sub \Uacute by \U \acute.cap;
     sub \Udieresis by \U \uni0308;
-    sub \Eacute by \E \acutecomb;
+    sub \Eacute by \E \acute.cap;
     sub \Edieresis by \E \uni0308;
-    sub \Iacute by \I \acutecomb;
+    sub \Iacute by \I \acute.cap;
     sub \Idieresis by \I \uni0308;
     sub \Ydieresis by \Y \uni0308;
     sub \uni1E05 by \b \dotbelowcomb;
@@ -77,8 +91,8 @@ lookup ccmpGlyphCompositionDecompositi {
     sub \Umacron by \U \uni0304;
     sub \uni004503280304 by \E \uni0328 \uni0304;
     sub \uni006503280304 by \e \uni0328 \uni0304;
-    sub \Yacute by \Y \acutecomb;
-    sub \Agrave by \A \gravecomb;
+    sub \Yacute by \Y \acute.cap;
+    sub \Agrave by \A \grave.cap;
     sub \Acircumflex by \A \uni0302;
     sub \Atilde by \A \tildecomb;
     sub \agrave by \a \gravecomb;
@@ -86,10 +100,10 @@ lookup ccmpGlyphCompositionDecompositi {
     sub \igrave by \dotlessi \gravecomb;
     sub \ograve by \o \gravecomb;
     sub \ugrave by \u \gravecomb;
-    sub \Egrave by \E \gravecomb;
-    sub \Igrave by \I \gravecomb;
-    sub \Ograve by \O \gravecomb;
-    sub \Ugrave by \U \gravecomb;
+    sub \Egrave by \E \grave.cap;
+    sub \Igrave by \I \grave.cap;
+    sub \Ograve by \O \grave.cap;
+    sub \Ugrave by \U \grave.cap;
     sub \Ecircumflex by \E \uni0302;
     sub \Icircumflex by \I \uni0302;
     sub \Ocircumflex by \O \uni0302;
@@ -106,8 +120,6 @@ lookup ccmpGlyphCompositionDecompositi {
     sub \Otilde by \O \tildecomb;
     sub \Ccedilla by \C \uni0327;
     sub \ccedilla by \c \uni0327;
-    sub \aring by \a \uni0366;
-    sub \Aring by \A \uni0366;
     sub \uni1E04 by \B \dotbelowcomb;
     sub \uni1E0C by \D \dotbelowcomb;
     sub \uni1E24 by \H \dotbelowcomb;
@@ -136,10 +148,12 @@ lookup ccmpGlyphCompositionDecompositi {
     sub \uni01E3 by \ae \uni0304;
     sub \aeacute by \ae \acutecomb;
     sub \uni01E2 by \AE \uni0304;
-    sub \AEacute by \AE \acutecomb;
-} ccmpGlyphCompositionDecompositi;
+    sub \AEacute by \AE \acute.cap;
+    sub \Aring by \A \uni030A;
+    sub \aring by \a \uni030A;
+} ccmpDecompose;
 
-lookup smcpLowercasetoSmallCapitalsinL {
+lookup SmallCaps {
   lookupflag 0;
     sub \a by \a.sc;
     sub \b by \b.sc;
@@ -172,9 +186,9 @@ lookup smcpLowercasetoSmallCapitalsinL {
     sub \eth by \eth.sc;
     sub \thorn by \thorn.sc;
     sub \ae by \ae.sc;
-} smcpLowercasetoSmallCapitalsinL;
+} SmallCaps;
 
-lookup titlTitlingcapsfromlc {
+lookup TitlingCaps {
   lookupflag 0;
     sub \a by \A.titling;
     sub \b by \B.titling;
@@ -211,9 +225,9 @@ lookup titlTitlingcapsfromlc {
     sub \eth by \Eth.titling;
     sub \thorn by \Thorn.titling;
     sub \ae by \AE.titling;
-} titlTitlingcapsfromlc;
+} TitlingCaps;
 
-lookup histMedievalize {
+lookup Medievalize {
   lookupflag 0;
     sub \i by \dotlessi;
     sub \y by \uni1E8F;
@@ -225,9 +239,9 @@ lookup histMedievalize {
     sub \W by \W.medieval1;
     sub \question by \uniF160;
     sub \W.titling by \W.titling1;
-} histMedievalize;
+} Medievalize;
 
-lookup ss07Underdotted {
+lookup Underdotted {
   lookupflag 0;
     sub \a by \uni1EA1;
     sub \b by \uni1E05;
@@ -283,15 +297,15 @@ lookup ss07Underdotted {
     sub \Y by \uni1EF4;
     sub \Z by \uni1E92;
     sub \uniA75B by \uniA75B0323;
-} ss07Underdotted;
+} Underdotted;
 
-lookup ss10Alternatey {
+lookup Alternate_y {
   lookupflag 0;
     sub \y by \y.alt;
     sub \uni1E8F by \uni1E8F.alt;
-} ss10Alternatey;
+} Alternate_y;
 
-lookup ss11Sentencecapsfromcaps {
+lookup SentenceCaps_from_Caps {
   lookupflag 0;
     sub \A by \A.titling;
     sub \E by \E.medium;
@@ -319,9 +333,12 @@ lookup ss11Sentencecapsfromcaps {
     sub \W by \W.titling;
     sub \Y by \Y.titling;
     sub \Z by \Z.titling;
-} ss11Sentencecapsfromcaps;
+    sub AE by AE.titling;
+    sub Eth by Eth.titling;
+    sub Thorn by Thorn.titling;
+} SentenceCaps_from_Caps;
 
-lookup ss12Titlingcapsfromcaps {
+lookup TitlingCaps_from_Caps {
   lookupflag 0;
     sub \A by \A.titling;
     sub \E by \E.titling;
@@ -354,25 +371,25 @@ lookup ss12Titlingcapsfromcaps {
     sub \AE by \AE.titling;
     sub \Eth by \Eth.titling;
     sub \Thorn by \Thorn.titling;
-} ss12Titlingcapsfromcaps;
+} TitlingCaps_from_Caps;
 
-lookup ss13Alternatediacritics {
+lookup Alternate_Diacritics {
   lookupflag 0;
     sub \uni0328 by \ogonek.alt;
     sub \uni0304 by \uni0304.alt;
     sub \uni1DE3 by \uni1DE3.alt;
-} ss13Alternatediacritics;
+} Alternate_Diacritics;
 
-lookup ss14Enlargedminuscules {
+lookup Enlarged_Minuscules {
   lookupflag 0;
     sub \a by \a.enlarged;
     sub \c by \c.enlarged;
     sub \d by \d.enlarged;
     sub \f by \f.enlarged;
     sub \p by \p.enlarged;
-} ss14Enlargedminuscules;
+} Enlarged_Minuscules;
 
-lookup swshSwashinLatinlookup22 {
+lookup Swashes {
   lookupflag 0;
     sub \a by \a.swash;
     sub \e by \e.alt01;
@@ -382,9 +399,9 @@ lookup swshSwashinLatinlookup22 {
     sub \dotlessi by \dotlessi.swash;
     sub \M by \M.swash;
     sub \F by \F.swash;
-} swshSwashinLatinlookup22;
+} Swashes;
 
-lookup saltStylisticAlternativesinLati {
+lookup Stylistic_Alternates {
   lookupflag 0;
     sub \a from [\a.alt01 \a.alt02 \a.enlarged ];
     sub \c from [\c.enlarged ];
@@ -398,6 +415,7 @@ lookup saltStylisticAlternativesinLati {
     sub \uni1E8F from [\uni1E8F.alt ];
     sub \A from [\A.alt ];
     sub \D from [\uniA779 ];
+    sub \E from [\E.alt1];
     sub \Q from [\Q.alt ];
     sub \l.sc from [\l.sc2 ];
     sub \s.sc from [\s.sc2 ];
@@ -412,9 +430,9 @@ lookup saltStylisticAlternativesinLati {
     sub \N.titling from [\N.titling1 ];
     sub \W.medieval1 from [\W.medieval2 ];
     sub \W.titling1 from [\W.titling2 ];
-} saltStylisticAlternativesinLati;
+} Stylistic_Alternates;
 
-lookup ss18_pseudo_salt {
+lookup Pseudo_salt {
   lookupflag 0;
     sub \a by \a.alt01;
     sub \c by \c.enlarged;
@@ -442,140 +460,158 @@ lookup ss18_pseudo_salt {
     sub \N.titling by \N.titling1;
     sub \W.medieval1 by \W.medieval2;
     sub \W.titling1 by \W.titling2;
-} ss18_pseudo_salt;
+} Pseudo_salt;
 
 lookup SingleSubstitutionnotag {
   lookupflag 0;
-    sub \a by \a.alt01;
-    sub \c by \c.alt;
-    sub \g by \g.alt1;
-    sub \e by \e.alt01;
+#    sub \a by \a.alt01;
+#    sub \c by \c.alt;
+#    sub \g by \g.alt1;
+#    sub \e by \e.alt01;
     sub \f by \f.alt2;
     sub \i by \i.alt;
     sub \m by \m.alt;
     sub \n by \n.alt1;
     sub \p by \p.alt;
     sub \r by \r.alt;
-    sub \t by \t.alt2;
+#    sub \t by \t.alt2;
     sub \u by \u.alt;
     sub \dotlessi by \dotlessi.alt;
-    sub \l.sc by \l.sc2;
-    sub \s.sc by \s.sc2;
+#    sub \l.sc by \l.sc2;
+#    sub \s.sc by \s.sc2;
     sub \j by \j.alt;
-    sub \f.alt2 by \f.alt3;
-    sub \eth by \eth.alt;
+#    sub \f.alt2 by \f.alt3;
+#    sub \eth by \eth.alt;
 } SingleSubstitutionnotag;
 
-lookup caltContextualAlternatesforc {
-  lookupflag IgnoreMarks;
-    sub \c' [\a \f \g \i \j \m \n \p \r \s \t \u \x \z \dotlessi \uniF161] by \c.alt;
-} caltContextualAlternatesforc;
-
-lookup SingleSubstitutionnotag3 {
+lookup SingleSubstitutionnotag2 {
   lookupflag 0;
-    sub \g by \g.alt1;
-    sub \e by \e.alt03;
-    sub \f by \f.alt1;
+    sub \a by \a.alt02;
+#    sub \g by \g.alt2;
+#    sub \e by \e.alt02;
+#    sub \f by \f.alt2;
+#    sub \f.alt1 by \f.alt3;
     sub \t by \t.alt;
-    sub \f.alt2 by \f.alt3;
-    sub \ae by \ae.alt;
-} SingleSubstitutionnotag3;
+} SingleSubstitutionnotag2;
 
-lookup caltContextualAlternatesfort {
+#
+# Alternative c avoids awkwardness with certain following letters.
+#
+lookup ContextualAlternates_c {
+  lookupflag IgnoreMarks;
+    sub \c' [\a \b \f \g \i \j \m \n \p \r \s \t \u \x \z \dotlessi \uniF161] by \c.alt;
+} ContextualAlternates_c;
+
+#
+# t and the following letter vary to make pseudo-ligature
+# or avoid awkward clash
+#
+lookup ContextualAlternates_t {
   lookupflag IgnoreMarks;
     @cc14_match_1 = [\t ];
     @cc14_match_3 = [\f \i \dotlessi \j \m \n \p \r \u ];
     @cc14_ahead_2 = [\a \c \s \x ];
     sub \t' [\a \c \s \x] by \t.alt2;
-    sub @cc14_match_1' lookup SingleSubstitutionnotag3  @cc14_match_3' lookup SingleSubstitutionnotag;
-} caltContextualAlternatesfort;
+    sub @cc14_match_1' lookup SingleSubstitutionnotag2  @cc14_match_3' lookup SingleSubstitutionnotag;
+} ContextualAlternates_t;
 
-lookup SingleSubstitutionnotag2 {
-  lookupflag 0;
-    sub \a by \a.alt02;
-    sub \g by \g.alt2;
-    sub \e by \e.alt02;
-    sub \f by \f.alt2;
-    sub \f.alt1 by \f.alt3;
-} SingleSubstitutionnotag2;
-
-lookup caltContextualAlternatesgandfbe {
+#
+# g and f make pseudo-ligatures with several following letters
+#
+lookup ContextualAlternates_gf {
   lookupflag IgnoreMarks;
     sub \g' [\i \j \m \n \r \u \dotlessi \w.alt] by \g.alt1;
     sub \g' [\e \o \s \eth] by \g.alt2;
-    sub [\f \f.alt2]' [\e \o \s \eth] by [\f.alt1 \f.alt3];
-} caltContextualAlternatesgandfbe;
+    sub [\f \f.alt2]' [\e \s \eth] by [\f.alt1 \f.alt3];
+} ContextualAlternates_gf;
 
-lookup caltContextualAlternatesebefore {
+#
+# Alternate shape of e before tall letters
+#
+lookup ContextualAlternates_e {
   lookupflag IgnoreMarks;
-    sub \e' [\b \h \k \l] by \e.alt01;
-} caltContextualAlternatesebefore;
+    sub \e' [\b \h \k \l \thorn] by \e.alt01;
+} ContextualAlternates_e;
 
-lookup sub_context_caltlatn_0 {
+#
+# Alternate e before letters with a bowl on left.
+# e g and ae make pseudo-ligature with following f
+#
+lookup Contextual_Alternates_misc {
   lookupflag IgnoreMarks;
     sub \e' [\d \g \s \g.alt1 \g.alt2 \e.alt01 \e.alt03 \y \uni1E8F] by \e.alt02;
     sub \e' [\c \q \c.alt] by \e.alt04;
     sub [\e \g \ae]' [\f \f.alt1] by [\e.alt03 \g.alt1 \ae.alt];
-} sub_context_caltlatn_0;
+} Contextual_Alternates_misc;
 
-lookup caltContextualAlternatesalta {
+#
+# Narrow a following letters with right overhang.
+# Pseudo-random a
+#
+lookup ContextualAlternates_a {
   lookupflag IgnoreMarks;
-    sub [\r \t \t.alt2 \v \w \y \longs \uni0233 \uni1E5B \uni1E7F \uni1E89 \uni1E8F \r.alt \t.alt \y.alt \uni1E8F.alt ] \a' by \a.alt01;
-#  subtable;
-    @cc21_match_1 = [\b \d \e \e.alt04 \f \j \l \n \p \r \s \t \v \x \z \longs \f.alt1 \i.swash \n.alt1 \j.alt \r.alt 
+    sub [\r \t \t.alt2 \v \w \y \longs \uni0233 \uni1E5B \uni1E7F \uni1E89 \uni1E8F \r.alt \t.alt \y.alt
+         \uni1E8F.alt ] \a' by \a.alt01;
+    @cc21_match_1 = [\b \d \e \e.alt04 \f \j \l \n \p \r \s \t \v \x \z \longs \f.alt1 \i.swash \n.alt1 \j.alt \r.alt
 	\p.alt \f.alt2 \t.alt \e.alt01 ];
-    @cc21_match_2 = [\c \g \h \i \k \m \o \q \u \y \c.alt \dotlessi \g.alt1 \g.alt2 \uni1E8F.sc 
+    @cc21_match_2 = [\c \g \h \i \k \m \o \q \u \y \c.alt \dotlessi \g.alt1 \g.alt2 \uni1E8F.sc
 	\dotlessi.swash \m.alt \dotlessi.alt \i.alt ];
     @cc21_match_3 = [\a ];
-    sub @cc21_match_1' @cc21_match_2' @cc21_match_3'lookup SingleSubstitutionnotag2;
-} caltContextualAlternatesalta;
+    sub @cc21_match_1 @cc21_match_2 @cc21_match_3' lookup SingleSubstitutionnotag2;
+} ContextualAlternates_a;
 
-lookup caltContextualAlternatessmallca {
+#
+# Rustic cap l and s are tall: shorter forms avoid collision
+# with preceding f
+#
+lookup ContextualAlternates_smcp {
   lookupflag 0;
-    sub  \f.sc \l.sc'   by \l.sc2;
-    sub  \f.sc \s.sc'   by \s.sc2;
-} caltContextualAlternatessmallca;
+    sub  \f.sc \l.sc' by \l.sc2;
+    sub  \f.sc \s.sc' by \s.sc2;
+} ContextualAlternates_smcp;
 
-lookup caltNoncollidingeth {
+#
+# Alternate eth avoid collisions with preceding tall character
+#
+lookup ContextualAlternates_eth {
   lookupflag 0;
     sub [\d \f \i \j \l \longs \f.alt1 ] \eth' by \eth.alt;
-} caltNoncollidingeth;
+} ContextualAlternates_eth;
 
-lookup dligDiscretionaryLigaturesinLat {
+lookup Discretionary_Ligatures {
   lookupflag IgnoreMarks;
     sub \longs \t \dotlessi  by \longs_t_dotlessi;
+    sub \longs \t.alt \dotlessi.alt  by \longs_t_dotlessi;
     sub \longs \t \i  by \longs_t_i;
-#  subtable;
+    sub \longs \t.alt \i.alt  by \longs_t_i;
     sub \t \dotlessi  by \t_dotlessi;
     sub \t \i  by \t_i;
     sub \E \T  by \E_T;
     sub \n \t  by \n_t;
     sub \r.alt \a  by \r_a.alt;
-} dligDiscretionaryLigaturesinLat;
+} Discretionary_Ligatures;
 
-lookup hligHistoricLigaturesinLatinloo {
+lookup Historic_Ligatures {
   lookupflag IgnoreMarks;
     sub \e \r \r \a  by \e_r_r_a;
-#  subtable;
     sub \r \t \u  by \r_t_u;
     sub \e \r \a  by \e_r_a.alt;
     sub \r \r \a  by \r_r_a;
     sub \r \t \y.alt  by \r_t_y;
     sub \r \t \uni1E8F.alt  by \r_t_uni1E8F;
-#  subtable;
     sub \r \a  by \r_a;
     sub \r \t  by \r_t;
     sub \c \t  by \c_t;
+    sub \c.alt \t by \c_t;
     sub \o \r  by \o_uniA75B;
-} hligHistoricLigaturesinLatinloo;
+} Historic_Ligatures;
 
-lookup ligaStandardLigaturesinLatinloo {
+lookup Standard_Ligatures_1 {
   lookupflag IgnoreMarks;
     sub \e \longs \longs \dotlessi  by \e_longs_longs_i;
     sub \e \longs \longs \i  by \e_longs_longs_i;
     sub \ae \longs \longs \dotlessi  by \ae_longs_longs_i;
     sub \ae \longs \longs \i  by \ae_longs_longs_i;
-#  subtable;
     sub \e \t \u  by \e_t_u;
     sub \e \r \i  by \e_r_i;
     sub \e \r \dotlessi  by \e_r_dotlessi;
@@ -602,7 +638,6 @@ lookup ligaStandardLigaturesinLatinloo {
     sub \ae \longs \i  by \ae_longs_i;
     sub \ae \r \a  by \ae_r_a;
     sub \ae \t \t  by \ae_t_t;
-#  subtable;
     sub \f \l  by \uniFB02;
     sub \f \i  by \uniFB01;
     sub \f \dotlessi  by \uniFB01;
@@ -654,15 +689,15 @@ lookup ligaStandardLigaturesinLatinloo {
     sub \ae \uni01BF  by \ae_uni01BF;
     sub \ae \longs  by \ae_longs;
     sub \e \t.alt2  by \e_t.alt2;
-} ligaStandardLigaturesinLatinloo;
+} Standard_Ligatures_1;
 
-lookup ligaStandardLigatureslowerprior {
+lookup Standard_Ligatures_2 {
   lookupflag IgnoreMarks;
     sub \e \e  by \e_e;
     sub \uni019A \uni019A  by \uni019A_uni019A;
     sub \f \j  by \f_j;
     sub \f \j.alt by \f_j.alt;
-} ligaStandardLigatureslowerprior;
+} Standard_Ligatures_2;
 
 feature aalt {
  feature smcp;
@@ -680,120 +715,174 @@ feature aalt {
 
 feature ccmp {
   lookup ccmpDotlessi;
-  lookup ccmpGlyphCompositionDecompositi;
+  lookup ccmpDecompose;
 } ccmp;
 
+#
+# Small Caps. Duplicated as ss03
+#
 feature smcp {
-  lookup smcpLowercasetoSmallCapitalsinL;
+  lookup SmallCaps;
 } smcp;
 
+#
+# Duplicates smcp, for Word users.
+#
 feature ss03 {
-  #
-  # Duplicates smcp, for Word users.
-  #
-  lookup smcpLowercasetoSmallCapitalsinL;
+  lookup SmallCaps;
 } ss03;
 
+#
+# Titling Caps. Duplicated as ss09.
+#
 feature titl {
-  lookup titlTitlingcapsfromlc;
+  lookup TitlingCaps;
 } titl;
 
+#
+# Duplicates titl, for Word users.
+#
 feature ss09 {
-  #
-  # Duplicates titl, for Word users.
-  #
-  lookup titlTitlingcapsfromlc;
+  lookup TitlingCaps;
 } ss09;
 
+#
+# Historical forms. Duplicated as ss16.
+#
 feature hist {
-  #
-  # Duplicated as ss16.
-  #
-  lookup histMedievalize;
+  lookup Medievalize;
 } hist;
 
+#
+# Duplicates hist, for Word and InDesign users.
+#
 feature ss16 {
-  #
-  # Duplicates hist, for Word and InDesign users.
-  #
-  lookup histMedievalize;
+  lookup Medievalize;
 } ss16;
 
+#
+# Expunges (places a dot under) alphabetic characters.
+# This is the most common medieval method for signalling
+# a deletion.
+#
 feature ss07 {
-  lookup ss07Underdotted;
+  lookup Underdotted;
 } ss07;
 
+#
+# y with short curved limbs. Replaces both undotted
+# and dotted forms.
+#
 feature ss10 {
-  lookup ss10Alternatey;
+  lookup Alternate_y;
 } ss10;
 
+#
+# There are a few capitals for use especially in running
+# text. Otherwise titling capitals are used (consistent
+# with MS usage).
+#
 feature ss11 {
-  lookup ss11Sentencecapsfromcaps;
+  lookup SentenceCaps_from_Caps;
 } ss11;
 
+#
+# Different route to titling caps
+#
 feature ss12 {
-  lookup ss12Titlingcapsfromcaps;
+  lookup TitlingCaps_from_Caps;
 } ss12;
 
+#
+# There are alternate forms of cauda (ogonek), macron,
+# and -tur.
+#
 feature ss13 {
-  lookup ss13Alternatediacritics;
+  lookup Alternate_Diacritics;
 } ss13;
 
+#
+# There are very few enlarged minuscules. These can
+# also be used in place of sentence caps. They are
+# also duplicated in MUFI positions.
+#
 feature ss14 {
-  lookup ss14Enlargedminuscules;
+  lookup Enlarged_Minuscules;
 } ss14;
 
+#
+# Swash characters. Duplicated as ss17.
+#
 feature swsh {
-  #
-  # Duplicated as ss17.
-  #
-  lookup swshSwashinLatinlookup22;
+  lookup Swashes;
 } swsh;
 
+#
+# Duplicates swsh, for Word users.
+#
 feature ss17 {
-  #
-  # Duplicates swsh, for Word users.
-  #
-  lookup swshSwashinLatinlookup22;
+  lookup Swashes;
 } ss17;
 
+#
+# Many of the stylistic alternates are applied automatically by
+# calt, but they can also be manually selected here.
+#
 feature salt {
-   lookup saltStylisticAlternativesinLati;
+   lookup Stylistic_Alternates;
 } salt;
 
+#
+# For Word users, provides access to the first of each class in salt.
+#
 feature ss18 {
-  #
-  # For Word users, provides access to the first of each class in salt.
-  #
-  lookup ss18_pseudo_salt;
+  lookup Pseudo_salt;
 } ss18;
 
+#
+# Many rules. They're a mix of pseudo-random alternates, alternates
+# that fit better in context, and pseudo-ligatures.
+#
 feature calt {
-  lookup caltContextualAlternatesforc;
-  lookup caltContextualAlternatesfort;
-  lookup caltContextualAlternatesgandfbe;
-  lookup caltContextualAlternatesebefore;
-  lookup sub_context_caltlatn_0;
-  lookup caltContextualAlternatesalta;
-  lookup caltContextualAlternatessmallca;
-  lookup caltNoncollidingeth;
+  lookup ContextualAlternates_c;
+  lookup ContextualAlternates_t;
+  lookup ContextualAlternates_gf;
+  lookup ContextualAlternates_e;
+  lookup Contextual_Alternates_misc;
+  lookup ContextualAlternates_a;
+  lookup ContextualAlternates_smcp;
+  lookup ContextualAlternates_eth;
 } calt;
 
+#
+# Ligatures that are not inconsistent with modern usage, but
+# might be confusing to readers.
+#
 feature dlig {
-  lookup dligDiscretionaryLigaturesinLat;
+  lookup Discretionary_Ligatures;
 } dlig;
 
+#
+# Ligatures that would appear only in a medieval context.
+#
 feature hlig {
-  lookup hligHistoricLigaturesinLatinloo;
+  lookup Historic_Ligatures;
 } hlig;
 
+#
+# Standard Ligatures
+#
 feature liga {
-  lookup ligaStandardLigaturesinLatinloo;
-  lookup ligaStandardLigatureslowerprior;
+  lookup Standard_Ligatures_1;
+  lookup Standard_Ligatures_2;
 } liga;
 
-# GPOS 
+# GPOS
 
+#
+# There are two kern subtables: the second for rustic capitals (small caps), and the
+# first for everything else.
+#
 lookup kern_standard {
   lookupflag IgnoreMarks;
     @kc37_first_1 = [\a \aacute \adieresis \amacron \g_a \a.alt01 \e_r_a \uni1EA1 \ae_r_a ];
@@ -809,9 +898,9 @@ lookup kern_standard {
     @kc37_first_11 = [\g ];
     @kc37_first_12 = [\g.alt2 ];
     @kc37_first_13 = [\h \uni1E25 ];
-    @kc37_first_14 = [\i \longs_i \e_r_i \e_r_dotlessi \e_longs_i \t_i \t_dotlessi \longs_t_i \uniFB01 
-	\f_i.alt \dotlessi \e_i \e_dotlessi \longs_longs_i \e_longs_longs_i 
-	\i.alt \dotlessi.alt \uni1ECB \ae_i \ae_dotlessi \ae_longs_longs_i 
+    @kc37_first_14 = [\i \longs_i \e_r_i \e_r_dotlessi \e_longs_i \t_i \t_dotlessi \longs_t_i \uniFB01
+	\f_i.alt \dotlessi \e_i \e_dotlessi \longs_longs_i \e_longs_longs_i
+	\i.alt \dotlessi.alt \uni1ECB \ae_i \ae_dotlessi \ae_longs_longs_i
 	\ae_longs_i ];
     @kc37_first_15 = [\j \f_j \uni0237 \j.alt \e_j \uni006A0323 ];
     @kc37_first_16 = [\k \uni1E33 ];
@@ -826,7 +915,8 @@ lookup kern_standard {
     @kc37_first_25 = [\t \e_t \c_t \uniFB05 \uni1E6D \ae_t \ae_longs_t \ae_t_t ];
     @kc37_first_26 = [\t.alt \t_t \e_t_t \t.alt2 \e_t.alt2 ];
     @kc37_first_27 = [\thorn \uni01BF ];
-    @kc37_first_28 = [\u \uacute \udieresis \umacron \uni1EE5 ];
+    @kc37_first_28 = [\u \uacute \udieresis \umacron \uni1EE5 \e_u w.alt \t_u \f_u \f_u.alt \f_f_u
+                      \e_t_u \r_t_u \u.alt ];
     @kc37_first_29 = [\v \w \uni1E7F \uni1E89 ];
     @kc37_first_30 = [\x \e_x \xdotbelowcomb ];
     @kc37_first_31 = [\y \yacute \ydieresis \uni0233 \uni1E8F \uni1EF5 ];
@@ -869,21 +959,21 @@ lookup kern_standard {
     @kc37_first_68 = [\hyphen \endash \emdash ];
     @kc37_first_69 = [\hyphen.titling \endash.titling \emdash.titling ];
     @kc37_first_70 = [\quoteright ];
-    @kc37_second_1 = [\a \aacute \adieresis \amacron \a.alt02 \uni1EA1 \a.swash \ae \ae_t \ae_i 
-	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs 
-	\ae_longs_longs \ae_longs_longs_i \ae_longs_t \ae_longs_i \ae_r_a 
+    @kc37_second_1 = [\a \aacute \adieresis \amacron \a.alt02 \uni1EA1 \a.swash \ae \ae_t \ae_i
+	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs
+	\ae_longs_longs \ae_longs_longs_i \ae_longs_t \ae_longs_i \ae_r_a
 	\ae_t_t \ae.alt \aeacute \uni01E3 ];
     @kc37_second_2 = [\a.alt01 ];
     @kc37_second_3 = [\b ];
     @kc37_second_4 = [\c \c.alt \uni00630323 ];
     @kc37_second_5 = [\d \uni1E0D ];
-    @kc37_second_6 = [\e \e.alt01 \e_n \e_m \e_p \e_t_u \e_a \e_t \e_x \e_r_i \e_r_dotlessi \e_r_n 
-	\uni1E8F.sc \e_u \e_longs_i \e_longs \e_r_a.alt \e_o \e_r \e_t.alt 
-	\eacute \edieresis \emacron \e_i \e_dotlessi \e_t_i \e_t_dotlessi 
-	\e_longs_t \e_longs_longs \e_longs_longs_i \e.alt02 \e_e \e.alt03 
+    @kc37_second_6 = [\e \e.alt01 \e_n \e_m \e_p \e_t_u \e_a \e_t \e_x \e_r_i \e_r_dotlessi \e_r_n
+	\uni1E8F.sc \e_u \e_longs_i \e_longs \e_r_a.alt \e_o \e_r \e_t.alt
+	\eacute \edieresis \emacron \e_i \e_dotlessi \e_t_i \e_t_dotlessi
+	\e_longs_t \e_longs_longs \e_longs_longs_i \e.alt02 \e_e \e.alt03
 	\e_t_t \e_r_a \uni1EB9 ];
     @kc37_second_7 = [\e.alt04 ];
-    @kc37_second_8 = [\f \f_t \f_u \f_r \f_o \f_a \uniFB01 \uniFB02 \f_f_a \f_f.alt \f_f_u 
+    @kc37_second_8 = [\f \f_t \f_u \f_r \f_o \f_a \uniFB01 \uniFB02 \f_f_a \f_f.alt \f_f_u
 	\uni00660323 \f.alt1 ];
     @kc37_second_9 = [\g \g.alt1 \g.alt2 \g_o \g_a \uni00670323 \g_y ];
     @kc37_second_10 = [\h \uni1E25 ];
@@ -1270,29 +1360,36 @@ lookup kern_standard {
     pos @kc37_first_37 @kc37_second_49 -133;
     pos @kc37_first_37 @kc37_second_50 -133;
     pos @kc37_first_37 @kc37_second_62 -222;
-    pos @kc37_first_38 @kc37_second_1 -120;
-    pos @kc37_first_38 @kc37_second_2 -146;
-    pos @kc37_first_38 @kc37_second_4 -93;
+    pos @kc37_first_38 @kc37_second_1 -53;
+    pos @kc37_first_38 @kc37_second_2 -79;
+    pos @kc37_first_38 @kc37_second_4 -73;
     pos @kc37_first_38 @kc37_second_5 -80;
-    pos @kc37_first_38 @kc37_second_6 -93;
-    pos @kc37_first_38 @kc37_second_7 -93;
-    pos @kc37_first_38 @kc37_second_8 -29;
+    pos @kc37_first_38 @kc37_second_6 -26;
+    pos @kc37_first_38 @kc37_second_7 -66;
+#   pos @kc37_first_38 @kc37_second_8 -29;
     pos @kc37_first_38 @kc37_second_9 -107;
-    pos @kc37_first_38 @kc37_second_11 -53;
+    pos @kc37_first_38 @kc37_second_11 14;
+    pos @kc37_first_38 @kc37_second_13 80;
     pos @kc37_first_38 @kc37_second_14 -67;
     pos @kc37_first_38 @kc37_second_16 -103;
-    pos @kc37_first_38 @kc37_second_20 -80;
+    pos @kc37_first_38 @kc37_second_17 67;
+    pos @kc37_first_38 @kc37_second_18 40;
+    pos @kc37_first_38 @kc37_second_19 20;
+    pos @kc37_first_38 @kc37_second_20 -27;
     pos @kc37_first_38 @kc37_second_21 -93;
     pos @kc37_first_38 @kc37_second_22 -54;
-    pos @kc37_first_38 @kc37_second_23 -66;
+    pos @kc37_first_38 @kc37_second_23 -26;
     pos @kc37_first_38 @kc37_second_24 -88;
     pos @kc37_first_38 @kc37_second_25 -67;
-    pos @kc37_first_38 @kc37_second_26 -78;
-    pos @kc37_first_38 @kc37_second_27 -93;
+    pos @kc37_first_38 @kc37_second_26 -20;
+    pos @kc37_first_38 @kc37_second_27 -26;
     pos @kc37_first_38 @kc37_second_28 -88;
+    pos @kc37_first_38 @kc37_second_38 -93;
+    pos @kc37_first_38 @kc37_second_40 40;
     pos @kc37_first_38 @kc37_second_49 -120;
     pos @kc37_first_38 @kc37_second_50 -106;
-    pos @kc37_first_38 @kc37_second_62 -128;
+    pos @kc37_first_38 @kc37_second_51 -93;
+    pos @kc37_first_38 @kc37_second_62 -48;
     pos @kc37_first_39 @kc37_second_1 -107;
     pos @kc37_first_39 @kc37_second_4 -66;
     pos @kc37_first_39 @kc37_second_5 -80;
@@ -1341,6 +1438,7 @@ lookup kern_standard {
     pos @kc37_first_44 @kc37_second_40 20;
     pos @kc37_first_44 @kc37_second_45 27;
     pos @kc37_first_44 @kc37_second_62 36;
+    pos @kc37_first_45 @kc37_second_38 -67;
     pos @kc37_first_45 @kc37_second_42 -120;
     pos @kc37_first_45 @kc37_second_44 -67;
     pos @kc37_first_45 @kc37_second_45 -40;
@@ -1386,6 +1484,12 @@ lookup kern_standard {
     pos @kc37_first_52 @kc37_second_49 -78;
     pos @kc37_first_52 @kc37_second_50 -73;
     pos @kc37_first_52 @kc37_second_62 -124;
+    pos @kc37_first_53 @kc37_second_1 -107;
+    pos @kc37_first_53 @kc37_second_2 -133;
+    pos @kc37_first_53 @kc37_second_6 -80;
+    pos @kc37_first_53 @kc37_second_7 -93;
+    pos @kc37_first_53 @kc37_second_23 -80;
+    pos @kc37_first_53 @kc37_second_26 -67;
     pos @kc37_first_53 @kc37_second_37 -45;
     pos @kc37_first_53 @kc37_second_38 -120;
     pos @kc37_first_53 @kc37_second_39 -77;
@@ -1394,6 +1498,7 @@ lookup kern_standard {
     pos @kc37_first_53 @kc37_second_43 27;
     pos @kc37_first_53 @kc37_second_49 -133;
     pos @kc37_first_53 @kc37_second_50 -146;
+    pos @kc37_first_53 @kc37_second_51 -120;
     pos @kc37_first_53 @kc37_second_61 -81;
     pos @kc37_first_53 @kc37_second_62 -39;
     pos @kc37_first_54 @kc37_second_45 40;
@@ -1632,6 +1737,10 @@ subtable;
     pos @kc38_first_24 @kc38_second_9 -47;
 } kern_standard;
 
+#
+# -us abbreviation mark is positioned differently from other marks,
+# so gets its own lookups.
+#
 lookup ligmark_us_abbrev {
   lookupflag 0;
   markClass [\uni1DD2 ] <anchor -234 391> @us_ligature_anchor;
@@ -1640,7 +1749,7 @@ lookup ligmark_us_abbrev {
       <anchor 560 391> mark @us_ligature_anchor;
   pos ligature \uniFB01 <anchor 227 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 431 391> mark @us_ligature_anchor;
+      <anchor 411 391> mark @us_ligature_anchor;
   pos ligature \uniFB05 <anchor 205 391> mark @us_ligature_anchor
     ligComponent
       <anchor 526 391> mark @us_ligature_anchor;
@@ -1799,12 +1908,12 @@ lookup ligmark_us_abbrev {
       <anchor 390 391> mark @us_ligature_anchor
     ligComponent
       <anchor 604 391> mark @us_ligature_anchor;
-  pos ligature \e_longs_longs <anchor 246 391> mark @us_ligature_anchor 
+  pos ligature \e_longs_longs <anchor 246 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 500 391> mark @us_ligature_anchor 
+      <anchor 500 391> mark @us_ligature_anchor
     ligComponent
       <anchor 876 391> mark @us_ligature_anchor;
-  pos ligature \longs_longs <anchor 188 391> mark @us_ligature_anchor 
+  pos ligature \longs_longs <anchor 188 391> mark @us_ligature_anchor
     ligComponent
       <anchor 574 391> mark @us_ligature_anchor;
   pos ligature \e_longs_t <anchor 240 391> mark @us_ligature_anchor
@@ -1817,9 +1926,9 @@ lookup ligmark_us_abbrev {
       <anchor 620 391> mark @us_ligature_anchor;
   pos ligature \e_r_r_a <anchor 236 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 482 391> mark @us_ligature_anchor 
+      <anchor 482 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 672 391> mark @us_ligature_anchor 
+      <anchor 672 391> mark @us_ligature_anchor
     ligComponent
       <anchor 967 391> mark @us_ligature_anchor;
   pos ligature \r_r_a <anchor 185 391> mark @us_ligature_anchor
@@ -1840,7 +1949,7 @@ lookup ligmark_us_abbrev {
       <anchor 505 391> mark @us_ligature_anchor
     ligComponent
       <anchor 693 436> mark @us_ligature_anchor;
-  pos ligature \n_t <anchor 185 515> mark @us_ligature_anchor 
+  pos ligature \n_t <anchor 185 515> mark @us_ligature_anchor
     ligComponent
       <anchor 394 515> mark @us_ligature_anchor;
   pos ligature \e_i <anchor 209 391> mark @us_ligature_anchor
@@ -1849,33 +1958,33 @@ lookup ligmark_us_abbrev {
   pos ligature \e_dotlessi <anchor 208 391> mark @us_ligature_anchor
     ligComponent
       <anchor 373 391> mark @us_ligature_anchor;
-  pos ligature \e_e <anchor 255 391> mark @us_ligature_anchor 
+  pos ligature \e_e <anchor 255 391> mark @us_ligature_anchor
     ligComponent
       <anchor 560 391> mark @us_ligature_anchor;
-  pos ligature \f_f_u <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \f_f_u <anchor 240 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 473 391> mark @us_ligature_anchor 
+      <anchor 473 391> mark @us_ligature_anchor
     ligComponent
       <anchor 814 391> mark @us_ligature_anchor;
-  pos ligature \uniFB00 <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \uniFB00 <anchor 240 391> mark @us_ligature_anchor
     ligComponent
       <anchor 647 391> mark @us_ligature_anchor;
-  pos ligature \uniFB03 <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \uniFB03 <anchor 240 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 473 391> mark @us_ligature_anchor 
+      <anchor 473 391> mark @us_ligature_anchor
     ligComponent
       <anchor 652 391> mark @us_ligature_anchor;
-  pos ligature \uniFB04 <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \uniFB04 <anchor 240 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 473 391> mark @us_ligature_anchor 
+      <anchor 473 391> mark @us_ligature_anchor
     ligComponent
       <anchor 782 391> mark @us_ligature_anchor;
-  pos ligature \f_f.alt <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \f_f.alt <anchor 240 391> mark @us_ligature_anchor
     ligComponent
       <anchor 473 391> mark @us_ligature_anchor;
-  pos ligature \f_f_a <anchor 240 391> mark @us_ligature_anchor 
+  pos ligature \f_f_a <anchor 240 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 473 391> mark @us_ligature_anchor 
+      <anchor 473 391> mark @us_ligature_anchor
     ligComponent
       <anchor 665 391> mark @us_ligature_anchor;
   pos ligature \e_t_t <anchor 221 391> mark @us_ligature_anchor
@@ -1889,15 +1998,15 @@ lookup ligmark_us_abbrev {
   pos ligature \e_j <anchor 209 391> mark @us_ligature_anchor
     ligComponent
       <anchor 481 391> mark @us_ligature_anchor;
-  pos ligature \uni019A_uni019A <anchor 183 594> mark @us_ligature_anchor 
+  pos ligature \uni019A_uni019A <anchor 183 594> mark @us_ligature_anchor
     ligComponent
       <anchor 469 593> mark @us_ligature_anchor;
   pos ligature \r_a.alt <anchor 226 391> mark @us_ligature_anchor
     ligComponent
       <anchor 526 391> mark @us_ligature_anchor;
-  pos ligature \r_t_y <anchor 196 391> mark @us_ligature_anchor 
+  pos ligature \r_t_y <anchor 196 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 456 391> mark @us_ligature_anchor 
+      <anchor 456 391> mark @us_ligature_anchor
     ligComponent
       <anchor 696 391> mark @us_ligature_anchor;
   pos ligature \r_t_uni1E8F <anchor 196 391> mark @us_ligature_anchor
@@ -1905,785 +2014,795 @@ lookup ligmark_us_abbrev {
       <anchor 456 391> mark @us_ligature_anchor
     ligComponent
       <anchor 746 584> mark @us_ligature_anchor;
-  pos ligature \g_y  <anchor 280 391> mark @us_ligature_anchor 
+  pos ligature \g_y  <anchor 280 391> mark @us_ligature_anchor
     ligComponent
        <anchor 726 391> mark @us_ligature_anchor;
-  pos ligature \ae_t  <anchor 350 391> mark @us_ligature_anchor 
+  pos ligature \ae_t  <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 699 391> mark @us_ligature_anchor;
-  pos ligature \ae_i <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_i <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 646 391> mark @us_ligature_anchor;
-  pos ligature \ae_dotlessi <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_dotlessi <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 549 391> mark @us_ligature_anchor;
-  pos ligature \ae_n <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_n <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 757 391> mark @us_ligature_anchor;
-  pos ligature \ae_m <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_m <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 964 383> mark @us_ligature_anchor;
-  pos ligature \ae_r <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_r <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 658 391> mark @us_ligature_anchor;
-  pos ligature \ae_p <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_p <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 775 391> mark @us_ligature_anchor;
-  pos ligature \ae_uni01BF <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_uni01BF <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 734 391> mark @us_ligature_anchor;
-  pos ligature \ae_longs <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_longs <anchor 350 391> mark @us_ligature_anchor
     ligComponent
        <anchor 801 391> mark @us_ligature_anchor;
-  pos ligature \ae_longs_longs <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_longs_longs <anchor 350 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 662 391> mark @us_ligature_anchor  
+      <anchor 662 391> mark @us_ligature_anchor
     ligComponent
       <anchor 1039 391> mark @us_ligature_anchor;
-  pos ligature \ae_longs_longs_i <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_longs_longs_i <anchor 350 391> mark @us_ligature_anchor
     ligComponent
-      <anchor 636 391> mark @us_ligature_anchor  
+      <anchor 636 391> mark @us_ligature_anchor
     ligComponent
-       <anchor 855 391> mark @us_ligature_anchor 
+       <anchor 855 391> mark @us_ligature_anchor
     ligComponent
       <anchor 1057 391> mark @us_ligature_anchor;
-  pos ligature \ae_longs_t <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_longs_t <anchor 350 391> mark @us_ligature_anchor
     ligComponent
-       <anchor 661 391> mark @us_ligature_anchor 
+       <anchor 661 391> mark @us_ligature_anchor
     ligComponent
       <anchor 946 391> mark @us_ligature_anchor;
-  pos ligature \ae_longs_i <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_longs_i <anchor 350 391> mark @us_ligature_anchor
     ligComponent
-       <anchor 606 391> mark @us_ligature_anchor 
+       <anchor 606 391> mark @us_ligature_anchor
     ligComponent
        <anchor 813 391> mark @us_ligature_anchor;
-  pos ligature \ae_r_a <anchor 350 391> mark @us_ligature_anchor  
+  pos ligature \ae_r_a <anchor 350 391> mark @us_ligature_anchor
     ligComponent
-       <anchor 663 391> mark @us_ligature_anchor 
+       <anchor 663 391> mark @us_ligature_anchor
     ligComponent
       <anchor 879 391> mark @us_ligature_anchor;
-  pos ligature \ae_t_t  <anchor 341 391> mark @us_ligature_anchor 
+  pos ligature \ae_t_t  <anchor 341 391> mark @us_ligature_anchor
     ligComponent
-       <anchor 679 391> mark @us_ligature_anchor 
+       <anchor 679 391> mark @us_ligature_anchor
     ligComponent
       <anchor 1006 391> mark @us_ligature_anchor;
-  pos ligature \f_j <anchor 227 391> mark @us_ligature_anchor  
+  pos ligature \f_j <anchor 227 391> mark @us_ligature_anchor
     ligComponent
       <anchor 431 391> mark @us_ligature_anchor;
-  pos ligature \f_j.alt <anchor 227 391> mark @us_ligature_anchor  
+  pos ligature \f_j.alt <anchor 227 391> mark @us_ligature_anchor
     ligComponent
       <anchor 431 391> mark @us_ligature_anchor;
-  pos ligature \e_t.alt2 <anchor 215 391> mark @us_ligature_anchor  
+  pos ligature \e_t.alt2 <anchor 215 391> mark @us_ligature_anchor
     ligComponent
       <anchor 517 391> mark @us_ligature_anchor;
 } ligmark_us_abbrev;
 
+#
+# A few marks go below the base character. We have a complete
+# set of marks, even though many combinations will never occur.
+#
 lookup ligmark_below {
   lookupflag 0;
   markClass [\uni0328 \ogonek.alt \dotbelowcomb \uni0327 ] <anchor 0 -24> @ligature_below;
-  pos ligature \uniFB02 <anchor 174 -54> mark @ligature_below 
+  pos ligature \uniFB02 <anchor 174 -54> mark @ligature_below
     ligComponent
       <anchor 432 -24> mark @ligature_below;
-  pos ligature \uniFB01 <anchor 182 -54> mark @ligature_below 
+  pos ligature \uniFB01 <anchor 182 -54> mark @ligature_below
     ligComponent
       <anchor 371 -24> mark @ligature_below;
-  pos ligature \uniFB05 <anchor 135 -54> mark @ligature_below 
+  pos ligature \uniFB05 <anchor 135 -54> mark @ligature_below
     ligComponent
       <anchor 375 -24> mark @ligature_below;
-  pos ligature \f_a <anchor 188 -54> mark @ligature_below 
+  pos ligature \f_a <anchor 188 -54> mark @ligature_below
     ligComponent
       <anchor 404 -24> mark @ligature_below;
-  pos ligature \r_a <anchor 151 -24> mark @ligature_below 
+  pos ligature \r_a <anchor 151 -24> mark @ligature_below
     ligComponent
       <anchor 420 -24> mark @ligature_below;
-  pos ligature \longs_t_dotlessi <anchor 155 -54> mark @ligature_below 
+  pos ligature \longs_t_dotlessi <anchor 155 -54> mark @ligature_below
     ligComponent
-      <anchor 419 -24> mark @ligature_below 
+      <anchor 419 -24> mark @ligature_below
     ligComponent
       <anchor 584 -54> mark @ligature_below;
-  pos ligature \r_t_u <anchor 149 -54> mark @ligature_below 
+  pos ligature \r_t_u <anchor 149 -54> mark @ligature_below
     ligComponent
-      <anchor 372 -24> mark @ligature_below 
+      <anchor 372 -24> mark @ligature_below
     ligComponent
       <anchor 650 -24> mark @ligature_below;
-  pos ligature \r_t <anchor 142 -54> mark @ligature_below 
+  pos ligature \r_t <anchor 142 -54> mark @ligature_below
     ligComponent
       <anchor 385 -24> mark @ligature_below;
-  pos ligature \longs_i <anchor 108 -49> mark @ligature_below 
+  pos ligature \longs_i <anchor 108 -49> mark @ligature_below
     ligComponent
       <anchor 306 -24> mark @ligature_below;
-  pos ligature \e_n <anchor 151 -24> mark @ligature_below 
+  pos ligature \e_n <anchor 151 -24> mark @ligature_below
     ligComponent
       <anchor 442 -24> mark @ligature_below;
-  pos ligature \e_t_u <anchor 158 -24> mark @ligature_below 
+  pos ligature \e_t_u <anchor 158 -24> mark @ligature_below
     ligComponent
-      <anchor 457 -24> mark @ligature_below 
+      <anchor 457 -24> mark @ligature_below
     ligComponent
       <anchor 759 -24> mark @ligature_below;
-  pos ligature \e_a <anchor 148 -24> mark @ligature_below 
+  pos ligature \e_a <anchor 148 -24> mark @ligature_below
     ligComponent
       <anchor 448 -24> mark @ligature_below;
-  pos ligature \e_t <anchor 146 -24> mark @ligature_below 
+  pos ligature \e_t <anchor 146 -24> mark @ligature_below
     ligComponent
       <anchor 430 -24> mark @ligature_below;
   pos ligature \c_t <anchor 149 -24> mark @ligature_below
     ligComponent
       <anchor 423 -24> mark @ligature_below;
-  pos ligature \e_x <anchor 78 14> mark @ligature_below 
+  pos ligature \e_x <anchor 78 14> mark @ligature_below
     ligComponent
       <anchor 454 -24> mark @ligature_below;
-  pos ligature \t_u <anchor 174 -24> mark @ligature_below 
+  pos ligature \t_u <anchor 174 -24> mark @ligature_below
     ligComponent
       <anchor 459 -24> mark @ligature_below;
-  pos ligature \f_u <anchor 186 -54> mark @ligature_below 
+  pos ligature \f_u <anchor 186 -54> mark @ligature_below
     ligComponent
       <anchor 453 -24> mark @ligature_below;
-  pos ligature \e_r_i <anchor 148 -24> mark @ligature_below 
+  pos ligature \e_r_i <anchor 148 -24> mark @ligature_below
     ligComponent
-      <anchor 418 -24> mark @ligature_below 
-    ligComponent
-      <anchor 618 -24> mark @ligature_below;
-  pos ligature \e_r_dotlessi <anchor 148 -24> mark @ligature_below 
-    ligComponent
-      <anchor 418 -24> mark @ligature_below 
+      <anchor 418 -24> mark @ligature_below
     ligComponent
       <anchor 618 -24> mark @ligature_below;
-  pos ligature \r_m <anchor 176 -24> mark @ligature_below 
+  pos ligature \e_r_dotlessi <anchor 148 -24> mark @ligature_below
+    ligComponent
+      <anchor 418 -24> mark @ligature_below
+    ligComponent
+      <anchor 618 -24> mark @ligature_below;
+  pos ligature \r_m <anchor 176 -24> mark @ligature_below
     ligComponent
       <anchor 634 -24> mark @ligature_below;
-  pos ligature \e_r_n <anchor 139 -24> mark @ligature_below 
+  pos ligature \e_r_n <anchor 139 -24> mark @ligature_below
     ligComponent
-      <anchor 437 -24> mark @ligature_below 
+      <anchor 437 -24> mark @ligature_below
     ligComponent
       <anchor 743 -24> mark @ligature_below;
-  pos ligature \e_u <anchor 146 -24> mark @ligature_below 
+  pos ligature \e_u <anchor 146 -24> mark @ligature_below
     ligComponent
       <anchor 441 -24> mark @ligature_below;
-  pos ligature \e_longs_i <anchor 129 -24> mark @ligature_below 
+  pos ligature \e_longs_i <anchor 129 -24> mark @ligature_below
     ligComponent
-      <anchor 405 -24> mark @ligature_below 
+      <anchor 405 -24> mark @ligature_below
     ligComponent
       <anchor 581 -24> mark @ligature_below;
-  pos ligature \e_longs <anchor 129 -24> mark @ligature_below 
+  pos ligature \e_longs <anchor 129 -24> mark @ligature_below
     ligComponent
       <anchor 403 -24> mark @ligature_below;
-  pos ligature \t_dotlessi <anchor 152 -24> mark @ligature_below 
+  pos ligature \t_dotlessi <anchor 152 -24> mark @ligature_below
     ligComponent
       <anchor 378 -24> mark @ligature_below;
-  pos ligature \r_n <anchor 153 -24> mark @ligature_below 
+  pos ligature \r_n <anchor 153 -24> mark @ligature_below
     ligComponent
       <anchor 473 -24> mark @ligature_below;
-  pos ligature \e_m <anchor 151 -24> mark @ligature_below 
+  pos ligature \e_m <anchor 151 -24> mark @ligature_below
     ligComponent
       <anchor 592 -24> mark @ligature_below;
-  pos ligature \e_r_a.alt <anchor 154 -24> mark @ligature_below 
+  pos ligature \e_r_a.alt <anchor 154 -24> mark @ligature_below
     ligComponent
-      <anchor 446 -24> mark @ligature_below 
+      <anchor 446 -24> mark @ligature_below
     ligComponent
       <anchor 729 -24> mark @ligature_below;
-  pos ligature \e_o <anchor 139 -24> mark @ligature_below 
+  pos ligature \e_o <anchor 139 -24> mark @ligature_below
     ligComponent
       <anchor 441 -24> mark @ligature_below;
-  pos ligature \g_o <anchor 168 -383> mark @ligature_below 
+  pos ligature \g_o <anchor 168 -383> mark @ligature_below
     ligComponent
       <anchor 566 -24> mark @ligature_below;
-  pos ligature \f_o <anchor 157 -54> mark @ligature_below 
+  pos ligature \f_o <anchor 157 -54> mark @ligature_below
     ligComponent
       <anchor 407 -24> mark @ligature_below;
-  pos ligature \t_i <anchor 155 -24> mark @ligature_below 
+  pos ligature \t_i <anchor 155 -24> mark @ligature_below
     ligComponent
       <anchor 376 -24> mark @ligature_below;
-  pos ligature \longs_t_i <anchor 154 -49> mark @ligature_below 
+  pos ligature \longs_t_i <anchor 154 -49> mark @ligature_below
     ligComponent
-      <anchor 385 -24> mark @ligature_below 
+      <anchor 385 -24> mark @ligature_below
     ligComponent
       <anchor 570 -24> mark @ligature_below;
-  pos ligature \e_r <anchor 120 -24> mark @ligature_below 
+  pos ligature \e_r <anchor 120 -24> mark @ligature_below
     ligComponent
       <anchor 437 -24> mark @ligature_below;
-  pos ligature \f_i.alt <anchor 158 -54> mark @ligature_below 
+  pos ligature \f_i.alt <anchor 158 -54> mark @ligature_below
     ligComponent
       <anchor 340 -24> mark @ligature_below;
-  pos ligature \f_l.alt <anchor 161 -54> mark @ligature_below 
+  pos ligature \f_l.alt <anchor 161 -54> mark @ligature_below
     ligComponent
       <anchor 405 -24> mark @ligature_below;
-  pos ligature \f_o.alt <anchor 149 -54> mark @ligature_below 
+  pos ligature \f_o.alt <anchor 149 -54> mark @ligature_below
     ligComponent
       <anchor 398 -24> mark @ligature_below;
-  pos ligature \f_a.alt <anchor 167 -98> mark @ligature_below 
+  pos ligature \f_a.alt <anchor 167 -98> mark @ligature_below
     ligComponent
       <anchor 381 -24> mark @ligature_below;
-  pos ligature \f_u.alt <anchor 169 -54> mark @ligature_below 
+  pos ligature \f_u.alt <anchor 169 -54> mark @ligature_below
     ligComponent
       <anchor 429 -24> mark @ligature_below;
-  pos ligature \e_t.alt <anchor 142 -24> mark @ligature_below 
+  pos ligature \e_t.alt <anchor 142 -24> mark @ligature_below
     ligComponent
       <anchor 448 -24> mark @ligature_below;
-  pos ligature \e_p <anchor 141 -24> mark @ligature_below 
+  pos ligature \e_p <anchor 141 -24> mark @ligature_below
     ligComponent
       <anchor 485 -24> mark @ligature_below;
-  pos ligature \f_t <anchor 157 -54> mark @ligature_below 
+  pos ligature \f_t <anchor 157 -54> mark @ligature_below
     ligComponent
       <anchor 387 -24> mark @ligature_below;
-  pos ligature \f_r <anchor 170 -98> mark @ligature_below 
+  pos ligature \f_r <anchor 170 -98> mark @ligature_below
     ligComponent
       <anchor 394 -24> mark @ligature_below;
-  pos ligature \e_t_i <anchor 142 -24> mark @ligature_below 
+  pos ligature \e_t_i <anchor 142 -24> mark @ligature_below
     ligComponent
-      <anchor 451 -24> mark @ligature_below 
+      <anchor 451 -24> mark @ligature_below
     ligComponent
       <anchor 669 -24> mark @ligature_below;
-  pos ligature \e_longs_longs_i <anchor 143 -24> mark @ligature_below 
+  pos ligature \e_longs_longs_i <anchor 143 -24> mark @ligature_below
     ligComponent
       <anchor 395 -73> mark @ligature_below
     ligComponent
       <anchor 609 -73> mark @ligature_below
     ligComponent
       <anchor 830 -24> mark @ligature_below;
-  pos ligature \longs_longs_i <anchor 73 -73> mark @ligature_below 
+  pos ligature \longs_longs_i <anchor 73 -73> mark @ligature_below
     ligComponent
-      <anchor 303 -73> mark @ligature_below 
+      <anchor 303 -73> mark @ligature_below
     ligComponent
       <anchor 526 -24> mark @ligature_below;
-  pos ligature \e_longs_longs <anchor 130 -24> mark @ligature_below 
+  pos ligature \e_longs_longs <anchor 130 -24> mark @ligature_below
     ligComponent
-      <anchor 387 -73> mark @ligature_below 
+      <anchor 387 -73> mark @ligature_below
     ligComponent
       <anchor 609 -73> mark @ligature_below;
-  pos ligature \longs_longs <anchor 78 -73> mark @ligature_below 
+  pos ligature \longs_longs <anchor 78 -73> mark @ligature_below
     ligComponent
       <anchor 307 -73> mark @ligature_below;
-  pos ligature \e_longs_t <anchor 135 -24> mark @ligature_below 
+  pos ligature \e_longs_t <anchor 135 -24> mark @ligature_below
     ligComponent
-      <anchor 354 -73> mark @ligature_below 
+      <anchor 354 -73> mark @ligature_below
     ligComponent
       <anchor 614 -24> mark @ligature_below;
-  pos ligature \g_a <anchor 166 -383> mark @ligature_below 
+  pos ligature \g_a <anchor 166 -383> mark @ligature_below
     ligComponent
       <anchor 584 -24> mark @ligature_below;
-  pos ligature \e_r_r_a <anchor 158 -24> mark @ligature_below 
+  pos ligature \e_r_r_a <anchor 158 -24> mark @ligature_below
     ligComponent
-      <anchor 422 -24> mark @ligature_below 
+      <anchor 422 -24> mark @ligature_below
     ligComponent
-      <anchor 617 -24> mark @ligature_below 
+      <anchor 617 -24> mark @ligature_below
     ligComponent
       <anchor 869 -24> mark @ligature_below;
-  pos ligature \r_r_a <anchor 126 -24> mark @ligature_below 
+  pos ligature \r_r_a <anchor 126 -24> mark @ligature_below
     ligComponent
-      <anchor 340 -24> mark @ligature_below 
+      <anchor 340 -24> mark @ligature_below
     ligComponent
       <anchor 595 -24> mark @ligature_below;
-  pos ligature \o_uniA75B <anchor 144 -24> mark @ligature_below 
+  pos ligature \o_uniA75B <anchor 144 -24> mark @ligature_below
     ligComponent
       <anchor 435 -24> mark @ligature_below;
-  pos ligature \e_r_a <anchor 120 -24> mark @ligature_below 
+  pos ligature \e_r_a <anchor 120 -24> mark @ligature_below
     ligComponent
-      <anchor 437 -24> mark @ligature_below 
+      <anchor 437 -24> mark @ligature_below
     ligComponent
       <anchor 639 -24> mark @ligature_below;
-  pos ligature \e_t_dotlessi <anchor 142 -24> mark @ligature_below 
+  pos ligature \e_t_dotlessi <anchor 142 -24> mark @ligature_below
     ligComponent
-      <anchor 451 -24> mark @ligature_below 
+      <anchor 451 -24> mark @ligature_below
     ligComponent
       <anchor 669 -24> mark @ligature_below;
-  pos ligature \n_t <anchor 110 -24> mark @ligature_below 
+  pos ligature \n_t <anchor 110 -24> mark @ligature_below
     ligComponent
       <anchor 363 -65> mark @ligature_below;
-  pos ligature \e_i <anchor 141 -24> mark @ligature_below 
+  pos ligature \e_i <anchor 141 -24> mark @ligature_below
     ligComponent
       <anchor 384 -24> mark @ligature_below;
-  pos ligature \e_dotlessi <anchor 140 -24> mark @ligature_below 
+  pos ligature \e_dotlessi <anchor 140 -24> mark @ligature_below
     ligComponent
       <anchor 389 -24> mark @ligature_below;
-  pos ligature \e_e <anchor 154 -24> mark @ligature_below 
+  pos ligature \e_e <anchor 154 -24> mark @ligature_below
     ligComponent
       <anchor 453 -24> mark @ligature_below;
-  pos ligature \f_f_u <anchor 149 -73> mark @ligature_below 
+  pos ligature \f_f_u <anchor 149 -73> mark @ligature_below
     ligComponent
-      <anchor 371 -73> mark @ligature_below 
+      <anchor 371 -73> mark @ligature_below
     ligComponent
       <anchor 678 -24> mark @ligature_below;
-  pos ligature \uniFB00 <anchor 149 -73> mark @ligature_below 
+  pos ligature \uniFB00 <anchor 149 -73> mark @ligature_below
     ligComponent
       <anchor 371 -73> mark @ligature_below;
-  pos ligature \uniFB03 <anchor 149 -73> mark @ligature_below 
+  pos ligature \uniFB03 <anchor 149 -73> mark @ligature_below
     ligComponent
-      <anchor 371 -73> mark @ligature_below 
+      <anchor 371 -73> mark @ligature_below
     ligComponent
       <anchor 576 -24> mark @ligature_below;
-  pos ligature \uniFB04 <anchor 149 -73> mark @ligature_below 
+  pos ligature \uniFB04 <anchor 149 -73> mark @ligature_below
     ligComponent
-      <anchor 371 -73> mark @ligature_below 
+      <anchor 371 -73> mark @ligature_below
     ligComponent
       <anchor 646 -21> mark @ligature_below;
-  pos ligature \f_f.alt <anchor 149 -73> mark @ligature_below 
+  pos ligature \f_f.alt <anchor 149 -73> mark @ligature_below
     ligComponent
       <anchor 371 -73> mark @ligature_below;
-  pos ligature \f_f_a <anchor 149 -73> mark @ligature_below 
+  pos ligature \f_f_a <anchor 149 -73> mark @ligature_below
     ligComponent
-      <anchor 371 -73> mark @ligature_below 
+      <anchor 371 -73> mark @ligature_below
     ligComponent
       <anchor 599 -24> mark @ligature_below;
-  pos ligature \e_t_t <anchor 142 -24> mark @ligature_below 
+  pos ligature \e_t_t <anchor 142 -24> mark @ligature_below
     ligComponent
-      <anchor 448 -24> mark @ligature_below 
+      <anchor 448 -24> mark @ligature_below
     ligComponent
       <anchor 709 -24> mark @ligature_below;
-  pos ligature \t_t <anchor 162 -24> mark @ligature_below 
+  pos ligature \t_t <anchor 162 -24> mark @ligature_below
     ligComponent
       <anchor 450 -21> mark @ligature_below;
-  pos ligature \e_j <anchor 141 -24> mark @ligature_below 
+  pos ligature \e_j <anchor 141 -24> mark @ligature_below
     ligComponent
       <anchor 384 -24> mark @ligature_below;
-  pos ligature \uni019A_uni019A <anchor 128 -24> mark @ligature_below 
+  pos ligature \uni019A_uni019A <anchor 128 -24> mark @ligature_below
     ligComponent
       <anchor 319 -24> mark @ligature_below;
-  pos ligature \r_a.alt <anchor 151 -24> mark @ligature_below 
+  pos ligature \r_a.alt <anchor 151 -24> mark @ligature_below
     ligComponent
       <anchor 420 -24> mark @ligature_below;
-  pos ligature \r_t_y <anchor 182 -24> mark @ligature_below 
+  pos ligature \r_t_y <anchor 182 -24> mark @ligature_below
     ligComponent
-      <anchor 396 -24> mark @ligature_below 
-    ligComponent
-      <anchor 656 -19> mark @ligature_below;
-  pos ligature \r_t_uni1E8F <anchor 182 -24> mark @ligature_below 
-    ligComponent
-      <anchor 396 -24> mark @ligature_below 
+      <anchor 396 -24> mark @ligature_below
     ligComponent
       <anchor 656 -19> mark @ligature_below;
-  pos ligature \g_y <anchor 168 -383> mark @ligature_below 
+  pos ligature \r_t_uni1E8F <anchor 182 -24> mark @ligature_below
+    ligComponent
+      <anchor 396 -24> mark @ligature_below
+    ligComponent
+      <anchor 656 -19> mark @ligature_below;
+  pos ligature \g_y <anchor 168 -383> mark @ligature_below
     ligComponent
       <anchor 684 -103> mark @ligature_below;
-  pos ligature \ae_t <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_t <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 601 -24> mark @ligature_below;
-  pos ligature \ae_i <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_i <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 548 -24> mark @ligature_below;
-  pos ligature \ae_dotlessi <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_dotlessi <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 564 -24> mark @ligature_below;
-  pos ligature \ae_n <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_n <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 662 -24> mark @ligature_below;
-  pos ligature \ae_m <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_m <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 762 -24> mark @ligature_below;
-  pos ligature \ae_r <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_r <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 622 -24> mark @ligature_below;
-  pos ligature \ae_p <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_p <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 680 -24> mark @ligature_below;
-  pos ligature \ae_uni01BF <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_uni01BF <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 680 -24> mark @ligature_below;
-  pos ligature \ae_longs <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_longs <anchor 193 -24> mark @ligature_below
     ligComponent
       <anchor 556 -24> mark @ligature_below;
-  pos ligature \ae_longs_longs <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_longs_longs <anchor 193 -24> mark @ligature_below
     ligComponent
-      <anchor 549 -73> mark @ligature_below 
+      <anchor 549 -73> mark @ligature_below
     ligComponent
       <anchor 772 -73> mark @ligature_below;
-  pos ligature \ae_longs_longs_i <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_longs_longs_i <anchor 193 -24> mark @ligature_below
     ligComponent
-      <anchor 554 -73> mark @ligature_below 
+      <anchor 554 -73> mark @ligature_below
     ligComponent
-      <anchor 769 -73> mark @ligature_below 
+      <anchor 769 -73> mark @ligature_below
     ligComponent
       <anchor 990 -24> mark @ligature_below;
-  pos ligature \ae_longs_t <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_longs_t <anchor 193 -24> mark @ligature_below
     ligComponent
-      <anchor 543 -73> mark @ligature_below 
+      <anchor 543 -73> mark @ligature_below
     ligComponent
       <anchor 803 -24> mark @ligature_below;
-  pos ligature \ae_longs_i <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_longs_i <anchor 193 -24> mark @ligature_below
     ligComponent
-      <anchor 550 -24> mark @ligature_below 
+      <anchor 550 -24> mark @ligature_below
     ligComponent
       <anchor 726 -24> mark @ligature_below;
-  pos ligature \ae_r_a <anchor 193 -24> mark @ligature_below 
+  pos ligature \ae_r_a <anchor 193 -24> mark @ligature_below
     ligComponent
-      <anchor 627 -24> mark @ligature_below 
+      <anchor 627 -24> mark @ligature_below
     ligComponent
       <anchor 829 -24> mark @ligature_below;
-  pos ligature \ae_t_t <anchor 197 -24> mark @ligature_below 
+  pos ligature \ae_t_t <anchor 197 -24> mark @ligature_below
     ligComponent
-      <anchor 583 -24> mark @ligature_below 
+      <anchor 583 -24> mark @ligature_below
     ligComponent
       <anchor 866 -24> mark @ligature_below;
-  pos ligature \f_j <anchor 182 -54> mark @ligature_below 
+  pos ligature \f_j <anchor 182 -54> mark @ligature_below
     ligComponent
       <anchor 371 -24> mark @ligature_below;
-  pos ligature \f_j.alt <anchor 182 -54> mark @ligature_below 
+  pos ligature \f_j.alt <anchor 182 -54> mark @ligature_below
     ligComponent
       <anchor 371 -24> mark @ligature_below;
-  pos ligature \e_t.alt2 <anchor 146 -24> mark @ligature_below 
+  pos ligature \e_t.alt2 <anchor 146 -24> mark @ligature_below
     ligComponent
       <anchor 430 -24> mark @ligature_below;
 } ligmark_below;
 
+#
+# Any mark can be positioned over any element of any ligature, though
+# many combinations will never occur. This feature does not work well
+# in Word or InDesign.
+#
 lookup ligmark_above {
   lookupflag 0;
   markClass [\macron.titling ] <anchor 0 537> @ligature_anchor;
-  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni035B \uni1DE3
+  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni030A \uni035B \uni1DE3 \grave.cap \acute.cap
   	    \uni0365 \uni0307 \uni0304.alt \uni1DE3.alt \uni0366] <anchor 0 391> @ligature_anchor;
-
-  pos ligature \uniFB02 <anchor 199 659> mark @ligature_anchor 
+  pos ligature \uniFB02 <anchor 199 659> mark @ligature_anchor
     ligComponent
       <anchor 434 659> mark @ligature_anchor;
-  pos ligature \uniFB01 <anchor 184 659> mark @ligature_anchor 
+  pos ligature \uniFB01 <anchor 184 659> mark @ligature_anchor
     ligComponent
       <anchor 364 659> mark @ligature_anchor;
-  pos ligature \uniFB05 <anchor 158 659> mark @ligature_anchor 
+  pos ligature \uniFB05 <anchor 158 406> mark @ligature_anchor
     ligComponent
       <anchor 356 659> mark @ligature_anchor;
-  pos ligature \f_a <anchor 163 659> mark @ligature_anchor 
+  pos ligature \f_a <anchor 163 659> mark @ligature_anchor
     ligComponent
       <anchor 404 391> mark @ligature_anchor;
-  pos ligature \r_a <anchor 149 391> mark @ligature_anchor 
+  pos ligature \r_a <anchor 149 391> mark @ligature_anchor
     ligComponent
       <anchor 432 391> mark @ligature_anchor;
-  pos ligature \longs_t_dotlessi <anchor 149 659> mark @ligature_anchor 
+  pos ligature \longs_t_dotlessi <anchor 149 659> mark @ligature_anchor
     ligComponent
-      <anchor 354 659> mark @ligature_anchor 
+      <anchor 354 659> mark @ligature_anchor
     ligComponent
       <anchor 596 391> mark @ligature_anchor;
-  pos ligature \r_t_u <anchor 164 757> mark @ligature_anchor 
+  pos ligature \r_t_u <anchor 164 757> mark @ligature_anchor
     ligComponent
-      <anchor 407 659> mark @ligature_anchor 
+      <anchor 407 659> mark @ligature_anchor
     ligComponent
       <anchor 700 391> mark @ligature_anchor;
-  pos ligature \r_t <anchor 132 757> mark @ligature_anchor 
+  pos ligature \r_t <anchor 132 757> mark @ligature_anchor
     ligComponent
       <anchor 401 659> mark @ligature_anchor;
-  pos ligature \longs_i <anchor 138 659> mark @ligature_anchor 
+  pos ligature \longs_i <anchor 138 659> mark @ligature_anchor
     ligComponent
       <anchor 303 659> mark @ligature_anchor;
-  pos ligature \e_n <anchor 186 391> mark @ligature_anchor 
+  pos ligature \e_n <anchor 186 391> mark @ligature_anchor
     ligComponent
       <anchor 474 391> mark @ligature_anchor;
-  pos ligature \e_t_u <anchor 195 391> mark @ligature_anchor 
+  pos ligature \e_t_u <anchor 195 391> mark @ligature_anchor
     ligComponent
-      <anchor 494 391> mark @ligature_anchor 
+      <anchor 494 391> mark @ligature_anchor
     ligComponent
       <anchor 771 391> mark @ligature_anchor;
-  pos ligature \e_a <anchor 196 391> mark @ligature_anchor 
+  pos ligature \e_a <anchor 196 391> mark @ligature_anchor
     ligComponent
       <anchor 482 391> mark @ligature_anchor;
-  pos ligature \e_t <anchor 163 391> mark @ligature_anchor 
+  pos ligature \e_t <anchor 163 391> mark @ligature_anchor
     ligComponent
       <anchor 467 391> mark @ligature_anchor;
   pos ligature \c_t <anchor 210 659> mark @ligature_anchor
     ligComponent
       <anchor 439 659> mark @ligature_anchor;
-  pos ligature \e_x <anchor 201 391> mark @ligature_anchor 
+  pos ligature \e_x <anchor 201 391> mark @ligature_anchor
     ligComponent
       <anchor 510 391> mark @ligature_anchor;
-  pos ligature \t_u <anchor 211 391> mark @ligature_anchor 
+  pos ligature \t_u <anchor 211 391> mark @ligature_anchor
     ligComponent
       <anchor 467 391> mark @ligature_anchor;
-  pos ligature \f_u <anchor 220 659> mark @ligature_anchor 
+  pos ligature \f_u <anchor 220 659> mark @ligature_anchor
     ligComponent
       <anchor 469 391> mark @ligature_anchor;
-  pos ligature \e_r_i <anchor 164 391> mark @ligature_anchor 
+  pos ligature \e_r_i <anchor 164 391> mark @ligature_anchor
     ligComponent
-      <anchor 423 391> mark @ligature_anchor 
+      <anchor 423 391> mark @ligature_anchor
     ligComponent
       <anchor 631 586> mark @ligature_anchor;
-  pos ligature \e_r_dotlessi <anchor 164 391> mark @ligature_anchor 
+  pos ligature \e_r_dotlessi <anchor 164 391> mark @ligature_anchor
     ligComponent
-      <anchor 416 391> mark @ligature_anchor 
+      <anchor 416 391> mark @ligature_anchor
     ligComponent
       <anchor 631 391> mark @ligature_anchor;
-  pos ligature \r_m <anchor 176 391> mark @ligature_anchor 
+  pos ligature \r_m <anchor 176 391> mark @ligature_anchor
     ligComponent
       <anchor 662 391> mark @ligature_anchor;
-  pos ligature \e_r_n <anchor 182 391> mark @ligature_anchor 
+  pos ligature \e_r_n <anchor 182 391> mark @ligature_anchor
     ligComponent
-      <anchor 441 391> mark @ligature_anchor 
+      <anchor 441 391> mark @ligature_anchor
     ligComponent
       <anchor 750 391> mark @ligature_anchor;
-  pos ligature \e_u <anchor 180 391> mark @ligature_anchor 
+  pos ligature \e_u <anchor 180 391> mark @ligature_anchor
     ligComponent
       <anchor 453 391> mark @ligature_anchor;
-  pos ligature \e_longs_i <anchor 179 391> mark @ligature_anchor 
+  pos ligature \e_longs_i <anchor 179 391> mark @ligature_anchor
     ligComponent
-      <anchor 526 586> mark @ligature_anchor 
+      <anchor 526 586> mark @ligature_anchor
     ligComponent
       <anchor 643 586> mark @ligature_anchor;
-  pos ligature \e_longs <anchor 179 391> mark @ligature_anchor 
+  pos ligature \e_longs <anchor 179 391> mark @ligature_anchor
     ligComponent
       <anchor 479 535> mark @ligature_anchor;
-  pos ligature \t_dotlessi <anchor 171 391> mark @ligature_anchor 
+  pos ligature \t_dotlessi <anchor 171 391> mark @ligature_anchor
     ligComponent
       <anchor 381 391> mark @ligature_anchor;
-  pos ligature \r_n <anchor 160 391> mark @ligature_anchor 
+  pos ligature \r_n <anchor 160 391> mark @ligature_anchor
     ligComponent
       <anchor 476 391> mark @ligature_anchor;
-  pos ligature \e_m <anchor 189 383> mark @ligature_anchor 
+  pos ligature \e_m <anchor 189 383> mark @ligature_anchor
     ligComponent
       <anchor 618 383> mark @ligature_anchor;
-  pos ligature \e_r_a.alt <anchor 188 391> mark @ligature_anchor 
+  pos ligature \e_r_a.alt <anchor 188 391> mark @ligature_anchor
     ligComponent
-      <anchor 436 391> mark @ligature_anchor 
+      <anchor 436 391> mark @ligature_anchor
     ligComponent
       <anchor 719 391> mark @ligature_anchor;
-  pos ligature \e_o <anchor 157 391> mark @ligature_anchor 
+  pos ligature \e_o <anchor 157 391> mark @ligature_anchor
     ligComponent
       <anchor 445 391> mark @ligature_anchor;
-  pos ligature \g_o <anchor 221 391> mark @ligature_anchor 
+  pos ligature \g_o <anchor 221 391> mark @ligature_anchor
     ligComponent
       <anchor 594 391> mark @ligature_anchor;
-  pos ligature \f_o <anchor 226 659> mark @ligature_anchor 
+  pos ligature \f_o <anchor 226 659> mark @ligature_anchor
     ligComponent
       <anchor 447 391> mark @ligature_anchor;
-  pos ligature \t_i <anchor 157 391> mark @ligature_anchor 
+  pos ligature \t_i <anchor 157 391> mark @ligature_anchor
     ligComponent
       <anchor 382 586> mark @ligature_anchor;
-  pos ligature \longs_t_i <anchor 215 659> mark @ligature_anchor 
+  pos ligature \longs_t_i <anchor 215 659> mark @ligature_anchor
     ligComponent
-      <anchor 381 659> mark @ligature_anchor 
+      <anchor 381 659> mark @ligature_anchor
     ligComponent
       <anchor 587 586> mark @ligature_anchor;
-  pos ligature \e_r <anchor 174 391> mark @ligature_anchor 
+  pos ligature \e_r <anchor 174 391> mark @ligature_anchor
     ligComponent
       <anchor 415 391> mark @ligature_anchor;
-  pos ligature \f_i.alt <anchor 178 659> mark @ligature_anchor 
+  pos ligature \f_i.alt <anchor 178 659> mark @ligature_anchor
     ligComponent
       <anchor 326 391> mark @ligature_anchor;
-  pos ligature \f_l.alt <anchor 161 659> mark @ligature_anchor 
+  pos ligature \f_l.alt <anchor 161 659> mark @ligature_anchor
     ligComponent
       <anchor 367 659> mark @ligature_anchor;
-  pos ligature \f_o.alt <anchor 168 659> mark @ligature_anchor 
+  pos ligature \f_o.alt <anchor 168 659> mark @ligature_anchor
     ligComponent
       <anchor 417 391> mark @ligature_anchor;
-  pos ligature \f_a.alt <anchor 156 659> mark @ligature_anchor 
+  pos ligature \f_a.alt <anchor 156 659> mark @ligature_anchor
     ligComponent
       <anchor 396 391> mark @ligature_anchor;
-  pos ligature \f_u.alt <anchor 196 659> mark @ligature_anchor 
+  pos ligature \f_u.alt <anchor 196 659> mark @ligature_anchor
     ligComponent
       <anchor 448 391> mark @ligature_anchor;
-  pos ligature \e_t.alt <anchor 179 391> mark @ligature_anchor 
+  pos ligature \e_t.alt <anchor 179 391> mark @ligature_anchor
     ligComponent
       <anchor 460 391> mark @ligature_anchor;
-  pos ligature \e_p <anchor 166 391> mark @ligature_anchor 
+  pos ligature \e_p <anchor 166 391> mark @ligature_anchor
     ligComponent
       <anchor 489 391> mark @ligature_anchor;
-  pos ligature \f_t <anchor 157 659> mark @ligature_anchor 
+  pos ligature \f_t <anchor 157 659> mark @ligature_anchor
     ligComponent
       <anchor 376 659> mark @ligature_anchor;
-  pos ligature \f_r <anchor 160 659> mark @ligature_anchor 
+  pos ligature \f_r <anchor 160 659> mark @ligature_anchor
     ligComponent
       <anchor 398 391> mark @ligature_anchor;
-  pos ligature \e_t_i <anchor 192 391> mark @ligature_anchor 
+  pos ligature \e_t_i <anchor 192 391> mark @ligature_anchor
     ligComponent
-      <anchor 473 391> mark @ligature_anchor 
+      <anchor 473 391> mark @ligature_anchor
     ligComponent
       <anchor 664 586> mark @ligature_anchor;
-  pos ligature \e_longs_longs_i <anchor 178 391> mark @ligature_anchor 
+  pos ligature \e_longs_longs_i <anchor 178 391> mark @ligature_anchor
     ligComponent
       <anchor 486 513> mark @ligature_anchor
     ligComponent
       <anchor 713 513> mark @ligature_anchor
     ligComponent
       <anchor 811 513> mark @ligature_anchor;
-  pos ligature \longs_longs_i <anchor 171 513> mark @ligature_anchor 
+  pos ligature \longs_longs_i <anchor 171 513> mark @ligature_anchor
     ligComponent
-      <anchor 396 513> mark @ligature_anchor 
+      <anchor 396 513> mark @ligature_anchor
     ligComponent
       <anchor 527 513> mark @ligature_anchor;
-  pos ligature \e_longs_longs <anchor 176 391> mark @ligature_anchor 
+  pos ligature \e_longs_longs <anchor 176 391> mark @ligature_anchor
     ligComponent
-      <anchor 463 513> mark @ligature_anchor 
+      <anchor 463 513> mark @ligature_anchor
     ligComponent
       <anchor 690 513> mark @ligature_anchor;
-  pos ligature \longs_longs <anchor 188 513> mark @ligature_anchor 
+  pos ligature \longs_longs <anchor 188 513> mark @ligature_anchor
     ligComponent
       <anchor 399 513> mark @ligature_anchor;
-  pos ligature \e_longs_t <anchor 185 391> mark @ligature_anchor 
+  pos ligature \e_longs_t <anchor 185 391> mark @ligature_anchor
     ligComponent
-      <anchor 453 608> mark @ligature_anchor 
+      <anchor 453 608> mark @ligature_anchor
     ligComponent
       <anchor 664 608> mark @ligature_anchor;
-  pos ligature \g_a <anchor 224 391> mark @ligature_anchor 
+  pos ligature \g_a <anchor 224 391> mark @ligature_anchor
     ligComponent
       <anchor 565 391> mark @ligature_anchor;
-  pos ligature \e_r_r_a <anchor 170 391> mark @ligature_anchor 
+  pos ligature \e_r_r_a <anchor 170 391> mark @ligature_anchor
     ligComponent
-      <anchor 416 391> mark @ligature_anchor 
+      <anchor 416 391> mark @ligature_anchor
     ligComponent
-      <anchor 615 391> mark @ligature_anchor 
+      <anchor 615 391> mark @ligature_anchor
     ligComponent
       <anchor 869 391> mark @ligature_anchor;
-  pos ligature \r_r_a <anchor 127 391> mark @ligature_anchor 
+  pos ligature \r_r_a <anchor 127 391> mark @ligature_anchor
     ligComponent
-      <anchor 327 390> mark @ligature_anchor 
+      <anchor 327 390> mark @ligature_anchor
     ligComponent
       <anchor 595 391> mark @ligature_anchor;
-  pos ligature \o_uniA75B <anchor 193 391> mark @ligature_anchor 
+  pos ligature \o_uniA75B <anchor 193 391> mark @ligature_anchor
     ligComponent
       <anchor 426 391> mark @ligature_anchor;
-  pos ligature \e_r_a <anchor 174 391> mark @ligature_anchor 
+  pos ligature \e_r_a <anchor 174 391> mark @ligature_anchor
     ligComponent
-      <anchor 415 391> mark @ligature_anchor 
+      <anchor 415 391> mark @ligature_anchor
     ligComponent
       <anchor 657 391> mark @ligature_anchor;
-  pos ligature \e_t_dotlessi <anchor 192 391> mark @ligature_anchor 
+  pos ligature \e_t_dotlessi <anchor 192 391> mark @ligature_anchor
     ligComponent
-      <anchor 473 391> mark @ligature_anchor 
+      <anchor 473 391> mark @ligature_anchor
     ligComponent
       <anchor 664 437> mark @ligature_anchor;
-  pos ligature \n_t <anchor 126 515> mark @ligature_anchor 
+  pos ligature \n_t <anchor 126 515> mark @ligature_anchor
     ligComponent
       <anchor 347 515> mark @ligature_anchor;
-  pos ligature \e_i <anchor 155 391> mark @ligature_anchor 
+  pos ligature \e_i <anchor 155 391> mark @ligature_anchor
     ligComponent
       <anchor 401 537> mark @ligature_anchor;
-  pos ligature \e_dotlessi <anchor 159 391> mark @ligature_anchor 
+  pos ligature \e_dotlessi <anchor 159 391> mark @ligature_anchor
     ligComponent
       <anchor 392 391> mark @ligature_anchor;
-  pos ligature \e_e <anchor 192 391> mark @ligature_anchor 
+  pos ligature \e_e <anchor 192 391> mark @ligature_anchor
     ligComponent
       <anchor 489 391> mark @ligature_anchor;
-  pos ligature \f_f_u <anchor 209 659> mark @ligature_anchor 
+  pos ligature \f_f_u <anchor 209 659> mark @ligature_anchor
     ligComponent
-      <anchor 412 659> mark @ligature_anchor 
+      <anchor 412 659> mark @ligature_anchor
     ligComponent
       <anchor 700 391> mark @ligature_anchor;
-  pos ligature \uniFB00 <anchor 209 659> mark @ligature_anchor 
+  pos ligature \uniFB00 <anchor 209 659> mark @ligature_anchor
     ligComponent
       <anchor 412 659> mark @ligature_anchor;
-  pos ligature \uniFB03 <anchor 209 659> mark @ligature_anchor 
+  pos ligature \uniFB03 <anchor 209 659> mark @ligature_anchor
     ligComponent
-      <anchor 412 659> mark @ligature_anchor 
+      <anchor 412 659> mark @ligature_anchor
     ligComponent
       <anchor 564 659> mark @ligature_anchor;
-  pos ligature \uniFB04 <anchor 209 659> mark @ligature_anchor 
+  pos ligature \uniFB04 <anchor 209 659> mark @ligature_anchor
     ligComponent
-      <anchor 412 659> mark @ligature_anchor 
+      <anchor 412 659> mark @ligature_anchor
     ligComponent
       <anchor 623 659> mark @ligature_anchor;
-  pos ligature \f_f.alt <anchor 209 659> mark @ligature_anchor 
+  pos ligature \f_f.alt <anchor 209 659> mark @ligature_anchor
     ligComponent
       <anchor 412 659> mark @ligature_anchor;
-  pos ligature \f_f_a <anchor 209 659> mark @ligature_anchor 
+  pos ligature \f_f_a <anchor 209 659> mark @ligature_anchor
     ligComponent
-      <anchor 412 659> mark @ligature_anchor 
+      <anchor 412 659> mark @ligature_anchor
     ligComponent
       <anchor 617 391> mark @ligature_anchor;
-  pos ligature \e_t_t <anchor 179 391> mark @ligature_anchor 
+  pos ligature \e_t_t <anchor 179 391> mark @ligature_anchor
     ligComponent
-      <anchor 460 391> mark @ligature_anchor 
+      <anchor 460 391> mark @ligature_anchor
     ligComponent
       <anchor 749 391> mark @ligature_anchor;
-  pos ligature \t_t <anchor 185 391> mark @ligature_anchor 
+  pos ligature \t_t <anchor 185 391> mark @ligature_anchor
     ligComponent
       <anchor 497 391> mark @ligature_anchor;
-  pos ligature \e_j <anchor 155 391> mark @ligature_anchor 
+  pos ligature \e_j <anchor 155 391> mark @ligature_anchor
     ligComponent
       <anchor 400 537> mark @ligature_anchor;
-  pos ligature \uni019A_uni019A <anchor 89 593> mark @ligature_anchor 
+  pos ligature \uni019A_uni019A <anchor 89 593> mark @ligature_anchor
     ligComponent
       <anchor 312 602> mark @ligature_anchor;
-  pos ligature \r_a.alt <anchor 149 391> mark @ligature_anchor 
+  pos ligature \r_a.alt <anchor 149 391> mark @ligature_anchor
     ligComponent
       <anchor 432 391> mark @ligature_anchor;
-  pos ligature \r_t_y <anchor 189 899> mark @ligature_anchor 
+  pos ligature \r_t_y <anchor 189 899> mark @ligature_anchor
     ligComponent
-      <anchor 410 606> mark @ligature_anchor 
+      <anchor 410 606> mark @ligature_anchor
     ligComponent
       <anchor 621 391> mark @ligature_anchor;
-  pos ligature \r_t_uni1E8F <anchor 189 899> mark @ligature_anchor 
+  pos ligature \r_t_uni1E8F <anchor 189 899> mark @ligature_anchor
     ligComponent
-      <anchor 410 606> mark @ligature_anchor 
+      <anchor 410 606> mark @ligature_anchor
     ligComponent
       <anchor 645 635> mark @ligature_anchor;
-  pos ligature \g_y <anchor 221 391> mark @ligature_anchor 
+  pos ligature \g_y <anchor 221 391> mark @ligature_anchor
     ligComponent
       <anchor 645 391> mark @ligature_anchor;
-  pos ligature \ae_t <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_t <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 642 391> mark @ligature_anchor;
-  pos ligature \ae_i <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_i <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 565 537> mark @ligature_anchor;
-  pos ligature \ae_dotlessi <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_dotlessi <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 568 391> mark @ligature_anchor;
-  pos ligature \ae_n <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_n <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 693 391> mark @ligature_anchor;
-  pos ligature \ae_m <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_m <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 788 383> mark @ligature_anchor;
-  pos ligature \ae_r <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_r <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 601 391> mark @ligature_anchor;
-  pos ligature \ae_p <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_p <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 684 391> mark @ligature_anchor;
-  pos ligature \ae_uni01BF <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_uni01BF <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 665 391> mark @ligature_anchor;
-  pos ligature \ae_longs <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_longs <anchor 241 391> mark @ligature_anchor
     ligComponent
       <anchor 631 535> mark @ligature_anchor;
-  pos ligature \ae_longs_longs <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_longs_longs <anchor 241 391> mark @ligature_anchor
     ligComponent
-      <anchor 625 513> mark @ligature_anchor 
+      <anchor 625 513> mark @ligature_anchor
     ligComponent
       <anchor 853 513> mark @ligature_anchor;
-  pos ligature \ae_longs_longs_i <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_longs_longs_i <anchor 241 391> mark @ligature_anchor
     ligComponent
-      <anchor 646 513> mark @ligature_anchor 
+      <anchor 646 513> mark @ligature_anchor
     ligComponent
-      <anchor 873 513> mark @ligature_anchor 
+      <anchor 873 513> mark @ligature_anchor
     ligComponent
       <anchor 970 513> mark @ligature_anchor;
-  pos ligature \ae_longs_t <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_longs_t <anchor 241 391> mark @ligature_anchor
     ligComponent
-      <anchor 642 608> mark @ligature_anchor 
+      <anchor 642 608> mark @ligature_anchor
     ligComponent
       <anchor 853 608> mark @ligature_anchor;
-  pos ligature \ae_longs_i <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_longs_i <anchor 241 391> mark @ligature_anchor
     ligComponent
-      <anchor 671 586> mark @ligature_anchor 
+      <anchor 671 586> mark @ligature_anchor
     ligComponent
       <anchor 788 586> mark @ligature_anchor;
-  pos ligature \ae_r_a <anchor 241 391> mark @ligature_anchor 
+  pos ligature \ae_r_a <anchor 241 391> mark @ligature_anchor
     ligComponent
-      <anchor 605 391> mark @ligature_anchor 
+      <anchor 605 391> mark @ligature_anchor
     ligComponent
       <anchor 848 391> mark @ligature_anchor;
-  pos ligature \ae_t_t <anchor 245 391> mark @ligature_anchor 
+  pos ligature \ae_t_t <anchor 245 391> mark @ligature_anchor
     ligComponent
-      <anchor 622 391> mark @ligature_anchor 
+      <anchor 622 391> mark @ligature_anchor
     ligComponent
       <anchor 911 391> mark @ligature_anchor;
-  pos ligature \f_j <anchor 184 659> mark @ligature_anchor 
+  pos ligature \f_j <anchor 184 659> mark @ligature_anchor
     ligComponent
       <anchor 364 659> mark @ligature_anchor;
-  pos ligature \f_j.alt <anchor 184 659> mark @ligature_anchor 
+  pos ligature \f_j.alt <anchor 184 659> mark @ligature_anchor
     ligComponent
       <anchor 364 659> mark @ligature_anchor;
-  pos ligature \e_t.alt2 <anchor 163 391> mark @ligature_anchor 
+  pos ligature \e_t.alt2 <anchor 163 391> mark @ligature_anchor
     ligComponent
       <anchor 467 391> mark @ligature_anchor;
 } ligmark_above;
 
+#
+# There should be an anchor for every alphabetic character.
+#
 lookup mark_above {
   lookupflag 0;
   markClass [\macron.sc ] <anchor 0 483> @std_above_anchor;
-  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni035B
+  markClass [\acutecomb \gravecomb \uni0302 \tildecomb \uni0304 \uni0308 \uni030A \uni035B \acute.cap \grave.cap
   	    \uni1DE3 \uni0365 \uni0307 \uni0304.alt \uni1DE3.alt \uni0366] <anchor 0 439> @std_above_anchor;
-
   pos base [\a ] <anchor 171 439> mark @std_above_anchor;
   pos base [\b ] <anchor 193 659> mark @std_above_anchor;
   pos base [\c \y ] <anchor 189 439> mark @std_above_anchor;
   pos base [\g ] <anchor 201 439> mark @std_above_anchor;
-  pos base [\d \A.alt ] <anchor 185 659> mark @std_above_anchor;
+  pos base [\d ] <anchor 185 659> mark @std_above_anchor;
   pos base [\e \a.alt01 ] <anchor 168 439> mark @std_above_anchor;
   pos base [\f ] <anchor 172 659> mark @std_above_anchor;
   pos base [\h \thorn ] <anchor 179 659> mark @std_above_anchor;
@@ -2706,18 +2825,20 @@ lookup mark_above {
   pos base [\eogonek ] <anchor 172 439> mark @std_above_anchor;
   pos base [\s ] <anchor 163 439> mark @std_above_anchor;
   pos base [\dotlessi ] <anchor 93 439> mark @std_above_anchor;
-  pos base [\A ] <anchor 180 562> mark @std_above_anchor;
-  pos base [\E ] <anchor 309 562> mark @std_above_anchor;
-  pos base [\U ] <anchor 333 562> mark @std_above_anchor;
-  pos base [\D \Eth ] <anchor 330 562> mark @std_above_anchor;
-  pos base [\C ] <anchor 309 562> mark @std_above_anchor;
-  pos base [\I ] <anchor 114 562> mark @std_above_anchor;
-  pos base [\Q ] <anchor 350 562> mark @std_above_anchor;
-  pos base [\N ] <anchor 376 562> mark @std_above_anchor;
-  pos base [\X \N.titling ] <anchor 350 562> mark @std_above_anchor;
-  pos base [\T ] <anchor 299 562> mark @std_above_anchor;
-  pos base [\S ] <anchor 224 562> mark @std_above_anchor;
-  pos base [\R ] <anchor 262 562> mark @std_above_anchor;
+  pos base [\A ] <anchor 180 603> mark @std_above_anchor;
+  pos base [\A.alt ] <anchor 263 603> mark @std_above_anchor;
+  pos base [\E ] <anchor 309 603> mark @std_above_anchor;
+  pos base [\E.alt1 ] <anchor 180 603> mark @std_above_anchor;
+  pos base [\U ] <anchor 333 603> mark @std_above_anchor;
+  pos base [\D \Eth ] <anchor 330 603> mark @std_above_anchor;
+  pos base [\C ] <anchor 309 603> mark @std_above_anchor;
+  pos base [\I ] <anchor 114 603> mark @std_above_anchor;
+  pos base [\Q ] <anchor 350 603> mark @std_above_anchor;
+  pos base [\N ] <anchor 376 603> mark @std_above_anchor;
+  pos base [\X \N.titling ] <anchor 350 603> mark @std_above_anchor;
+  pos base [\T ] <anchor 299 603> mark @std_above_anchor;
+  pos base [\S ] <anchor 224 603> mark @std_above_anchor;
+  pos base [\R ] <anchor 262 603> mark @std_above_anchor;
   pos base [\uniA751 ] <anchor 282 439> mark @std_above_anchor;
   pos base [\a.sc \ae.sc ] <anchor 195 483> mark @std_above_anchor;
   pos base [\b.sc ] <anchor 145 483> mark @std_above_anchor;
@@ -2751,20 +2872,20 @@ lookup mark_above {
   pos base [\uni1E8F.sc \P.titling ] <anchor 256 684> mark @std_above_anchor;
   pos base [\uniA753 \F.titling ] <anchor 245 439> mark @std_above_anchor;
   pos base [\e.alt01 ] <anchor 147 439> mark @std_above_anchor;
-  pos base [\M ] <anchor 357 562> mark @std_above_anchor;
-  pos base [\O ] <anchor 316 562> mark @std_above_anchor;
-  pos base [\B ] <anchor 166 562> mark @std_above_anchor;
-  pos base [\F \F.swash ] <anchor 278 562> mark @std_above_anchor;
-  pos base [\G ] <anchor 316 562> mark @std_above_anchor;
+  pos base [\M ] <anchor 357 603> mark @std_above_anchor;
+  pos base [\O ] <anchor 316 603> mark @std_above_anchor;
+  pos base [\B ] <anchor 166 603> mark @std_above_anchor;
+  pos base [\F \F.swash ] <anchor 278 603> mark @std_above_anchor;
+  pos base [\G ] <anchor 316 603> mark @std_above_anchor;
   pos base [\H \Thorn ] <anchor 278 586> mark @std_above_anchor;
-  pos base [\J ] <anchor 116 562> mark @std_above_anchor;
-  pos base [\K \H.alt ] <anchor 261 562> mark @std_above_anchor;
+  pos base [\J ] <anchor 116 603> mark @std_above_anchor;
+  pos base [\K \H.alt ] <anchor 261 603> mark @std_above_anchor;
   pos base [\L ] <anchor 211 610> mark @std_above_anchor;
-  pos base [\P ] <anchor 255 562> mark @std_above_anchor;
-  pos base [\V ] <anchor 284 562> mark @std_above_anchor;
-  pos base [\W ] <anchor 396 562> mark @std_above_anchor;
-  pos base [\Y ] <anchor 356 562> mark @std_above_anchor;
-  pos base [\Z ] <anchor 344 562> mark @std_above_anchor;
+  pos base [\P ] <anchor 255 603> mark @std_above_anchor;
+  pos base [\V ] <anchor 284 603> mark @std_above_anchor;
+  pos base [\W ] <anchor 396 603> mark @std_above_anchor;
+  pos base [\Y ] <anchor 356 603> mark @std_above_anchor;
+  pos base [\Z ] <anchor 344 603> mark @std_above_anchor;
   pos base [\f.alt1 \f.alt3 ] <anchor 208 708> mark @std_above_anchor;
   pos base [\uniA75D ] <anchor 167 439> mark @std_above_anchor;
   pos base [\uniA779 ] <anchor 302 -49> mark @std_above_anchor;
@@ -2794,7 +2915,7 @@ lookup mark_above {
   pos base [\N.titling1 ] <anchor 332 513> mark @std_above_anchor;
   pos base [\E.titling1 ] <anchor 300 513> mark @std_above_anchor;
   pos base [\uni0237 ] <anchor 95 439> mark @std_above_anchor;
-  pos base [\Q.alt ] <anchor 300 562> mark @std_above_anchor;
+  pos base [\Q.alt ] <anchor 300 603> mark @std_above_anchor;
   pos base [\n.alt1 ] <anchor 220 439> mark @std_above_anchor;
   pos base [\m.alt ] <anchor 329 439> mark @std_above_anchor;
   pos base [\j.alt ] <anchor 105 586> mark @std_above_anchor;
@@ -2825,11 +2946,11 @@ lookup mark_above {
   pos base [\M.swash ] <anchor 426 464> mark @std_above_anchor;
   pos base [\e.alt04 ] <anchor 203 439> mark @std_above_anchor;
   pos base [\n.alt2 ] <anchor 257 415> mark @std_above_anchor;
-  pos base [\Y.alt ] <anchor 326 562> mark @std_above_anchor;
+  pos base [\Y.alt ] <anchor 326 603> mark @std_above_anchor;
   pos base [\uni1E8E.alt ] <anchor 356 684> mark @std_above_anchor;
   pos base [\G.alt1 ] <anchor 519 654> mark @std_above_anchor;
   pos base [\uniEEE4 \d.enlarged ] <anchor 371 474> mark @std_above_anchor;
-  pos base [\G.alt2 ] <anchor 335 562> mark @std_above_anchor;
+  pos base [\G.alt2 ] <anchor 335 603> mark @std_above_anchor;
   pos base [\B.medium ] <anchor 231 681> mark @std_above_anchor;
   pos base [\D.medium ] <anchor 224 571> mark @std_above_anchor;
   pos base [\E.medium ] <anchor 169 632> mark @std_above_anchor;
@@ -2842,15 +2963,21 @@ lookup mark_above {
   pos base [\S.medium ] <anchor 210 605> mark @std_above_anchor;
   pos base [\T.medium ] <anchor 283 610> mark @std_above_anchor;
   pos base [\c.enlarged ] <anchor 234 488> mark @std_above_anchor;
-  pos base [\AE ] <anchor 350 562> mark @std_above_anchor;
+  pos base [\AE ] <anchor 350 603> mark @std_above_anchor;
+  pos base [\OE ] <anchor 430 603> mark @std_above_anchor;
   pos base [\eth ] <anchor 149 722> mark @std_above_anchor;
   pos base [\ae ] <anchor 242 439> mark @std_above_anchor;
+  pos base [\oe ] <anchor 299 439> mark @std_above_anchor;
   pos base [\ae.alt ] <anchor 244 439> mark @std_above_anchor;
   pos base [\eth.alt ] <anchor 179 694> mark @std_above_anchor;
   pos base [\AE.titling ] <anchor 394 513> mark @std_above_anchor;
   pos base [\Thorn.titling ] <anchor 257 564> mark @std_above_anchor;
 } mark_above;
 
+#
+# There should be a mark for every alphabetic character that is not
+# pre-composed.
+#
 lookup mark_below {
   lookupflag 0;
   markClass [\uni0328 \ogonek.alt \dotbelowcomb \uni0327 ] <anchor 0 -49> @std_below_anchor;
@@ -2882,6 +3009,7 @@ lookup mark_below {
   pos base [\dotlessi ] <anchor 82 -49> mark @std_below_anchor;
   pos base [\A ] <anchor 217 -49> mark @std_below_anchor;
   pos base [\E ] <anchor 287 -49> mark @std_below_anchor;
+  pos base [\E.alt1 ] <anchor 210 -49> mark @std_below_anchor;
   pos base [\U ] <anchor 322 -49> mark @std_below_anchor;
   pos base [\D \Eth ] <anchor 303 -49> mark @std_below_anchor;
   pos base [\C ] <anchor 280 -49> mark @std_below_anchor;
@@ -2941,7 +3069,7 @@ lookup mark_below {
   pos base [\Z ] <anchor 346 -49> mark @std_below_anchor;
   pos base [\f.alt1 \f.alt3 ] <anchor 154 -73> mark @std_below_anchor;
   pos base [\uniA75D ] <anchor 391 -49> mark @std_below_anchor;
-  pos base [\uniA779 ] <anchor 302 562> mark @std_below_anchor;
+  pos base [\uniA779 ] <anchor 302 603> mark @std_below_anchor;
   pos base [\uniA787 ] <anchor 157 -49> mark @std_below_anchor;
   pos base [\w.alt ] <anchor 420 -49> mark @std_below_anchor;
   pos base [\c.alt ] <anchor 142 -49> mark @std_below_anchor;
@@ -3025,10 +3153,12 @@ lookup mark_below {
   pos base [\Thorn.titling ] <anchor 315 -88> mark @std_below_anchor;
 } mark_below;
 
+#
+# Should there be a -us anchor for every alphabetic character?
+#
 lookup mark_us_abbrev {
   lookupflag 0;
   markClass [\uni1DD2 ] <anchor -234 439> @us_anchor;
-
   pos base [\a ] <anchor 245 439> mark @us_anchor;
   pos base [\b ] <anchor 326 439> mark @us_anchor;
   pos base [\c \y ] <anchor 287 439> mark @us_anchor;
@@ -3058,6 +3188,7 @@ lookup mark_us_abbrev {
   pos base [\dotlessi ] <anchor 82 439> mark @us_anchor;
   pos base [\A ] <anchor 354 586> mark @us_anchor;
   pos base [\E ] <anchor 463 586> mark @us_anchor;
+  pos base [\E.alt1 ] <anchor 384 586> mark @us_anchor;
   pos base [\U ] <anchor 485 586> mark @us_anchor;
   pos base [\D \Eth ] <anchor 521 586> mark @us_anchor;
   pos base [\C ] <anchor 443 586> mark @us_anchor;
@@ -3192,7 +3323,7 @@ lookup mark_us_abbrev {
   pos base [\S.medium ] <anchor 314 586> mark @us_anchor;
   pos base [\T.medium ] <anchor 350 610> mark @us_anchor;
   pos base [\c.enlarged ] <anchor 332 537> mark @us_anchor;
-  pos base [\AE ] <anchor 513 586> mark @us_anchor;
+  pos base [\AE ] <anchor 513 603> mark @us_anchor;
   pos base [\eth ] <anchor 356 439> mark @us_anchor;
   pos base [\ae ] <anchor 359 439> mark @us_anchor;
   pos base [\ae.alt ] <anchor 380 439> mark @us_anchor;
@@ -3215,67 +3346,71 @@ feature mark {
 } mark;
 
 
-@GDEF_Simple = [\a \b \c \g \d \e \f \h \i \l \m \n \o \p \r \q \t \u \x \longs \ampersand \y \v \k 
-	\w \eogonek \s \space \dotlessi \uni1E8F \A \E \U \D \C \I \Q \N \X \T \S \R \period \colon 
-	\uniA751 \a.sc \b.sc \c.sc \d.sc \e.sc \f.sc \g.sc \h.sc \i.sc \j.sc \k.sc \l.sc 
-	\m.sc \n.sc \o.sc \p.sc \q.sc \r.sc \s.sc \t.sc \u.sc \v.sc \w.sc \x.sc \y.sc \z.sc 
-	\umacron \macron \emacron \amacron \imacron \omacron \j \acute \aacute \eacute 
-	\iacute \oacute \uacute \g.alt1 \g.alt2 \uni1E8F.sc \uniA753 \e.alt01 \z \M \O \B \F 
-	\G \H \J \K \L \P \V \W \Y \Z \f.alt1 \bracketleft \backslash \bracketright 
-	\asciicircum \underscore \braceleft \bar \braceright \asciitilde \exclam 
-	\quotedbl \numbersign \dollar \percent \quotesingle \parenleft \parenright 
-	\asterisk \plus \comma \hyphen \slash \zero \one \two \three \four \five \six \seven 
-	\eight \nine \semicolon \less \equal \greater \question \uniA75D \uniA779 
-	\uniA787 \w.alt \i.swash \emdash \endash \afii00208 \figuredash \uni2011 
-	\uni2010 \uniF161 \c.alt \dotlessi.swash \A.titling1 \M.alt \A.titling 
-	\B.titling \C.titling \D.titling \E.titling \F.titling \G.titling \H.titling 
-	\I.titling \J.titling \K.titling \L.titling \M.titling \N.titling \O.titling 
-	\P.titling \Q.titling \R.titling \S.titling \T.titling \U.titling \V.titling 
-	\W.titling \X.titling \Y.titling \Z.titling \N.titling1 \E.titling1 \uni0237 
-	\A.alt \Q.alt \n.alt1 \m.alt \j.alt \r.alt \p.alt \f.alt2 \adieresis \dieresis 
-	\edieresis \idieresis \odieresis \udieresis \germandbls \yacute \ydieresis 
-	\quoteleft \quoteright \quotedblleft \quotedblright \periodcentered \uni0000 
-	\W.medieval1 \W.medieval2 \W.titling1 \W.titling2 \ogonek \u.alt \a.alt02 
-	\n.swash \dotlessi.alt \i.alt \uni1E8F.alt \a.alt01 \xdotbelowcomb \D.titling1 
-	\uni0233 \uniF1EA \t.alt \uniEEE0 \uniEEE2 \uniEEE7 \uniEEF1 \divide 
-	\uni223B \Aacute \Adieresis \Oacute \Odieresis \Uacute \Udieresis \Eacute 
-	\Edieresis \Iacute \Idieresis \Ydieresis \uni1E05 \uni1E0D \uni1E25 \uni1E33 
-	\uni1E37 \uni1E43 \uni1E47 \uni1E5B \uni1E63 \uni1E6D \uni1E7F \uni1E89 \uni1E93 
-	\uni1EA1 \uni1EB9 \uni1ECB \uni1ECD \uni1EE5 \uni1EF5 \uni00630323 \uni00660323 
-	\uni00670323 \uni006A0323 \uni00700323 \uni00710323 \uniA770 \uniA75B \e.alt02 
-	\t.swash \e.alt03 \y.alt \dotaccent \uniF160 \l.sc2 \s.sc2 \M.swash \uni019A.sc 
-	\e.alt04 \H.alt \Xdotbelowcomb \n.alt2 \Y.alt \uni1E8E.alt \emdash.titling 
-	\endash.titling \hyphen.titling \at \grave \G.alt1 \uniEEE4 \a.swash \G.alt2 
-	\uniF1E1 \uni0232 \Amacron \Emacron \Imacron \Omacron \Umacron \uni004503280304 
-	\uni006503280304 \Eogonek \Yacute \F.swash \Agrave \Acircumflex \Atilde \agrave 
-	\egrave \igrave \ograve \ugrave \Egrave \Igrave \Ograve \Ugrave \circumflex 
-	\Ecircumflex \Icircumflex \Ocircumflex \Ucircumflex \acircumflex \ecircumflex 
-	\icircumflex \ocircumflex \ucircumflex \oslash \Oslash \atilde \tilde \otilde 
-	\ntilde \Ntilde \Otilde \cedilla \Ccedilla \ccedilla \aring \Aring \B.medium 
-	\D.medium \E.medium \G.medium \H.medium \I.medium \M.medium \O.medium \Q.medium 
-	\S.medium \T.medium \uni1E04 \uni1E0C \uni1E24 \uni1E32 \uni1E36 \uni1E42 
-	\uni1E46 \uni1E5A \uni1E6C \uni1E7E \uni1E88 \uni1E62 \uni1E92 \uni1EE4 \uni1EF4 
-	\uni1ECA \uni1ECC \uni1EA0 \uni1EB8 \uni1E8E \uni00460323 \uni00430323 
-	\uni00470323 \uni004A0323 \uni00500323 \uni00510323 \uniA75B0323 \uni017F0323 
-	\e.swash \copyright \a.enlarged \c.enlarged \d.enlarged \f.enlarged 
-	\p.enlarged \AE \Eth \eth \thorn \uni01BF \ae \ae.alt \eth.alt \uni01E3 \aeacute 
-	\uni01E2 \AEacute \AE.titling \Eth.titling \Thorn \Thorn.titling \afii301 
+@GDEF_Simple = [\a \b \c \g \d \e \f \h \i \l \m \n \o \p \r \q \t \u \x \longs \ampersand \y \v \k
+	\w \eogonek \s \space \dotlessi \uni1E8F \A \E \U \D \C \I \Q \N \X \T \S \R \period \colon
+	\uniA751 \a.sc \b.sc \c.sc \d.sc \e.sc \f.sc \g.sc \h.sc \i.sc \j.sc \k.sc \l.sc
+	\m.sc \n.sc \o.sc \p.sc \q.sc \r.sc \s.sc \t.sc \u.sc \v.sc \w.sc \x.sc \y.sc \z.sc
+	\umacron \macron \emacron \amacron \imacron \omacron \j \acute \aacute \eacute
+	\iacute \oacute \uacute \g.alt1 \g.alt2 \uni1E8F.sc \uniA753 \e.alt01 \z \M \O \B \F
+	\G \H \J \K \L \P \V \W \Y \Z \f.alt1 \bracketleft \backslash \bracketright
+	\asciicircum \underscore \braceleft \bar \braceright \asciitilde \exclam
+	\quotedbl \numbersign \dollar \percent \quotesingle \parenleft \parenright
+	\asterisk \plus \comma \hyphen \slash \zero \one \two \three \four \five \six \seven
+	\eight \nine \semicolon \less \equal \greater \question \uniA75D \uniA779
+	\uniA787 \w.alt \i.swash \emdash \endash \afii00208 \figuredash \uni2011
+	\uni2010 \uniF161 \c.alt \dotlessi.swash \A.titling1 \M.alt \A.titling
+	\B.titling \C.titling \D.titling \E.titling \F.titling \G.titling \H.titling
+	\I.titling \J.titling \K.titling \L.titling \M.titling \N.titling \O.titling
+	\P.titling \Q.titling \R.titling \S.titling \T.titling \U.titling \V.titling
+	\W.titling \X.titling \Y.titling \Z.titling \N.titling1 \E.titling1 \uni0237
+	\A.alt \Q.alt \n.alt1 \m.alt \j.alt \r.alt \p.alt \f.alt2 \adieresis \dieresis
+	\edieresis \idieresis \odieresis \udieresis \germandbls \yacute \ydieresis
+	\quoteleft \quoteright \quotedblleft \quotedblright \periodcentered \uni0000
+	\W.medieval1 \W.medieval2 \W.titling1 \W.titling2 \ogonek \u.alt \a.alt02
+	\n.swash \dotlessi.alt \i.alt \uni1E8F.alt \a.alt01 \xdotbelowcomb \D.titling1
+	\uni0233 \uniF1EA \t.alt \uniEEE0 \uniEEE2 \uniEEE7 \uniEEF1 \divide
+	\uni223B \Aacute \Adieresis \Oacute \Odieresis \Uacute \Udieresis \Eacute
+	\Edieresis \Iacute \Idieresis \Ydieresis \uni1E05 \uni1E0D \uni1E25 \uni1E33
+	\uni1E37 \uni1E43 \uni1E47 \uni1E5B \uni1E63 \uni1E6D \uni1E7F \uni1E89 \uni1E93
+	\uni1EA1 \uni1EB9 \uni1ECB \uni1ECD \uni1EE5 \uni1EF5 \uni00630323 \uni00660323
+	\uni00670323 \uni006A0323 \uni00700323 \uni00710323 \uniA770 \uniA75B \e.alt02
+	\t.swash \e.alt03 \y.alt \dotaccent \uniF160 \l.sc2 \s.sc2 \M.swash \uni019A.sc
+	\e.alt04 \H.alt \Xdotbelowcomb \n.alt2 \Y.alt \uni1E8E.alt \emdash.titling
+	\endash.titling \hyphen.titling \at \grave \G.alt1 \uniEEE4 \a.swash \G.alt2
+	\uniF1E1 \uni0232 \Amacron \Emacron \Imacron \Omacron \Umacron \uni004503280304
+	\uni006503280304 \Eogonek \Yacute \F.swash \Agrave \Acircumflex \Atilde \agrave
+	\egrave \igrave \ograve \ugrave \Egrave \Igrave \Ograve \Ugrave \circumflex
+	\Ecircumflex \Icircumflex \Ocircumflex \Ucircumflex \acircumflex \ecircumflex
+	\icircumflex \ocircumflex \ucircumflex \oslash \Oslash \atilde \tilde \otilde
+	\ntilde \Ntilde \Otilde \cedilla \Ccedilla \ccedilla \aring \Aring \B.medium
+	\D.medium \E.medium \G.medium \H.medium \I.medium \M.medium \O.medium \Q.medium
+	\S.medium \T.medium \uni1E04 \uni1E0C \uni1E24 \uni1E32 \uni1E36 \uni1E42
+	\uni1E46 \uni1E5A \uni1E6C \uni1E7E \uni1E88 \uni1E62 \uni1E92 \uni1EE4 \uni1EF4
+	\uni1ECA \uni1ECC \uni1EA0 \uni1EB8 \uni1E8E \uni00460323 \uni00430323
+	\uni00470323 \uni004A0323 \uni00500323 \uni00510323 \uniA75B0323 \uni017F0323
+	\e.swash \copyright \a.enlarged \c.enlarged \d.enlarged \f.enlarged
+	\p.enlarged \AE \Eth \eth \thorn \uni01BF \ae \ae.alt \eth.alt \uni01E3 \aeacute
+	\uni01E2 \AEacute \AE.titling \Eth.titling \Thorn \Thorn.titling \afii301
 	\afii61664 \uni0337 \uni0338 \eth.sc \ae.sc \thorn.sc \f.alt3 \t.alt2
-	\uni000D \uni2000 \uni2001 \uni2002 \uni2003 \uni2004 \uni2005 \uni2006 \uni2007 \uni2008 \uni2009 \uni200A \uni200B];
-@GDEF_Ligature = [\uniFB02 \uniFB01 \uniFB05 \f_a \r_a \longs_t_dotlessi \r_t_u 
-	\r_t \longs_i \e_n \e_t_u \e_a \e_t \c_t \dcroat \e_x \t_u \f_u \e_r_i \e_r_dotlessi 
-	\r_m \e_r_n \e_u \e_longs_i \e_longs \t_dotlessi \r_n \e_m \e_r_a.alt \e_o \g_o 
-	\f_o \t_i \longs_t_i \e_r \f_i.alt \f_l.alt \f_o.alt \f_a.alt \f_u.alt \e_t.alt 
-	\e_p \f_t \f_r \e_t_i \uni019A \e_longs_longs_i \longs_longs_i \e_longs_longs 
-	\longs_longs \e_longs_t \g_a \e_r_r_a \r_r_a \o_uniA75B \e_r_a \e_t_dotlessi 
-	\E_T \n_t \e_i \e_dotlessi \e_e \f_f_u \uniFB00 \uniFB03 \uniFB04 \f_f.alt \f_f_a 
-	\e_t_t \t_t \e_j \uni019A_uni019A \r_a.alt \r_t_y \r_t_uni1E8F \g_y \ae_t \ae_i 
-	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs \ae_longs_longs 
+	\uni000D \uni2000 \uni2001 \uni2002 \uni2003 \uni2004 \uni2005 \uni2006 \uni2007
+	\uni2008 \uni2009 \uni200A \uni200B \OE \oe \ring];
+@GDEF_Ligature = [\uniFB02 \uniFB01 \uniFB05 \f_a \r_a \longs_t_dotlessi \r_t_u
+	\r_t \longs_i \e_n \e_t_u \e_a \e_t \c_t \dcroat \e_x \t_u \f_u \e_r_i \e_r_dotlessi
+	\r_m \e_r_n \e_u \e_longs_i \e_longs \t_dotlessi \r_n \e_m \e_r_a.alt \e_o \g_o
+	\f_o \t_i \longs_t_i \e_r \f_i.alt \f_l.alt \f_o.alt \f_a.alt \f_u.alt \e_t.alt
+	\e_p \f_t \f_r \e_t_i \uni019A \e_longs_longs_i \longs_longs_i \e_longs_longs
+	\longs_longs \e_longs_t \g_a \e_r_r_a \r_r_a \o_uniA75B \e_r_a \e_t_dotlessi
+	\E_T \n_t \e_i \e_dotlessi \e_e \f_f_u \uniFB00 \uniFB03 \uniFB04 \f_f.alt \f_f_a
+	\e_t_t \t_t \e_j \uni019A_uni019A \r_a.alt \r_t_y \r_t_uni1E8F \g_y \ae_t \ae_i
+	\ae_dotlessi \ae_n \ae_m \ae_r \ae_p \ae_uni01BF \ae_longs \ae_longs_longs
 	\ae_longs_longs_i \ae_longs_t \ae_longs_i \ae_r_a \ae_t_t \f_j \e_t.alt2 \f_j.alt ];
-@GDEF_Mark = [\uni0328 \macron.titling \ogonek.alt \acutecomb \uni0304 \uni0308 
-	\uni035B \uni1DD2 \uni1DE3 \uni0365 \dotbelowcomb \uni0307 \macron.sc 
-	\uni0304.alt \uni1DE3.alt \uni0366 \gravecomb \uni0302 \tildecomb \uni0327 ];
+@GDEF_Mark = [\uni0328 \macron.titling \ogonek.alt \acutecomb \uni0304 \uni0308
+	\uni035B \uni1DD2 \uni1DE3 \uni0365 \dotbelowcomb \uni0307 \macron.sc
+	\uni0304.alt \uni1DE3.alt \uni0366 \gravecomb \uni0302 \tildecomb \uni0327 \uni030A];
 
+#
+# Check that there is a ligature caret for every ligature, including dlig and hlig.
+#
 table GDEF {
   GlyphClassDef @GDEF_Simple, @GDEF_Ligature, @GDEF_Mark,;
 
