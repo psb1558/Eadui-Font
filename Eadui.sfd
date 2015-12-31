@@ -22,7 +22,7 @@ OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1210090339
-ModificationTime: 1451513963
+ModificationTime: 1451582237
 PfmFamily: 65
 TTFWeight: 500
 TTFWidth: 5
@@ -461,7 +461,7 @@ NameList: Adobe Glyph List
 DisplaySize: -36
 AntiAlias: 1
 FitToEm: 1
-WinInfo: 624 16 11
+WinInfo: 0 16 11
 BeginPrivate: 7
 BlueValues 31 [-49 0 357 365 536 568 639 647]
 OtherBlues 11 [-320 -268]
@@ -489,7 +489,7 @@ Grid
 EndSplineSet
 TeXData: 1 0 0 246784 123392 82261 374875 -1048576 82261 783286 444596 497025 792723 393216 433062 380633 303038 157286 324010 404750 52429 2506097 1059062 262144
 AnchorClass2: "us ligature anchor" "'mark' Ligature mark-1" "us anchor" "'mark' Standard mark-1" "ligature below" "'mark' Ligature mark-1" "std below anchor" "'mark' Standard mark-1" "std above anchor" "'mark' Standard mark-1" "ligature anchor" "'mark' Ligature mark-1" 
-BeginChars: 65764 585
+BeginChars: 65766 589
 
 StartChar: a
 Encoding: 97 97 0
@@ -5944,30 +5944,25 @@ EndChar
 StartChar: acute
 Encoding: 180 180 91
 Width: 337
-VWidth: 0
-Flags: W
-HStem: 671 50<334.487 379.946>
-VStem: 354 31<634.338 670.817>
+Flags: HW
 LayerCount: 3
 Back
 Fore
 SplineSet
-39 452 m 0
- 39 455 40 457 41 459 c 0
- 70 493 101 524 136 554 c 0
- 171 584 218 619 276 660 c 0
- 334 701 368 721 375 721 c 256
- 382 721 385 712 385 694 c 0
- 385 661 380 641 372 634 c 0
- 365 628 361 625 358 625 c 0
- 355 625 354 629 354 641 c 0
- 354 661 348 671 336 671 c 256
- 319 671 290 656 248 624 c 0
- 206 592 161 555 113 513 c 0
- 65 471 41 450 40 450 c 256
- 39 450 39 451 39 452 c 0
+39 410 m 0
+ 39 413.333333333 55.8333333333 432.333333333 89.5 467 c 128
+ 123.166666667 501.666666667 163.333333333 536.833333333 210 572.5 c 128
+ 256.666666667 608.166666667 283.666666667 626 291 626 c 0
+ 297.666666667 626 301 617 301 599 c 0
+ 301 566.333333333 297.166666667 546.5 289.5 539.5 c 128
+ 281.833333333 532.5 276.666666667 529 274 529 c 256
+ 271.333333333 529 270 534.666666667 270 546 c 0
+ 270 565.333333333 264.333333333 575 253 575 c 0
+ 243.666666667 575 223 562.5 191 537.5 c 128
+ 159 512.5 126.333333333 484.666666667 93 454 c 128
+ 59.6666666667 423.333333333 42.3333333333 408 41 408 c 256
+ 39.6666666667 408 39 408.666666667 39 410 c 0
 EndSplineSet
-Validated: 1
 Layer: 2
 EndChar
 
@@ -5975,7 +5970,7 @@ StartChar: aacute
 Encoding: 225 225 92
 Width: 325
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -4 35<104.037 149.081 244 326.306> 325 36<137.5 216> 671 50<328.487 373.946>
 VStem: 12 61<55.138 112.025> 200 62<51.9355 155.99 178.96 293.808> 348 31<634.338 670.817>
 LayerCount: 3
@@ -5991,7 +5986,7 @@ StartChar: eacute
 Encoding: 233 233 93
 Width: 296
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -5 33<124.5 232.03> 283 20<267.332 310.102> 337 23<131.229 213> 671 50<372.487 417.946>
 VStem: 13 66<93.5246 245.747> 392 31<634.338 670.817>
 LayerCount: 3
@@ -6007,7 +6002,7 @@ StartChar: iacute
 Encoding: 237 237 94
 Width: 207
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: 0 32<72.5 147.111> 341 20G<112.5 128> 671 50<318.487 363.946>
 VStem: 68 51<46.4783 271.477> 338 31<634.338 670.817>
 LayerCount: 3
@@ -6015,7 +6010,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 -16 0 2
 Refer: 33 305 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" dotlessi acutecomb
 EndChar
@@ -6024,7 +6018,7 @@ StartChar: oacute
 Encoding: 243 243 95
 Width: 367
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -7 38<136.904 219.944> 317 42<133.166 238.103> 671 50<396.487 441.946>
 VStem: 7 69<87.1216 241.416> 278 62<108.015 242.952> 416 31<634.338 670.817>
 LayerCount: 3
@@ -6032,7 +6026,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 62 0 2
 Refer: 12 111 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" o acutecomb
 EndChar
@@ -6041,7 +6034,7 @@ StartChar: uacute
 Encoding: 250 250 96
 Width: 437
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -9 35<300 401.291> -9 49<106.5 217.193 312 443> 343 20G<141.5 153> 671 50<444.487 489.946>
 VStem: 47 67<53.7296 258.189> 250 138<286.227 339.8> 464 31<634.338 670.817>
 LayerCount: 3
@@ -6049,7 +6042,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 110 0 2
 Refer: 17 117 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" u acutecomb
 EndChar
@@ -14822,7 +14814,7 @@ StartChar: yacute
 Encoding: 253 253 246
 Width: 386
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -270 65<-82.5 13.5> 343 20G<57 66 278.5 300.5> 671 50<418.487 463.946>
 VStem: 438 31<634.338 670.817>
 LayerCount: 3
@@ -14830,7 +14822,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 84 0 2
 Refer: 21 121 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" y acutecomb
 EndChar
@@ -17136,7 +17127,7 @@ StartChar: acutecomb
 Encoding: 769 769 284
 Width: 0
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: 671 50<241.487 286.946>
 VStem: 261 31<634.338 670.817>
 AnchorPoint: "std above anchor" 1 439 mark 0
@@ -17145,7 +17136,6 @@ LayerCount: 3
 Back
 Fore
 Refer: 91 180 N 1 0 0 1 -93 0 2
-Validated: 1
 Layer: 2
 EndChar
 
@@ -17954,15 +17944,14 @@ StartChar: Aacute
 Encoding: 193 193 304
 Width: 563
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -13 6<113.168 135.994> -10 10<257.368 297.869> 248 106<190.588 263.991> 479 56<215.056 238.233> 524 20G<308.5 335.5> 793 50<382.487 427.946>
 VStem: 38 66<-15.5 33.9313> 264 94<355.151 445.272> 402 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 48 122 2
+Refer: 586 -1 N 1 0 0 1 166 174 2
 Refer: 222 -1 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" A acutecomb
 EndChar
@@ -17988,15 +17977,14 @@ StartChar: Oacute
 Encoding: 211 211 306
 Width: 649
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -13 30<262.216 393.19> 489 51<236.953 401.055> 793 50<500.487 545.946>
 VStem: 16 132<134.154 363.934> 500 128<153.713 385.33> 520 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 166 122 2
+Refer: 586 -1 N 1 0 0 1 288 200 2
 Refer: 122 79 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" O acutecomb
 EndChar
@@ -18022,15 +18010,14 @@ StartChar: Uacute
 Encoding: 218 218 308
 Width: 675
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -26 21G<473.5 483.5> -12 25<580.838 681.523> -11 46<245.398 375.649> -3 16<610.128 689.559> 512 18<-61.226 148.93 367.037 454.798> 536 20G<277.5 280.5 642.5 650.5> 793 50<522.487 567.946>
 VStem: 30 121<144.479 334.388> 474 88<72.5469 448.263> 542 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 188 122 2
+Refer: 586 -1 N 1 0 0 1 314 192 2
 Refer: 37 85 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" U acutecomb
 EndChar
@@ -18056,15 +18043,14 @@ StartChar: Eacute
 Encoding: 201 201 310
 Width: 582
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -14 43<242.249 414.514> -7 21G<521.5 527.5> 273 43<179.188 509.15> 505 37<220.182 422.445> 542 20G<516.5 520> 793 50<520.487 565.946>
 VStem: 28 122<122.645 385.536> 497 29<530 555.26> 515 40<93.5529 156.802> 517 20<-5.72224 40.7443 239.664 273> 540 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 186 122 2
+Refer: 586 -1 N 1 0 0 1 286 188 2
 Refer: 36 69 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" E acutecomb
 EndChar
@@ -18090,15 +18076,14 @@ StartChar: Iacute
 Encoding: 205 205 312
 Width: 226
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -14 15<32.6406 56.1875> -4 26<164.987 257.231> 4 15<208.359 265.974> 515 15<-56.8206 49.3845> 522 20G<204.5 205.5> 793 50<262.487 307.946>
 VStem: 71 79<26.8774 507.874> 282 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 -72 122 2
+Refer: 586 -1 N 1 0 0 1 100 192 2
 Refer: 40 73 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" I acutecomb
 EndChar
@@ -21031,29 +21016,29 @@ EndChar
 StartChar: grave
 Encoding: 96 96 378
 Width: 337
-VWidth: 0
-Flags: W
-HStem: 536 32<26.8281 131.588>
-VStem: 20 300
+Flags: HW
 LayerCount: 3
 Back
 Fore
 SplineSet
-20 544 m 0
- 21 555 60 568 70 568 c 0
- 78 568 92 566 110 560 c 0
- 163 544 256 507 306 480 c 0
- 315 475 320 472 320 469 c 0
- 320 467 318 466 314 465 c 2
- 291 459 l 2
- 289 458 287 458 286 458 c 0
- 282 458 278 459 274 461 c 0
- 221 488 175 507 134 520 c 0
- 98 531 65 536 33 536 c 0
- 30 536 27 536 24 536 c 0
- 21 536 20 539 20 544 c 0
+25 536 m 0
+ 25 540 26.5 547.833333333 29.5 559.5 c 128
+ 32.5 571.166666667 37.1666666667 583.833333333 43.5 597.5 c 128
+ 49.8333333333 611.166666667 54.6666666667 618 58 618 c 256
+ 61.3333333333 618 80.6666666667 606.166666667 116 582.5 c 128
+ 151.333333333 558.833333333 190.666666667 527.166666667 234 487.5 c 128
+ 277.333333333 447.833333333 301 426 305 422 c 128
+ 309 418 311 415 311 413 c 0
+ 311 410.333333333 306.333333333 409 297 409 c 0
+ 287 409 280.666666667 410.5 278 413.5 c 128
+ 275.333333333 416.5 258 432.833333333 226 462.5 c 128
+ 194 492.166666667 161.666666667 519.333333333 129 544 c 128
+ 96.3333333333 568.666666667 77 581 71 581 c 128
+ 65 581 59.5 578 54.5 572 c 128
+ 49.5 566 44.5 557.833333333 39.5 547.5 c 128
+ 34.5 537.166666667 30.8333333333 532 28.5 532 c 128
+ 26.1666666667 532 25 533.333333333 25 536 c 0
 EndSplineSet
-Validated: 1
 Layer: 2
 EndChar
 
@@ -21808,15 +21793,14 @@ StartChar: Yacute
 Encoding: 221 221 397
 Width: 623
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -286 31G<-7.5 -0.5 155.5 167> 516 15<7.21303 100.059> 527 20G<666 674> 793 50<555.487 600.946>
 VStem: -14 140<-278 -215.5> 575 31<756.338 792.817>
 LayerCount: 3
 Back
 Fore
-Refer: 91 180 N 1 0 0 1 221 122 2
+Refer: 586 -1 N 1 0 0 1 316 194 2
 Refer: 133 89 N 1 0 0 1 0 0 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" Y acutecomb
 EndChar
@@ -21900,15 +21884,14 @@ StartChar: Agrave
 Encoding: 192 192 399
 Width: 563
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -13 6<113.168 135.994> -10 10<257.368 297.869> 248 106<190.588 263.991> 479 56<215.056 238.233> 524 20G<308.5 335.5> 658 32<72.8281 177.588>
 VStem: 38 66<-15.5 33.9313> 66 300 264 94<355.151 445.272>
 LayerCount: 3
 Back
 Fore
+Refer: 587 -1 N 1 0 0 1 256 186 2
 Refer: 222 -1 N 1 0 0 1 0 0 3
-Refer: 402 768 N 1 0 0 1 247 122 2
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" A gravecomb
 EndChar
@@ -21951,7 +21934,7 @@ StartChar: gravecomb
 Encoding: 768 768 402
 Width: 0
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: 536 32<-174.172 -69.4121>
 VStem: -181 300
 AnchorPoint: "ligature anchor" 0 391 mark 0
@@ -21960,7 +21943,6 @@ LayerCount: 3
 Back
 Fore
 Refer: 378 96 N 1 0 0 1 -201 0 2
-Validated: 1
 Layer: 2
 EndChar
 
@@ -21968,13 +21950,13 @@ StartChar: agrave
 Encoding: 224 224 403
 Width: 325
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -4 35<104.037 149.081 244 326.306> 325 36<137.5 216> 536 32<0.828 105.588>
 VStem: -6 300 12 61<55.138 112.025> 200 62<51.9355 155.99 178.96 293.808>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 175 0 2
+Refer: 378 96 N 1 0 0 1 -18 0 2
 Refer: 0 97 N 1 0 0 1 0 0 3
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" a gravecomb
@@ -21984,13 +21966,13 @@ StartChar: egrave
 Encoding: 232 232 404
 Width: 296
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -5 33<124.5 232.03> 283 20<267.332 310.102> 337 23<131.229 213> 536 32<-16.172 88.5879>
 VStem: -23 300 13 66<93.5246 245.747>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 158 0 2
+Refer: 378 96 N 1 0 0 1 -24 0 2
 Refer: 5 101 N 1 0 0 1 0 0 3
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" e gravecomb
@@ -22000,15 +21982,14 @@ StartChar: igrave
 Encoding: 236 236 405
 Width: 207
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: 0 32<72.5 147.111> 341 20G<112.5 128> 536 32<-102.172 2.58789>
 VStem: -109 300 68 51<46.4783 271.477>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 72 0 2
+Refer: 378 96 N 1 0 0 1 -120 0 2
 Refer: 33 305 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" dotlessi gravecomb
 EndChar
@@ -22017,15 +21998,14 @@ StartChar: ograve
 Encoding: 242 242 406
 Width: 367
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -7 38<136.904 219.944> 317 42<133.166 238.103> 536 32<19.8281 124.588>
 VStem: 7 69<87.1216 241.416> 13 300 278 62<108.015 242.952>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 194 0 2
+Refer: 378 96 N 1 0 0 1 0 0 2
 Refer: 12 111 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" o gravecomb
 EndChar
@@ -22034,15 +22014,14 @@ StartChar: ugrave
 Encoding: 249 249 407
 Width: 437
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -9 35<300 401.291> -9 49<106.5 217.193 312 443> 343 20G<141.5 153> 536 32<48.8281 153.588>
 VStem: 42 300 47 67<53.7296 258.189> 250 138<286.227 339.8>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 223 0 2
+Refer: 378 96 N 1 0 0 1 23 0 2
 Refer: 17 117 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" u gravecomb
 EndChar
@@ -22051,15 +22030,14 @@ StartChar: Egrave
 Encoding: 200 200 408
 Width: 582
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -14 43<242.249 414.514> -7 21G<521.5 527.5> 273 43<179.188 509.15> 505 37<220.182 422.445> 542 20G<516.5 520> 658 32<182.828 287.588>
 VStem: 28 122<122.645 385.536> 176 300 497 29<530 555.26> 515 40<93.5529 156.802> 517 20<-5.72224 40.7443 239.664 273>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 357 122 2
+Refer: 587 -1 N 1 0 0 1 358 174 2
 Refer: 36 69 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" E gravecomb
 EndChar
@@ -22068,15 +22046,14 @@ StartChar: Igrave
 Encoding: 204 204 409
 Width: 226
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -14 15<32.6406 56.1875> -4 26<164.987 257.231> 4 15<208.359 265.974> 515 15<-56.8206 49.3845> 522 20G<204.5 205.5> 658 32<-60.1719 44.5879>
 VStem: -67 300 71 79<26.8774 507.874>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 114 122 2
+Refer: 587 -1 N 1 0 0 1 126 178 2
 Refer: 40 73 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" I gravecomb
 EndChar
@@ -22085,15 +22062,14 @@ StartChar: Ograve
 Encoding: 210 210 410
 Width: 649
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -13 30<262.216 393.19> 489 51<236.953 401.055> 658 32<171.828 276.588>
 VStem: 16 132<134.154 363.934> 165 300 500 128<153.713 385.33>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 346 122 2
+Refer: 587 -1 N 1 0 0 1 362 170 2
 Refer: 122 79 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" O gravecomb
 EndChar
@@ -22102,15 +22078,14 @@ StartChar: Ugrave
 Encoding: 217 217 411
 Width: 675
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -26 21G<473.5 483.5> -12 25<580.838 681.523> -11 46<245.398 375.649> -3 16<610.128 689.559> 512 18<-61.226 148.93 367.037 454.798> 536 20G<277.5 280.5 642.5 650.5> 658 32<203.828 308.588>
 VStem: 30 121<144.479 334.388> 197 300 474 88<72.5469 448.263>
 LayerCount: 3
 Back
 Fore
-Refer: 402 768 N 1 0 0 1 378 122 2
+Refer: 587 -1 N 1 0 0 1 376 192 2
 Refer: 37 85 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" U gravecomb
 EndChar
@@ -26747,7 +26722,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 124 0 2
 Refer: 490 230 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" ae acutecomb
 EndChar
@@ -26773,7 +26747,7 @@ StartChar: AEacute
 Encoding: 508 508 511
 Width: 632
 VWidth: 0
-Flags: W
+Flags: HW
 HStem: -17 19<204.049 263.713> 0 44<394.132 525.98> 250 55<174.907 291.437> 257 47<374.946 541.902> 455 106<497.75 561.686> 485 53<239.121 290.849 385 519.413> 519 20G<80.5 106.5> 793 50<556.487 601.946>
 VStem: -10 67<-17.5 31.7742> 294 79<67.7532 249.762 305.659 483.571> 294 91<312.979 483.999> 542 44<237.457 254.361> 576 31<756.338 792.817>
 LayerCount: 3
@@ -26781,7 +26755,6 @@ Back
 Fore
 Refer: 91 180 N 1 0 0 1 222 122 2
 Refer: 485 198 N 1 0 0 1 0 0 3
-Validated: 1
 Layer: 2
 MultipleSubs2: "'ccmp' Glyph Composition/Decomposition in Latin lookup 14-1" AE acutecomb
 EndChar
@@ -29841,6 +29814,93 @@ LayerCount: 3
 Back
 Fore
 Refer: 572 730 N 1 0 0 1 -164 0 2
+Layer: 2
+EndChar
+
+StartChar: onedotenleader
+Encoding: 8228 8228 585
+Width: 116
+Flags: HW
+LayerCount: 3
+Back
+Fore
+SplineSet
+22 131 m 0
+ 22 151.666666667 30 166.166666667 46 174.5 c 128
+ 62 182.833333333 72.6666666667 187 78 187 c 0
+ 90 187 96 174.333333333 96 149 c 0
+ 96 135 95.1666666667 126.166666667 93.5 122.5 c 128
+ 91.8333333333 118.833333333 86.5 114 77.5 108 c 128
+ 68.5 102 59.3333333333 99 50 99 c 128
+ 40.6666666667 99 33.6666666667 102 29 108 c 128
+ 24.3333333333 114 22 121.666666667 22 131 c 0
+EndSplineSet
+Layer: 2
+EndChar
+
+StartChar: acute.cap
+Encoding: 65764 -1 586
+Width: 0
+Flags: HW
+LayerCount: 3
+Back
+Fore
+SplineSet
+-90 410 m 0
+ -90 413.333333333 -72.1666666667 427.833333333 -36.5 453.5 c 128
+ -0.833333333333 479.166666667 39.6666666667 504.333333333 85 529 c 128
+ 130.333333333 553.666666667 156.666666667 566 164 566 c 0
+ 170.666666667 566 174 557 174 539 c 0
+ 174 506.333333333 170.166666667 486.5 162.5 479.5 c 128
+ 154.833333333 472.5 149.666666667 469 147 469 c 256
+ 144.333333333 469 143 474.666666667 143 486 c 0
+ 143 505.333333333 137.333333333 515 126 515 c 0
+ 116.666666667 515 96.6666666667 508 66 494 c 128
+ 35.3333333333 480 2.33333333333 462.166666667 -33 440.5 c 128
+ -68.3333333333 418.833333333 -86.6666666667 408 -88 408 c 256
+ -89.3333333333 408 -90 408.666666667 -90 410 c 0
+EndSplineSet
+Layer: 2
+EndChar
+
+StartChar: grave.cap
+Encoding: 65765 -1 587
+Width: 0
+Flags: HW
+LayerCount: 3
+Back
+Fore
+SplineSet
+-201 480 m 0
+ -201 484 -199.5 491.833333333 -196.5 503.5 c 128
+ -193.5 515.166666667 -188.833333333 527.833333333 -182.5 541.5 c 128
+ -176.166666667 555.166666667 -171.333333333 562 -168 562 c 256
+ -164.666666667 562 -144.666666667 554.333333333 -108 539 c 128
+ -71.3333333333 523.666666667 -30.8333333333 501.166666667 13.5 471.5 c 128
+ 57.8333333333 441.833333333 82 425.166666667 86 421.5 c 128
+ 90 417.833333333 92 415 92 413 c 0
+ 92 410.333333333 87.6666666667 409 79 409 c 0
+ 71 409 65.1666666667 411 61.5 415 c 128
+ 57.8333333333 419 39.3333333333 431.833333333 6 453.5 c 128
+ -27.3333333333 475.166666667 -61 492.5 -95 505.5 c 128
+ -129 518.5 -149 525 -155 525 c 128
+ -161 525 -166.5 522 -171.5 516 c 128
+ -176.5 510 -181.5 501.833333333 -186.5 491.5 c 128
+ -191.5 481.166666667 -195.166666667 476 -197.5 476 c 128
+ -199.833333333 476 -201 477.333333333 -201 480 c 0
+EndSplineSet
+Layer: 2
+EndChar
+
+StartChar: Dcroat
+Encoding: 272 272 588
+Width: 707
+VWidth: 0
+Flags: HW
+LayerCount: 3
+Back
+Fore
+Refer: 486 208 N 1 0 0 1 0 0 2
 Layer: 2
 EndChar
 EndChars
