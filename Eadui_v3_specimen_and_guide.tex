@@ -1,0 +1,444 @@
+%&program=xelatex
+%&encoding=UTF-8 Unicode
+\ifdefined\suppressfontnotfounderror
+  \expandafter\let\csname xetex_suppressfontnotfounderror:D\endcsname
+    \suppressfontnotfounderror
+\else
+  \expandafter\let\csname xetex_suppressfontnotfounderror:D\endcsname
+    \luatexsuppressfontnotfounderror
+\fi
+\documentclass[11pt,letterpaper,twoside,openany]{book}
+%
+%
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Contextual=on}
+\setmainfont{Eadui}[Renderer=Harfbuzz]
+\newfontface{\irrm}{Irradiant-Regular.otf}[Renderer=Harfbuzz]
+\newfontface{\irsc}{Irradiant-Regular.otf}[Renderer=Harfbuzz,Letters=SmallCaps]
+\newfontface{\irit}{Irradiant-Italic.otf}[Renderer=Harfbuzz]
+%
+%
+\usepackage[twoside,text={3.8in,502pt},headheight=12pt,headsep=12pt]{geometry}
+\usepackage{xltxtra}
+\usepackage{fancyhdr}
+\usepackage{lettrine}
+\usepackage[first=0, last=10, seed=240]{lcg}
+
+\usepackage{wallpaper}
+\newopentypefeature{NarrowT}{on}{+ss03}
+%
+% Some mnemonics to help select Eadui's features.
+\newopentypefeature{SentenceCaps}{on}{+ss11}
+\newopentypefeature{Alty}{on}{+ss10}
+\newopentypefeature{AltCaps}{on}{+ss12}
+\newopentypefeature{AltDiacritics}{on}{+ss13}
+\newopentypefeature{LargeMinuscules}{on}{+ss14}
+\newopentypefeature{Contextual}{on}{+calt}
+
+% Compactly dealing with character variant features
+\newcommand{\cvd}[3][0]{{\addfontfeature{CharacterVariant=#2:#1}#3}}
+
+% End of Eadui mnemonics
+%
+% N.B. contextuals (calt) should always be on!
+%
+% Some convenient commands for working with Eadui.
+
+\newcommand{\rubric}[1]{{\addfontfeature{StylisticSet=5}#1}}
+\newcommand{\redtext}[1]{{\addfontfeature{StylisticSet=17}#1}}
+\newcommand{\goldtext}[1]{{\addfontfeature{StylisticSet=19}#1}}
+\newcommand{\greentext}[1]{{\addfontfeature{StylisticSet=20}#1}}
+\newcommand{\bluetext}[1]{{\addfontfeature{StylisticSet=18}#1}}
+\newcommand{\redfilltext}[1]{{\addfontfeature{StylisticSet=1}#1}}
+\newcommand{\bluefilltext}[1]{{\addfontfeature{StylisticSet=2}#1}}
+\newcommand{\yellowfilltext}[1]{{\addfontfeature{StylisticSet=3}#1}}
+\newcommand{\greenfilltext}[1]{{\addfontfeature{StylisticSet=4}#1}}
+
+\newcommand{\atc}[1]{{\addfontfeatures{Style=TitlingCaps,AltCaps=on}{#1}}}
+\newcommand{\ac}[1]{{\addfontfeatures{AltCaps=on}{#1}}}
+\newcommand{\salt}[1]{{\addfontfeatures{Alternate=0}{#1}}}
+\newcommand{\saltb}[1]{{\addfontfeatures{Alternate=1}{#1}}}
+\newcommand{\altd}[1]{{\addfontfeatures{AltDiacritics=on}{#1}}}
+\newcommand{\dlig}[1]{{\addfontfeatures{Ligatures=Rare}{#1}}}
+\newcommand{\hlig}[1]{{\addfontfeatures{Ligatures=Historic}{#1}}}
+\newcommand{\scap}[1]{{\addfontfeatures{StylisticSet=11}#1}}
+\newcommand{\swash}[1]{{\addfontfeatures{Style=Swash}{#1}}}
+\newcommand{\hist}[1]{{\addfontfeature{Style=Historic}{#1}}}
+\newcommand{\lmin}[1]{{\addfontfeature{LargeMinuscules=on}{#1}}}
+\newcommand{\eadui}[1]{{\fontspec{Eadui} #1}}
+% End of Eadui commands
+%
+\newcommand{\opentype}{Open\kern-2pt Type}
+\newcommand{\xetex}{X\kern-0.5pt e\kern-2pt Te\kern-1pt X}
+\renewcommand{\DefaultLraise}{0.2}
+\renewcommand{\DefaultLhang}{0.5}
+\renewcommand{\DefaultLoversize}{0.1}
+%\renewcommand{\DefaultFindent}{0.5em}
+\renewcommand{\DefaultNindent}{0em}
+\newenvironment{junicode}{\fontspec[NarrowT=on]{Junicode}\normalsize}{}
+%
+% A "medieval" environment turns on historical forms.
+\newenvironment{medieval}{\addfontfeatures{Style=Historic,Alty=on}}{}
+%
+%
+\newcommand{\filltext}[3]{{\fontspec{EaduiFill}\color{#1}#3}%
+\llap{\fontspec{Eadui}\color{#2}#3}}
+\newcommand{\filltitl}[3]{{\fontspec[Style=TitlingCaps]{EaduiFill}\color{#1}#3}%
+\llap{\fontspec[Style=TitlingCaps]{Eadui}\color{#2}#3}}
+\newcommand{\junb}[1]{{\fontspec{Junicode}\bfseries{#1}}}
+\newcommand{\jun}[1]{{\fontspec{Junicode}{#1}}}
+\newcommand{\editem}[1]{{\fontspec{Junicode}\color{myRed}#1}}
+\frenchspacing
+\linespread{1.04}
+\tolerance=1000
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+
+
+\begin{document}
+%\TileSquareWallPaper{6}{parch-light.jpg}
+%\color{stdText}%\pagecolor{bgColor}
+\Large\lettrine[lines=3,lraise=0,lhang=1]{\addfontfeature{StylisticSet=18}E}{}%
+%{\textcolor{myBlue}{}}
+{\addfontfeatures{Style=TitlingCaps,StylisticSet=5}adui is
+  named for a scribe who worked at} Christ Church, Canterbury, in the
+first half of the eleventh century and signed himself
+“\scap{Ead\-uuius cognomento Basan}.”\footnote{\irit Eaduuius \irrm is a Latinized spelling
+of the Old English name \irit Eadwig\irrm, and \irit Eadui \irrm is a modern respelling of the Latinized
+name.}
+\greentext{T}his \scap{Eadui Basan}
+was a leading practitioner of the scribal hand known to paleographers
+as style \atc{iv} \scap{E}ng\-lish caroline
+minuscule. \redtext{L}ike caroline minuscules
+generally, this one is notable for its legibility; and \scap{E}adui's
+work, at its best, possesses a formal beauty that is matched by few
+scribes of his time.
+
+\lettrine[lines=2,lraise=0]{\goldtext{U}}{%
+  \greentext{nlike}} most “medieval” fonts, this one aims not so much to convey
+a medieval feeling as to reproduce a great scribe's style with
+fidelity, avoiding the machined look of the digital font in favor of
+the irregular and uneven look of a handmade thing. Lines are rarely straight
+and often a little wavery, serifs
+differ in shape from one glyph to another, letters do not always sit
+cleanly on the baseline, and contextual variants vary some of the most
+common letters.
+
+\lettrine[lines=2,lraise=0]{\salt{\redtext{E}}}{\goldtext{adui}}
+is a color font---one in which the colors have been chosen by the designer
+and can't be changed by software. You can choose any of six different
+colors for text, from the default dark brown to a vivid red for rubrics. In addition,
+most letters can be filled with one of four different colors. All of the
+font's colors are based on the colors of Eadui's manuscripts.
+
+\lettrine[lines=2,lraise=0]{\greentext{T}}{\redtext{he font}}
+can be used in either of two modes: modern or historical. Historical mode
+emulates the usage of Eadui and other medieval scribes, with (for example)
+round r (ꝛ), where the context demands it, and long s (\hist{s}). For an
+even more authentic look, select historical ligatures, emulating
+Eadui's ligatures, which could be eccentric, even for his time. The
+font's default mode is modern, designed to be legible for modern readers.
+
+\lettrine[lines=2,lraise=0]{\bluetext{E}}{\redtext{adui}}
+the font (like the scribe)
+  employs a variety of capitals for various purposes. The default
+  capitals are those he used for what are now called
+  “drop caps” (though they can also be used to begin sentences and proper
+  names). Titling Caps are for titles and passages in all caps,
+  and Sentence Caps (often identical to Titling Caps) were
+  used by Eadui to begin sentences. All of Eadui's capabilities can
+  be selected with OpenType features, listed at the bottom of this
+  document.
+
+
+\newpage
+\noindent Historic mode (hist):\\[1ex]
+
+\begin{medieval}
+\huge\lettrine[lines=3,lraise=0,lhang=1]{\bluetext{B}}%
+{}{\scshape \rubric{eat᷒ uir qͥ non abiit in
+consilio impiorum⹎}} \& in uia peccatorum non stetit⹎ \cvd{64}{\&} in cathedra
+pestilentiae n̄ \kern-2pt sedi\swash{t}.
+
+\lettrine[lhang=1]{\redtext{S}\hspace{3pt}}{}ed in lege dn̄i fuit uoluntas eius⹎
+\cvd[2]{64}{\&} in lege eius meditabitur die ac no\hlig{ct}\swash{e}.
+
+\lettrine[lhang=1]{\goldtext{E}\hspace{3pt}}{}t erit tanquam lignum quod
+plantatum est secus decursus aquarum⹎ \cvd[2]{34}{q}uod fru\hlig{ct}um suum dabit in
+tempore suo.
+
+\lettrine[lhang=1]{\addfontfeatures{Ligatures=Rare}\greentext{ET}\hspace{3pt}}{}foliū
+ei᷒ \kern-1pt non defluet⹎ \cvd[1]{64}{\&} omnia quęcumq: faciet prosperabu\swash{n}tᷣ.
+
+\lettrine[lhang=1]{\redtext{N}\hspace{3pt}}{}on sic impi\swash{i} \salt{n}on sic⹎ \cvd{38}{s}ed
+tanquam pul\-uis quem ꝓicit uent᷒ a facie terr\altd{ę}.
+
+\lettrine[lhang=1,nindent=0.2em]{\bluetext{I}\hspace{3pt}}{}deo non resurgu\dlig{nt} impii in
+iudicio⹎ \cvd[3]{28}{n}eq: peccat\hlig{or}es in consilio iustorum.
+
+\lettrine[lhang=1]{\addfontfeatures{AltCaps=on}\goldtext{Q}\hspace{3pt}}{}\altd{m̄} nouit
+dn̄s uiam iustorum⹎ \cvd[3]{64}{\&} it͛ impioꝝ ꝑibi\swash{t}.
+
+\end{medieval}
+
+
+% The next two sections are causing crash with mysterious error message:
+%! error:  (linebreak): invalid node with type whatsit and subtype 16 found in d
+%iscretionary
+%!  ==> Fatal error occurred, no output PDF file produced!%
+
+
+\newpage
+\noindent Historical forms and ligatures (hist, hlig):\\[1ex]
+
+\begin{medieval}
+\Large\noindent{\addfontfeatures{Style=TitlingCaps,StylisticSet=5}%
+   \salt{G}\kern+1.5pt loriosissi\salt{m}o regi C\salt{e}oluulfo Baeda
+   f\salt{a}mul᷒ Christi et presbyter}
+
+\addfontfeatures{Ligatures=Historic,SentenceCaps=on}
+%\lettrine[lines=3,lraise=0]{H}{istoriam} 
+\noindent\redtext{{\huge H}istoriam} gentis Anglorum ecclesiasticam, quam nuper edi\-deram,
+libentissime tibi desideranti, rex, et prius ad legendum ac probandum
+transmisi, et nunc ad transscribendum ac plenius ex tempore meditandum
+retransmitto; satisque studium tuae sinceritatis amplector, quo non
+solum audiendis scripturae sanctae uerbis aurem sedulus accommodas,
+uerum etiam noscendis priorum gestis siue dictis, et maxime nostrae
+gentis uirorum inlustrium, curam uigilanter impendis. Siue enim
+historia de bonis bona referat, ad imitandum bonum auditor sollicitus
+instigatur; seu mala commemoret de prauis, nihilominus religiosus ac
+pius auditor siue lector deuitando quod noxium est ac peruersum, ipse
+sollertius ad exsequenda ea, quae bona ac Deo digna esse cognouerit,
+accenditur. Quod ipsum tu quoque uigilantissime deprehendens,
+historiam memoratam in notitiam tibi simul et eis, quibus te regendis
+diuina praefecit auctoritas, ob generalis curam salutis latius
+propalari desideras. Vt autem in his quae scripsi ƚ tibi, ƚ
+ceteris auditoribus siue lectoribus huius historiae occasionem
+dubitandi subtraham, quibus haec maxime auctoribus didicerim, breuiter
+intimare curabo.
+\end{medieval}
+
+
+\newpage
+\noindent Rustic capitals (smcp):\\[1ex]
+
+\begin{medieval}
+%\lettrine[lines=3,lraise=0]{B}{rittania oceani insula,}
+\scshape
+\noindent%
+\goldtext{{\huge B}rittania} oceani insula,
+\addfontfeatures{AltCaps=on} \ cui quondā
+\salt{Al}bion nomen fuit, inter septentrionē \kern-2pt \& occidentē locata
+est, Germanię, Gallię, Hispanię, maximis \salt{E}uropę partib᷒, multo
+interuallo aduersa. Quae per miliapas\salt{s}uū .dccc. in Boreā
+longa, latitudinis hab\& milia .cc., exceptis dumtaxat pro\-lixiorib᷒
+diuersorū promontoriorū tractib᷒, quibus efficitᷣ, ut circuit᷒ ei᷒
+quadragies octies .lxxv. milia conpleat. Habet a meridie Galliā
+Belgicā, cui᷒ proximū lit᷒ transmeantib᷒ aperit ciuitas, quae dicitᷣ
+Rutubi port᷒, a gente \salt{A}nglorū nunc corrupte Reptacaestir uocata,
+interposito mari a Ges\salt{s}oriaco Morynorū gentis litore proximo,
+traiectu miliū .l., siue, ut quidā scripsere, stadiorum .ccccl. A
+tergo autem, unde Oceano infinito patet, Orcadas insulas habet. Opima
+frugib᷒ atque arborib᷒ insula, \& alendis apta pecorib᷒ ac
+iumentis; uineas \&iam quibusdā in locis germinans; sed \& auiū
+ferax terra mariq: generis diuersi; fluuiis quoq: multū piscosis ac
+fontib᷒ praeclara copiosis, \& quidē praecipue issicio abundat, \&
+anguilla.
+\end{medieval}
+
+\newpage
+\noindent Modern languages:\\[1ex]
+
+\huge%
+\lettrine[lines=3,lraise=0,lhang=0.5,findent=-25pt,nindent=25pt]%
+{\greentext{H}}{\greentext{eureux}}
+l'homme qui ne marche pas selon le conseil des méchants,
+\bluetext{Q}ui
+ne s'arrête pas sur la voie des pécheurs,
+\greentext{E}t qui ne s'assied pas en
+compagnie des moqueurs,
+
+\lettrine[lines=2,lraise=0,lhang=1]{\bluetext{M}}%
+{\bluetext{ais}}
+qui trouve son plaisir dans la loi de l'Éternel,
+\redtext{E}t qui la médite
+jour et nuit!
+
+\lettrine[lines=2,lraise=0,lhang=1]{\redtext{I}\kern+5pt}%
+{\redtext{l est}}
+comme un arbre planté près d'un cou\-rant d'eau,
+\redtext{\salt{Q}}ui donne son
+fruit en sa saison,
+\bluetext{E}t dont le feuillage ne se flétrit point:
+\goldtext{T}out ce
+qu'il fait lui réussit.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\redtext{I}\kern+5pt}%
+{\redtext{l n'en}}
+est pas ainsi des méchants:
+\bluetext{I}\kern+1pt ls sont comme la paille que le
+vent dissipe.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\goldtext{C}}%
+{\goldtext{'est}}
+pourquoi les méchants ne résistent pas au jour du jugement,
+\bluetext{N}i
+les pécheurs dans l'assemblée des justes;
+
+\lettrine[lines=2,lraise=0,lhang=1]{\greentext{C}}%
+{\greentext{ar}}
+l'Éternel connaît la voie des justes,
+\redtext{E}t la voie des pécheurs mène
+à la ruine.
+
+\newpage
+
+{\addfontfeature{Language=Polish,StylisticSet=13}
+\lettrine[lines=3,lraise=0,lhang=0.5,findent=-10pt,nindent=10pt]%
+{\redtext{B}}{\bluetext{łogosławiony mąż}}, który nie chodzi w radzie 
+niepobożnych, a na drodze grzesz\-nych nie stoi,
+i na stolicy naś\-niewców nie siedzi;
+
+\lettrine[lines=2,lraise=0,lhang=1,findent=-10pt,nindent=10pt]{\bluetext{A}}{\goldtext{le}}
+w zakonie \redfilltext{Pańskim} jest kochanie jego, 
+a w zakonie jego rozmyśla we dnie i w nocy.
+
+\lettrine[lines=2,lraise=0,lhang=1,findent=-10pt,nindent=10pt]{\greentext{A}}{\goldtext{lbowiem}}
+będzie jako drzewo nad strumieniem wód w sadzone, które owoc swój wydaje czasu swego, 
+a liść jego nie opada; i wszystko, cokolwiek czynić będzie, posz\-części się.
+
+\lettrine[lines=2,lraise=0,lhang=1,findent=-5pt,nindent=5pt]{\goldtext{L}}{\bluetext{ecz}}
+nie tak niepobożni; ale są jako plewa, którą wiatr rozmiata.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\redtext{P}}{\bluetext{rzetoż}}
+się niepobożni na sądzie nie ostoją, ani grzesznicy w zgromadzeniu sprawiedliwych.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\greentext{A}}{\goldtext{lbowiem}} zna \bluefilltext{Pan}
+drogę sprawiedliwych; ale droga niepobożnych zginie.}
+
+\newpage
+
+\huge\lettrine[lines=2,lraise=0,lhang=1]%
+{\salt{\redtext{D}}}{\rubric{er Herr}} ist mein
+\bluefilltext{\salt{H}}irte, mir wird nichts mangeln.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\bluetext{\salt{E}}}%
+{\greentext{r}} weidet mich auf einer grünen \redfilltext{Aue} und
+führet mich zum frischen \yellowfilltext{Wasser}.
+
+\lettrine[lines=2,lraise=0,lhang=1]%
+{\goldtext{E}}{\redtext{r}}
+erquicket meine \greenfilltext{Seele}. \redfilltext{Er} führet mich auf rechter \bluefilltext{Straße} um seines
+\yellowfilltext{Namens} willen.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\greentext{U}}%
+{\goldtext{nd}} ob ich schon wanderte im finstern \bluefilltext{Tal},
+fürchte ich kein \greenfilltext{Unglück};
+denn du bist bei mir, dein \yellowfilltext{Stecken} und \redfilltext{Stab} trösten mich.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\bluetext{D}}%
+{\greentext{u}} bereitest vor mir einen \bluefilltext{Tisch} im
+\yellowfilltext{\salt{A}n\-ge\-sicht} meiner \redfilltext{Feinde}. \redfilltext{\salt{D}u}
+salbest mein \yellowfilltext{Haupt} mit \greenfilltext{Öl} und schenkest mir voll ein.
+
+\lettrine[lines=2,lraise=0,lhang=1]{\goldtext{G}}%
+{\redtext{utes}} und \bluefilltext{Barmherzigkeit} werden mir folgen
+mein \yellowfilltext{Leben} lang, und ich
+werde bleiben im \greenfilltext{Hause} des \rubric{\salt{H}\atc{errn}} immerdar.
+
+\newpage
+
+\noindent Open\kern-3ptType features\\[1ex]
+
+{\normalsize\irrm
+\begin{description}
+
+  \item[\irsc cv01-] Character variants. These fill or color letters. The indices
+  are as follows: 1 red-filled, 2 blue-filled, 3 yellow-filled, 4 green-filled,
+  5 rubricated, 6 red text, 7 blue text, 8 gold (dark yellow) text, 9 green text.
+  Character variant features map to letters as follows: A-Z odd-numbered
+  features, cv01-cv51; a-z even-numbered features, cv02-cv52; Æ cv56;
+  æ cv57; Œ cv58; œ cv59; Ð cv60; ð cv61; Þ cv62; þ cv63; \& cv64. Small caps follow the rules
+  for lowercase letters: that is, they can be colored with either Stylistic
+  Set or Character Variant features, but they can be filled only with
+  Character Variant features.
+  
+  \item[\irsc dlig] Discretionary ligatures. Unusual ligatures, or alternate forms of
+  historical ligatures.
+
+  \item[\irsc hist] Historical forms. Substitutes archaic for modern glyph shapes.
+
+  \item[\irsc hlig] Historical ligatures. Archaic forms of certain ligatures.
+
+  \item[\irsc salt] Stylistic alternates. Substitutes alternate forms of numerous
+  glyphs. This duplicates the function of ss10 and ss14 and includes a 
+  number of other alternates of standard upper- and lowercase letters,
+  titling caps, and small caps.
+
+  \item[\irsc smcp] Small caps. Substitutes rustic capitals for lowercase letters.
+
+
+  \item[\irsc ss01-ss04] Filled capitals: ss01 red, ss02 blue, ss03 yellow, ss04 green.
+
+  \item[\irsc ss05] Rubricated. Turns all text red.
+
+  \item[\irsc ss07] Underdotted. Dots are added below letters. In medieval
+  manuscripts this indicates deletion.
+
+  \item[\irsc ss10] Alternate y. Substitutes a round-limbed y for the default.
+
+  \item[\irsc ss11] Sentence cap. Substitutes capitals suitable for beginning sentences
+  for the default.
+
+  \item[\irsc ss12] Titling caps from caps.
+
+  \item[\irsc ss13] Alternate diacritics. Substitutes alternate forms of\linebreak macron,
+  ogonek, and the ur-abbreviation (U+1DE3).
+
+  \item[\irsc ss14] Enlarged minuscules. Enlarged forms of selected lowercase letters:
+  {\irit a c d f p}.
+
+  \item[\irsc ss17-ss20] Colored text. Turns all text a color: ss17 red, ss18 blue,
+  ss19 gold (dark yellow), ss20 green.
+
+  \item[\irsc swsh] Swash. Swash forms of selected letters: {\irit F M a e i ı n t}.
+
+  \item[\irsc titl] Titling caps. Substitutes titling caps for lowercase letters.
+  Use titling caps for all-caps titles and text.
+
+\end{description}
+}
+
+\newpage
+
+\noindent Color fonts and software compatibility\\[1ex]
+
+\noindent\normalsize\irrm There are several competing standards for color fonts like Eadui. One is
+the COLR/CPAL format, defined by Microsoft, which produces a relatively compact font file
+and can be used by all up-to-date web browsers. The file Eadui-CPAL.otf adheres to this
+standard: use it if you are mounting Eadui on a web server.
+
+A second standard is based on SVG (Scalable Vector Graphics): it was developed by
+Mozilla and Adobe. It produces much larger files---like, for example, the 5.5MB file
+Eadui-SVG.otf, which contains both COLR/CPAL and SVG tables and thus will work with
+a very wide variety of software.
+
+If you are installing Eadui on your desktop computer, use Eadui-SVG, which will work with
+most or all desktop software.
+
+If you are using {Lua\LaTeX} with fontspec, be sure to include the option “Renderer=Harfbuzz” in your
+\textbackslash setmainfont command. Other varieties of {\TeX} may treat Eadui as a traditional
+monochrome font.
+
+If an application cannot use color fonts, it will treat Eadui like an ordinary monochrome font.
+\vfill
+
+\noindent\irit The Eadui font. Copyright © 2011--2024 by Peter S. Baker. Licensed under the Open font
+License (https://openfontlicense.org/\kern+0.5pt) and free for all to use. This document was
+created with {Lua\LaTeX} and fontspec. The roman font is Irradiant, by Peter S. Baker.
+
+
+
+\end{document}
