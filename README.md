@@ -4,13 +4,8 @@
 Eadui is a script font based on the hand of the eleventh-century scribe Eadui Basan
 
 Version 1 of this Open Source font (SIL Open Font License) was released via the Open Font Library
-(www.openfontlibrary.org). Version 2, now under development, features improved outlines and completely
-reworked OpenType tables. It is being developed with FontForge and the Adobe FDK.
+(www.openfontlibrary.org). Version 2 featured improved outlines and completely
+reworked OpenType tables. Version 3, the current version, is a color font which retains the
+features of version 2 and adds many OpenType features for color management. The colors of
+version 3 are based on manuscripts written by Eadui.
 
-To build the OTF version of the font under Linux or OS X, make sure FontForge and the Adobe FDK tools
-are in your path, and then type
-
-./mkfont Eadui
-
-The simple mkfont script will call FontForge to generate the font and the Adobe tools to add hints and
-OpenType features. There is not yet a script to generate the TTF version.
