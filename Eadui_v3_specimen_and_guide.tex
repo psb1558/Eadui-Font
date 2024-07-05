@@ -152,6 +152,15 @@ the font (like the scribe)
   be selected with OpenType features, listed at the bottom of this
   document.
 
+\lettrine[lines=2,lraise=0]{\redtext{T}}{\goldtext{he colors}}
+of the default version of Eadui are meant to be used on a light background. If
+you want to use Eadui on a dark background, make sure to install the
+file with “Dark” in the name, and select the “Medium Dark” style in
+your application. Alternatively, if you are creating a web page, mount just
+one of Eadui's font files on the server and use
+the CSS “color-palette” property to select the light (0) or the dark
+(1) palette.
+
 
 \newpage
 \noindent Historic mode (hist):\\[1ex]
@@ -360,7 +369,8 @@ werde bleiben im \greenfilltext{Hause} des \rubric{\salt{H}\atc{errn}} immerdar.
   5 rubricated, 6 red text, 7 blue text, 8 gold (dark yellow) text, 9 green text.
   Character variant features map to letters as follows: A-Z odd-numbered
   features, cv01-cv51; a-z even-numbered features, cv02-cv52; Æ cv56;
-  æ cv57; Œ cv58; œ cv59; Ð cv60; ð cv61; Þ cv62; þ cv63; \& cv64. Small caps follow the rules
+  æ cv57; Œ cv58; œ cv59; Ð cv60; ð cv61; Þ cv62; þ cv63; \& cv64. Small caps
+  and the ampersand follow the rules
   for lowercase letters: that is, they can be colored with either Stylistic
   Set or Character Variant features, but they can be filled only with
   Character Variant features.
@@ -383,6 +393,10 @@ werde bleiben im \greenfilltext{Hause} des \rubric{\salt{H}\atc{errn}} immerdar.
   \item[\irsc ss01-ss04] Filled capitals: ss01 red, ss02 blue, ss03 yellow, ss04 green.
 
   \item[\irsc ss05] Rubricated. Turns all text red.
+
+  \item[\irsc ss06] User color. Text to which ss06 has been applied is black by
+  default, and can be colored by the user in the same way as a standard monochrome 
+  font.
 
   \item[\irsc ss07] Underdotted. Dots are added below letters. In medieval
   manuscripts this indicates deletion.
