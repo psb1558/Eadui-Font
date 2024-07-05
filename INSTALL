@@ -1,0 +1,7 @@
+Install the font file Eadui-SVG.otf on a desktop computer or laptop. Install Eadui-CPAL.otf on a web server
+(preferably compressed with woff2_compress).
+
+If you are planning to use Eadui on a dark background, also install Eadui-MediumDark-CPAL.otf or
+Eadui-MediumDark-SVG.otf alongside the other file and choose the "Medium Dark" style via your application's
+font commands.
+
