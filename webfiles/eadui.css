@@ -1,0 +1,156 @@
+@font-face {
+  font-family: 'Irradiant';
+  src:url("./Irradiant-Regular.woff2");
+  font-weight: normal;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: 'Eadui';
+  src:url("./Eadui.woff2");
+  font-weight: normal;
+  font-style:normal;
+}
+
+@font-palette-values --darkTheme {
+    font-family: Eadui;
+    base-palette: 1;
+}
+
+.fontdarktheme {
+    font-palette: --darkTheme;
+}
+
+/*
+    The @font-palette-values at-rule defines an alternative set of
+    colors to replace the five colors of the Eadui font.
+    To change the colors, simply add the class ".altcolors" to the
+    element containing the text whose color you want to change.
+*/
+/* @font-palette-values --Alternate {
+    font-family: Eadui;
+    override-colors:
+    0 rgb(94, 64, 54),
+    1 rgba(230, 220, 39, 0.5),
+    2 rgba(42, 210, 51, 0.5),
+    3 rgba(240, 81, 53, 0.5),
+    4 rgba(53, 118, 223, 0.5),
+    5 rgb(188, 25, 53);
+}
+
+.altcolors {
+    font-palette: --Alternate;
+} */
+
+  body {
+      width: 95%;
+      padding: 20px;
+      /* background-color: #e3e9e3; */
+      background-color: lightgray;
+  }
+
+  .headerbox {
+      /* background-image: url("parch-light.jpg"); */
+      background-color: #f9f9f9;
+      padding: 30px;
+      border: 1px solid black;
+  }
+
+  .bottombox {
+    clear: both;
+    padding: 20px;
+    /* background-image: url("parch-light.jpg"); */
+    background-color: #f9f9f9;
+    border: 1px solid black;
+  }
+
+  .controlbox {
+      width: 48%;
+      float: left;
+      border: 1px;
+      font-family: Irradiant;
+      padding: 10px;
+  }
+
+  .dropdown {
+      padding-bottom: 10px;
+  }
+
+  #textbox {
+      font-family: Eadui;
+      width: 48%;
+      height: 500px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      float: right;
+      border: 1px solid black;
+      font-size: 2em;
+      line-height: 135%;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+      /* background-image: url("parch-light.jpg"); */
+  }
+
+  .colorpicker {
+    display: none;
+    line-height: 2.5em;
+    white-space: nowrap;
+    background-color: #f9f9f9;
+    padding: 6px 8px 6px 5px;
+    margin: 5px;
+    font-family: Irradiant;
+    /* background-image: url("parch-light.jpg"); */
+    border: 1px solid black;
+}
+
+#colorinput {
+    height: 20px;
+}
+
+  .check {
+      line-height: 2.5em;
+      white-space: nowrap;
+      /* background-color: f9f9f9; */
+      padding: 6px 8px 6px 5px;
+      margin: 5px;
+      font-family: Irradiant;
+      background-color: #f9f9f9;
+      /* background-image: url("parch-light.jpg"); */
+      border: 1px solid black;
+  }
+
+  .hid {
+      display: none;
+  }
+
+  .smcp {
+      font-feature-settings: "smcp" on;
+  }
+
+  .capcolor {
+    font-feature-settings: "ss04" on;
+  }
+
+  h1 {
+      font-family: Eadui;
+      font-weight: 400;
+      font-size: 4.5em;
+  }
+
+  h2 {
+      font-family: Irradiant;
+      font-weight: 700;
+      font-size: 2em;
+      padding: 10px 0px 0px 0px;
+  }
+
+  p {
+      font-family: Irradiant;
+      font-size: 1.5em;
+  }
+
+  div {
+      font-family: Irradiant;
+  }
+

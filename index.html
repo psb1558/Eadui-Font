@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Eadui font specimen page</title>
+    <link rel="stylesheet" href="./webfiles/eadui.css"/>
+    <link rel="stylesheet" href="./webfiles/balloon-new.css"/>
+  </head>
+  <body lang="en">
+    <div class="headerbox" id="headerbox">
+      <h1>Eadui — An Eleventh-Century Script Font</h1>
+    </div>
+    <p>
+      The Eadui font is named for a scribe who worked at Christ Church,
+      Canterbury, in the first half of the eleventh century and signed 
+      himself “Eaduuius cognomento Basan.” This Eadui Basan
+      was a leading practitioner of the scribal hand known to paleographers
+      as style IV English caroline minuscule. Like caroline minuscules
+      generally, this one is notable for its legibility; and Eadui's
+      work, at its best, possesses a formal beauty that is matched by few
+      scribes of his time.
+    </p>
+    <p>
+        Eadui is a color font, with default colors based on those of several
+        of the scribe’s manuscripts; the font also contains an alternate
+        palette for use against dark backgrounds. Users can override the font’s
+        choice of text color with the OpenType feature ss06, and web 
+        designers can either select a palette or override any or all of the 
+        font’s colors with CSS.
+    </p>
+    <p>
+        Below you can play with the font’s colors (or try out your own) and
+        a generous selection of its many OpenType features.
+        The text box is editable: paste or type in your favorite
+        text to see what it looks like in this classic script!
+    </p>
+    <div class="controlbox">
+        <div class="dropdown">
+          <label for="fontsizes">Choose a size: </label>
+          <select id="fontsizes" name="fontsizes">
+            <option value="1em">1em</option>
+            <option value="1.25em">1.25em</option>
+            <option value="1.5em">1.5em</option>
+            <option value="1.75em">1.75em</option>
+            <option value="2em" selected="selected">2em</option>
+            <option value="2.25em">2.25em</option>
+            <option value="2.5em">2.5em</option>
+            <option value="2.75em">2.75em</option>
+            <option value="3em">3em</option>
+          </select>
+        </div>
+      <div class="dropdown">
+        <label for="languages">Choose a language:</label>
+        <select id="languages" name="languages">
+          <option value="ModEnglish" selected="selected">Modern English</option>
+          <option value="OldEnglish">Old English</option>
+          <option value="Latin">Latin</option>
+        </select>
+      </div>
+      <div class="checkboxes">
+        <span class="check"><input type="checkbox" id="hist"
+          name="his"/><label for="hist" data-tooltip="Historic mode">
+            Historic mode (hist)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="titl"
+            name="titl"/><label for="titl" data-tooltip="Titling capitals">
+              Titling capitals (titl)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="smcp"
+            name="smcp"/><label for="smcp" data-tooltip="Rustic capitals">
+                Rustic capitals (smcp)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss11"
+            name="ss11"/><label for="ss11" data-tooltip="Sentence capitals">
+                Sentence capitals (ss11)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss14"
+            name="ss14"/><label for="ss14" data-tooltip="Enlarged minuscules">
+                Enlarged minuscules (ss14)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="hlig"
+            name="hlig"/><label for="hlig" data-tooltip="Historic ligatures">
+                Historic ligatures (hlig)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="dlig"
+            name="dlig"/><label for="dlig" data-tooltip="Discretionary ligatures">
+                Discretionary ligatures (dlig)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss01"
+            name="ss01"/><label for="ss01" data-tooltip="Red-filled caps">
+                Red-filled caps (ss01)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss02"
+            name="ss02"/><label for="ss02" data-tooltip="Blue-filled caps">
+                Blue-filled caps (ss02)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss03"
+            name="ss03"/><label for="ss03" data-tooltip="Yellow-filled caps">
+                Yellow-filled caps (ss03)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss04"
+            name="ss04"/><label for="ss04" data-tooltip="Green-filled caps">
+                Green-filled caps (ss04)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss05"
+            name="ss05"/><label for="ss05" data-tooltip="Rubricated text">
+                Rubricated text (ss05)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss06"
+            name="ss06"/><label for="ss06" data-tooltip="User color">
+                User color (ss06)</label>
+        </span>
+
+        <span class="colorpicker">
+            <input type="color" id="colorinput" value="#000000"/><label 
+              for="colorinput"> User color</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss17"
+            name="ss17"/><label for="ss17" data-tooltip="Red text">
+                Red text (ss17)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss18"
+            name="ss18"/><label for="ss18" data-tooltip="Blue text">
+                Blue text (ss18)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss19"
+            name="ss19"/><label for="ss19" data-tooltip="Gold text">
+                Gold text (ss19)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="ss20"
+            name="ss20"/><label for="ss20" data-tooltip="Green text">
+                Green text (ss20)</label>
+        </span>
+
+        <span class="check"><input type="checkbox" id="darkpalette"
+        name="darkpalette"/><label for="darkpalette" data-tooltip="Dark palette">
+            Dark palette</label></span>
+
+        <span class="check">&nbsp;<select id="letterpicker">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+                <option value="i">i</option>
+                <option value="j">j</option>
+                <option value="k">k</option>
+                <option value="l">l</option>
+                <option value="m">m</option>
+                <option value="n">n</option>
+                <option value="o">o</option>
+                <option value="p">p</option>
+                <option value="q">q</option>
+                <option value="r">r</option>
+                <option value="s">s</option>
+                <option value="t">t</option>
+                <option value="u">u</option>
+                <option value="v">v</option>
+                <option value="w">w</option>
+                <option value="x">x</option>
+                <option value="y">y</option>
+                <option value="z">z</option>
+            </select>
+            <span>  </span>
+            <label for="radiodflt">default:</label>
+            <input type="radio" id="radiodflt" name="colorbuttons"/>
+            <label for="radiored" style="color: red">red:</label>
+            <input type="radio" id="radiored" name="colorbuttons"/>
+            <label for="radioblue" style="color: blue">blue:</label>
+            <input type="radio" id="radioblue" name="colorbuttons"/>
+            <label for="radioyellow" style="color: #c49102">yellow:</label>
+            <input type="radio" id="radioyellow" name="colorbuttons"/>
+            <label for="radiogreen" style="color: green">green:</label>
+            <input type="radio" id="radiogreen" name="colorbuttons"/></span>
+  </div>
+  </div>
+  <div id="textbox" contenteditable="true">
+</div>
+<div class="bottombox" id="bottombox">
+<p>
+  Eadui font copyright © 2011–2024 by Peter S. Baker.
+</p>
+<p>
+  <a href="https://github.com/psb1558/Eadui-Font">Development/Download Site</a>
+</p>
+<p>
+  Licensed under the <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License, v. 1.1</a>.
+</p>
+</div>
+    <script src="./webfiles/jquery-3.5.0.min.js" type="text/javascript"></script>
+    <script src="./webfiles/eadui.js" type="text/javascript"></script>
+  </body>
+</html>
