@@ -57,9 +57,7 @@ $(document).ready(function(){
 	// Clear the menus and boxes (in case the page is being reloaded) and
 	// display the default (modern English) text.
 
-//	var fstring = "\"ss08\" on, \"dlig\" on";
-  var fstring = "";
-//	$("#textbox").css("font-feature-settings", fstring).text(modtext);
+	var fstring = "";
 	$("#textbox").text(modtext);
 	$( "input[type='checkbox']" ).prop("checked", false);
 
@@ -83,19 +81,14 @@ $(document).ready(function(){
 
 		switch ( $("#languages option:selected").attr("value") ) {
 			case "ModEnglish":
-				// $( "input[type='checkbox']" ).not("#ss08, #dlig").prop("checked", false);
-				// $("#ss08, #dlig").prop("checked",true).change();
 				break;
 			case "OldEnglish":
 				// lang code is ang, but we use en to trigger English thorn and eth.
 				t = oldenglishtext;
-				// $( "input[type='checkbox']" ).prop("checked", false).first().change();
 				break;
 			case "Latin":
 				l = "la"
 				t = latintext;
-				// $( "input[type='checkbox']" ).not("#hist").prop("checked", false);
-				// $("#hist").prop("checked",true).change();
 				break;
 		}
 
@@ -125,11 +118,6 @@ $(document).ready(function(){
 	// because in CSS all features besides the ones you set explicitly are set to their
 	// default values. So we specify everything we want every time a box is checked or
 	// unchecked.
-
-	// $("#colorinput").change(function(){
-	// 	usercolor = $("#colorinput").val()
-	// 	$("#textbox").css("color", usercolor)
-	// })
 
 	$("#colorinput").on("input", function(){
 		usercolor = $("#colorinput").val()
@@ -163,10 +151,6 @@ $(document).ready(function(){
 				else if ( tag.length > 5 ) {
 					tagcolor = tag.substring(5)
 					lettercolors[currentletterselection] = tagcolor
-					//console.log(lettercolors[currentletterselection])
-					// for (fff in lettercolors) {
-					// 	console.log(`lettercolors.${fff} = ${lettercolors[fff]}`)
-					// }
 				}
 				else {
 					if (tag == "ss06" || tag == "ss07") {
@@ -179,7 +163,6 @@ $(document).ready(function(){
 				$(".hid").css("display", "none");
 			}
 		});
-		// alert(fstring)
 
 		if (showcolor) {
 			$(".colorpicker").css("display", "inline")
@@ -197,7 +180,6 @@ $(document).ready(function(){
 		}
 
 		for (letter in lettercolors) {
-			// console.log(letter)
 			if (lettercolors[letter] != "dflt") {
 				fstring = featureString(fstring, lettercv[letter], colorindexes[lettercolors[letter]]);
 			}
@@ -206,28 +188,23 @@ $(document).ready(function(){
 		if (fstring.length == 0)
 			fstring = "normal";
 
-		//console.log(fstring)
 
 		$("#textbox").css("font-feature-settings", fstring);
 
 		if ( darkpalette ) {
 			$("#textbox").addClass("fontdarktheme")
 			$("#textbox").css("background-color", "#3f454f")
-			console.log("did darkpalette")
 		}
 		else {
 			$("#textbox").removeClass("fontdarktheme")
 			$("#textbox").css("background-color", "#f9f9f9")
-			console.log("undid darkpalette")
 		}
 
 	});
 
-
 	$("#letterpicker").change(function(){
 		currentletterselection = $(this).children("option:selected").val();
 		radioid = "#".concat("radio",lettercolors[currentletterselection])
-		//console.log(radioid)
 		$(radioid).prop("checked", true)
 	})
 	});
