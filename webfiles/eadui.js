@@ -15,10 +15,10 @@ $(document).ready(function(){
 
     var latintext = "Brittania Oceani insula. cui quondam Albion nomen \
 		 fuit. int̄ septen­trionē & occidentem locata est. Germaniae. \
-		 Galliae. Hispaniae. maximis Europae partibꝫ multo int̄uallo aduersa. \
+		 Galliae. Hispaniae. maximis Europae partib: multo int̄uallo aduersa. \
 		 Q̄: ꝑ miliapassuum .dccc. in Boream longa. latitudinis \
 		 habet milia .cc. exceptis dumtaxat ꝓlixioribus diuersor̄ ꝓmontorior̄ \
-		 tractibꝫ. quibꝫ efficitur ut circuitus eius quadragies octies .lxxv. \
+		 tractib:. quib: efficitur ut circuitus eius quadragies octies .lxxv. \
 		 milia conpleat. Habet a meridie Galliam Belgicam. cuius proximum litus \
 		 transmeantibus aperit ciuitas, q̄: dicitur Rutubi portus, a gente \
 		 Anglor̄ nc̄ corrupte Reptacaestir uocata, interposito mari a Gessoriaco \
